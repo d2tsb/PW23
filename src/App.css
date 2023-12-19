@@ -1,41 +1,108 @@
 hr {
-    display: block;
-    height: 4px;
-    border: 2;
-    border-top: 1px solid #a24f4f;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 4px;
+  border: 2;
+  border-top: 1px solid #a24f4f;
+  margin: 1em 0;
+  padding: 0;
 }
-
-
-
-.Frame
-{
-  display: grid;
+.App {
   background-color: #000000;
-  grid-template-columns: 50px auto 50px;
-
-
-
+  height: 100%;
 }
 
-
+.Frame {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-template-rows: 100px 400px 700px 100px;
+}
 .App-header {
   grid-column-start: 2;
   grid-column-end: 3;
   min-height: 100vh;
   display: block;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
+.ListItem1 {
+  grid-column-start: 2;
+  grid-column-end: 3;
 
-.resize 
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.DataDivWrapper {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.DataDiv {
+  color: white;
+  font-family: sans-serif;
+  vertical-align: top;
+  row-gap: 5px;
+  display: grid;
+  align-items: start;
+  font-size: 15px;
+}
+
+.TextSize {
+  height: 1rem;
+}
+
+
+.link_
 {
-  width: 100px;
-  height: auto; 
+  color: hotpink; 
+
+
+}
+
+
+.resize {
+  width: 10rem;
+  height: auto;
+  float: left;
+}
+
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
   float: left; 
-  
+  display: inline;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
 }
