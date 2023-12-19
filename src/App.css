@@ -7,6 +7,17 @@ hr {
   padding: 0;
 }
 .App {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+
   background-color: #000000;
   height: 100%;
 }
@@ -14,7 +25,8 @@ hr {
 .Frame {
   display: grid;
   grid-template-columns: 50px auto 50px;
-  grid-template-rows: 100px 400px 700px 100px;
+  grid-template-rows: 100px 400px 100px 300px 1000px 100px 100px;
+  /*Name, Picture + Data, Menu, Text, Space, Statusline, Border*/
 }
 .App-header {
   grid-column-start: 2;
@@ -30,6 +42,15 @@ hr {
   grid-row-start: 3;
   grid-row-end: 4;
 }
+
+
+.active {
+  color: #928ccb;   
+
+}
+
+
+
 
 .DataDivWrapper {
   grid-row-start: 2;
@@ -54,11 +75,8 @@ hr {
 
 .link_
 {
-  color: hotpink; 
-
-
+  color: rgb(0, 255, 200); 
 }
-
 
 .resize {
   width: 10rem;
@@ -66,28 +84,42 @@ hr {
   float: left;
 }
 
-.ul {
+.ul_ {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #303030;
+  /*display: flex;*/
+  flex-direction: row;
+  justify-content: center;
 }
 
 li {
   float: left; 
   display: inline;
 }
-li a {
+.lia {
   display: block;
-  color: white;
   text-align: center;
+  color: rgb(239, 239, 239);
   padding: 14px 16px;
   text-decoration: none;
 }
 
-li a:hover {
+.liActive {
+  display: block;
+  text-align: center;
+  color: rgb(239, 239, 239);
+  background-color: #1c1c1c ;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.lia:hover {
   background-color: #111;
+  color: rgb(100, 154, 211);
 }
 
 
@@ -100,9 +132,32 @@ a:visited {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:active {
   text-decoration: underline;
+}
+
+
+.Description_ {
+  color: white; 
+  background-color: #0e0e0e;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+*.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
 }

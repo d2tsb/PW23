@@ -4,6 +4,7 @@
 /node_modules
 /ressources
 /src/ressources
+/public/res
 /.pnp
 .pnp.js
 
