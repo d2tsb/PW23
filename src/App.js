@@ -20,14 +20,19 @@ function App() {
               className="resize"
             />
             <text>Birth: 05.09.2001</text>
-            <text>Loc: Bavery, Landshut</text>
-            <text>Mail: tilmansoerenw@protonmail.com</text>
-            <a className="link_" href="https://github.com/d2tsb">
-              Github: d2tsb
-            </a>
+            <text>Loc: Bavaria, Landshut</text>
+            <div>
+              <text>Mail:</text> <a className="link_" href="mailto:tilmansoerenw@protonmail.com">tilmansoerenw@protonmail.com</a>
+            </div>
+            <div>
+              <text> Github: </text>
+              <a className="link_" href="https://github.com/d2tsb">
+                d2tsb
+              </a>
+            </div>
           </span>
         </div>
-        <Texts/>
+        <Texts />
       </div>
     </div>
   );
