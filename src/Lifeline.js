@@ -1,64 +1,97 @@
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Lifeline.css"
 
-const Lifeline = () => {
-
-  const divStyle0 = {position: 'absolute', 
-                    bottom: '40px', 
-                    right: '10px', 
-                    fontsize: '12px'};
-
-  const divStyle1 = {position: 'absolute', 
-                    bottom: '15px', 
-                    right: '10px', 
-                    fontsize: '12px'};
+import TimelineObserver from "react-timeline-animation";
 
 
-  //"position: absolute; bottom: 15px; left: 10px; font-size: 18px; font-weight: bold"
+const Timeline = ({ setObserver, callback }) => {
+  const [message1, setMessage1] = useState("");
+  const [message2, setMessage2] = useState("");
+  const [message3, setMessage3] = useState("");
 
+  const timeline1 = useRef(null);
+  const timeline2 = useRef(null);
+  const timeline3 = useRef(null);
+  const circle1 = useRef(null);
+  const circle2 = useRef(null);
+  const circle3 = useRef(null);
 
-  const divStyle2 = {position: 'absolute', 
-                    bottom: '15px', 
-                    left: '10px',
-                    fontsize: '18px',
-                    fontweight: 'bold'};
+  const someCallback = () => {
+    setMessage1("Step one");
+    callback();
+  };
 
+  const someCallback2 = () => {
+    setMessage2("Step two");
+  };
+
+  const someCallback3 = () => {
+    setMessage3("Finish");
+  };
+
+  useEffect(() => {
+    setObserver(timeline1.current);
+    setObserver(timeline2.current);
+    setObserver(timeline3.current);
+    setObserver(circle1.current, someCallback);
+    setObserver(circle2.current, someCallback2);
+    setObserver(circle3.current, someCallback3);
+  }, []);
 
   return (
-    <div>
-      <h1>
-      </h1>
-      <div class="flex-parent">
-        <div class="input-flex-container">
-          <div class="input">
-            <span data-year="2001" data-info="Birth *, 05.09.2001"></span>
-          </div>
-          <div class="input">
-            <span data-year="2007" data-info="jungle gym"></span>
-          </div>
-          <div class="input">
-            <span data-year="2011" data-info="chocolate chip cookie"></span>
-          </div>
-          <div class="input">
-            <span data-year="2017" data-info="Jeep"></span>
-          </div>
-          <div class="input">
-            <span data-year="2019" data-info="leaf blower"></span>
-          </div>
-          <div class="input active">
-            <span data-year="2020 -" data-info="magnetic stripe card"></span>
-          </div>
-          <div class="input">
-            <span data-year="1970" data-info="wireless LAN"></span>
-          </div>
-          <div class="input">
-            <span data-year="1980" data-info="flash memory"></span>
-          </div>
-       </div>
+    <div className="wrapper">
+      <div id="timeline1" ref={timeline1} className="timeline" />
+      <div className="circleWrapper">
+        <div id="circle1" ref={circle1} className="circle">
+          1
+        </div>
+        <div className="message">{message1}</div>
+      </div>
+      <div id="timeline2" ref={timeline2} className="timeline" />
+      <div className="circleWrapper">
+        <div id="circle2" ref={circle2} className="circle">
+          2
+        </div>
+        <div className="message">{message2}</div>
+      </div>
+      <div id="timeline3" ref={timeline3} className="timeline" />
+      <div className="circleWrapper">
+        <div id="circle3" ref={circle3} className="circle">
+          3
+        </div>
+        <div className="message">{message3}</div>
       </div>
     </div>
   );
 };
 
-export default Lifeline;
+export default function Lifeline () {
+  const [message, setMessage] = useState("");
+
+  const onCallback = () => {
+    console.log("awesome");
+  };
+
+  return (
+    <div style={ {background: '#222222', rotate: '270deg' } } >
+      <h1>react-scroll-animation component</h1>
+      <TimelineObserver
+        initialColor="#e5e5e5"
+        fillColor="black"
+        handleObserve={(setObserver) => (
+          <Timeline
+            callback={onCallback}
+            className="timeline"
+            setObserver={setObserver}
+          />
+        )}
+      />
+      <div className="stub2">{message}</div>
+    </div>
+  );
+
+
+
+
+};
