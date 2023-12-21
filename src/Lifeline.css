@@ -8,7 +8,7 @@
   width: 700px;
   height: 2px;
   /*background: #fff;*/
-  background-image: linear-gradient(to right, #fff, black);
+  background-image: linear-gradient(to right, #fff, rgba(0,0,0,0));
   position: absolute;
   transform-origin: left;
   animation: grow-left 1s linear ;

@@ -1,4 +1,5 @@
 import "./App.css";
+import "./Texts.css"
 import React from "react";
 import { useState } from "react";
 import "./Lifeline";
@@ -19,9 +20,9 @@ const Texts = () => {
   const ChooseElement = () => {
     switch (selectedIndex) {
       case 0:
-        return <div className="Description_"> <text> {Descriptions[0]} </text> </div>;
+        return <div className="Description_ collapser"> <text> {Descriptions[0]} </text> </div>;
       case 1:
-        return <div className="Description_"> <text> {Descriptions[1]} </text> </div>;
+        return <div className="Description_ collapser"> <text> {Descriptions[1]} </text> </div>;
       case 2:
         return (
           <div>

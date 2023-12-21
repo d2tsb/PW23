@@ -1,0 +1,33 @@
+
+.collapser{
+
+
+
+
+}
+
+.collapser{
+
+  animation: uncollapse 0.5s;
+  transform-origin: top;
+
+}
+
+
+
+@keyframes uncollapse {
+  from {
+    opacity: 0;
+    transform: scaleY(0%)
+
+
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(100%)
+
+  }
+
+
+
+}
