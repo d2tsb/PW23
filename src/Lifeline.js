@@ -4,12 +4,17 @@ import "./Lifeline.css";
 const LifelineElement = (probs) => {
   return (
     <div>
-      <span className="dot" style={{ animationDelay: probs.probs.probsdelay}}></span>
-      <div className="dotDivText" 
-      style={{ animationDelay: probs.probs.probsdelay}}
-      
-      >
-        <span className="">hello</span>
+      <div style={{paddingRight: '70px'}}>
+        <span
+          className="dot"
+          style={{ animationDelay: probs.probs.probsdelay }}
+        ></span>
+        <div
+          className="dotDivText"
+          style={{ animationDelay: probs.probs.probsdelay }}
+        >
+          <span className="">{probs.probs.text}</span>
+        </div>
       </div>
     </div>
   );
@@ -23,11 +28,21 @@ const Lifeline = () => {
   const VALUES = ["09.05.2001", "2007", "2017", "2019", "2020"];
 
   // Description array corresponding to values
-  const description = ["Birth", "", "The event of 22 March 2021 : Board Exam"];
-  const numElements = 5
+  const description = [
+    "2001/05/09: Birth",
+    "2011: Entering HighSchool",
+    "2017: Mittlere Reife",
+    "2019: Abitur, Studium BWL",
+    "2020: Studium Informatik",
+  ];
+  const numElements = description.length;
   const LifeLineElements = [];
   for (var i = 0; i < numElements; i++) {
-    LifeLineElements.push (<LifelineElement probs={{probsdelay: i* 0.1 + 's'}} />);
+    LifeLineElements.push(
+      <LifelineElement
+        probs={{ probsdelay: i * 0.1 + "s", text: description[i] }}
+      />
+    );
   }
 
   return (
