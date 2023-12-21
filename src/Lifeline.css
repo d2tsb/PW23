@@ -1,7 +1,83 @@
-.text-center {
-    text-align: center;
+.hrAnimatedLine::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  animation: animate 1s linear ;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
- 
+
+.hrAnimatedLine {
+  width: 400px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  transform: translate(0%, 100%);
+}
+
+@keyframes animate {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 100%;
+  }
+
+}
+
+@keyframes fade-in-right {
+  from {
+    transform: translateX(-15px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes grow-left {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.dotDiv
+{
+  position: relative;
+  display: flex;
+
+
+}
+
+.dot {
+    opacity: 0;
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  justify-content: space-between;
+  align-items:baseline;
+  animation: fade-in-right 1s forwards;
+}
+.dotDivText
+{
+
+  opacity: 0;
+  transform: rotate(-80deg);
+  animation: fade-in-right 1s forwards;
+
+}
+
 .root-div {
-    margin-top: 150px;
+  display: flex;
+  padding: 150px;
+  flex-direction: row;
 }

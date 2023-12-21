@@ -19,12 +19,14 @@ const Texts = () => {
   const ChooseElement = () => {
     switch (selectedIndex) {
       case 0:
-        return <text> {Descriptions[0]} </text>;
+        return <div className="Description_"> <text> {Descriptions[0]} </text> </div>;
       case 1:
-        return <text> {Descriptions[1]} </text>;
+        return <div className="Description_"> <text> {Descriptions[1]} </text> </div>;
       case 2:
         return (
-          <Lifeline/>
+          <div>
+            <Lifeline/>
+          </div>
         );
     }
     return <text></text>;
@@ -50,7 +52,7 @@ const Texts = () => {
           ))
         )}
       </ul>
-      <div className="Description_">{ChooseElement()}</div>
+      {ChooseElement()}
     </div>
   );
 };
