@@ -4,7 +4,7 @@ import "./Lifeline.css";
 const LifelineElement = (probs) => {
   return (
     <div>
-      <div style={{paddingRight: '70px'}}>
+      <div style={{ paddingRight: "70px" }}>
         <span
           className="dot"
           style={{ animationDelay: probs.probs.probsdelay }}
@@ -46,10 +46,10 @@ const Lifeline = () => {
   }
 
   return (
-    <div className="root-div">
-      <hr className="hrAnimatedLine" />
-      <div className="dotDiv">{LifeLineElements}</div>
-    </div>
+      <div className="root-div">
+        <hr className="hrAnimatedLine" />
+        <div className="dotDiv">{LifeLineElements}</div>
+      </div>
   );
 };
 

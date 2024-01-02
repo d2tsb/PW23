@@ -5,6 +5,8 @@
 }
 
 .hrAnimatedLine {
+  margin-top: 9px;
+  border: 0; 
   width: 700px;
   height: 2px;
   /*background: #fff;*/
@@ -77,9 +79,10 @@
   animation: fade-in-right 1s forwards;
 
 }
-
 .root-div {
-  padding-left: 150px; 
+  margin-top: 30px;
   display: flex;
+  margin-left: 50px; 
   flex-direction: row;
+  background-color: #000;
 }

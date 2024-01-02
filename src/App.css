@@ -1,3 +1,11 @@
+html,
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+
 .hr1 {
   display: block;
   height: 4px;
@@ -31,9 +39,10 @@
 .App-header {
   grid-column-start: 2;
   grid-column-end: 3;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   display: block;
   color: white;
+  background-color: #000;
 }
 .ListItem1 {
   grid-column-start: 2;
