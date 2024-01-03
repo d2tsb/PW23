@@ -5,7 +5,8 @@
 }
 
 .hrAnimatedLine {
-  margin-top: 9px;
+  margin-top: 10px;
+  margin-left: 3px;
   border: 0; 
   width: 700px;
   height: 2px;

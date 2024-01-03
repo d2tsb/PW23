@@ -1,0 +1,83 @@
+.gitcraw {
+  display: flex;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  color: aliceblue;
+  /*background-color: rgb(37, 42, 42);*/
+  background-color: #000;
+
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40%; 
+  /*overflow-y:auto;*/
+  margin-top: 5vh; 
+  animation: fadegitin 1s forwards;
+}
+.gitElement {
+  display: flex;
+}
+.gitText {
+  padding: 2px;
+}
+.gitli {
+  padding-top: 20px;
+  width: 85%;
+  padding-bottom: 20px;
+  /*padding-right: 100rem; */
+  /*padding-right: 60%;*/
+  padding-left: 2vh;
+  background-color: black;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 1px;
+  border-style: solid;
+  border-color: white;
+}
+.gitul {
+  /*
+  margin-right: 30vh;*/
+  padding-left: 0vh; 
+  border: 3px;
+
+  border-radius: 5px;
+
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+}
+.gitimg {
+  filter: invert(1);
+}
+.gitimgdiv
+{
+  display:grid; 
+  margin-left: 1vh; 
+
+}
+
+
+.gitbutton
+{
+  border: 0px; 
+  color: #000; 
+  background-color: #000;
+}
+
+
+@keyframes fadegitin {
+  from {
+    opacity: 0;
+
+  }
+  to {
+    opacity: 1;
+
+  }
+
+
+
+}

@@ -1,6 +1,8 @@
 import "./App.css";
 import "./Texts";
+import "./GithubCrawler"
 import Texts from "./Texts";
+import GithubCrawler from "./GithubCrawler";
 
 function App() {
   return (
@@ -19,8 +21,11 @@ function App() {
                 src={require("./ressources/pictureMe.png")}
                 alt="Pictr. of Self"
                 className="resize"
+                style={{marginBottom: "20px"}}
               />
-              <text style={{paddingTop: "5px"}}>Birth: 05.09.2001</text>
+              <div style={{ marginTop: "5px" }}>
+                <text>Birth: 05.09.2001</text>
+              </div>
               <text>Loc: Bavaria, Landshut</text>
               <div>
                 <text>Mail:</text>{" "}
@@ -37,6 +42,7 @@ function App() {
             </span>
           </div>
           <Texts />
+          <GithubCrawler/>
         </div>
       </div>
     </body>

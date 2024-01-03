@@ -32,8 +32,8 @@ body {
 
 .Frame {
   display: grid;
-  grid-template-columns: 50px auto 50px;
-  grid-template-rows: 100px 400px 100px 300px 1000px 100px 100px;
+  grid-template-columns: 25px auto 25px;
+  grid-template-rows: 100px 400px auto 400px 1000px 100px 100px;
   /*Name, Picture + Data, Menu, Text, Space, Statusline, Border*/
 }
 .App-header {
@@ -50,6 +50,7 @@ body {
 
   grid-row-start: 3;
   grid-row-end: 4;
+
 }
 
 
@@ -91,8 +92,23 @@ body {
   width: 10rem;
   height: auto;
   float: left;
+  /*animation: fadeimgin 0.1s forwards;*/
 }
 
+
+@keyframes fadeimgin {
+  from {
+    opacity: 0;
+
+  }
+  to {
+    opacity: 1;
+
+  }
+
+
+
+}
 .ul_ {
   list-style-type: none;
   margin: 0;
@@ -151,7 +167,11 @@ a:active {
 
 .Description_ {
   color: white; 
-  background-color: #0e0e0e;
+  /*background-color: #0e0e0e;*/
+  background-image: linear-gradient(to right,  #0e0e0e , rgba(0,0,0,0));
+;
+  padding: 6px; 
+  padding-bottom: 10vh; 
   grid-row-start: 3;
   grid-row-end: 4;
   grid-column-start: 2;

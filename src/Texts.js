@@ -37,7 +37,7 @@ const Texts = () => {
     <div className="ListItem1">
       <ul className="ul_">
         {menuItems.length === 0 || menuItems === undefined ? (
-          <p> Empty List. </p>
+          <p> No Option. </p>
         ) : (
           menuItems.map((item, index) => (
             <li
