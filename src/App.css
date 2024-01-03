@@ -46,7 +46,8 @@ body {
 .Frame {
   display: grid;
   grid-template-columns: 25px auto 25px;
-  grid-template-rows: 100px 400px auto 600px 400px 100px 100px;
+  grid-template-rows: 100px 400px auto auto 400px 100px 100px;
+  /*600px*/
   /*Name, Picture + Data, Menu, Text, Space, Statusline, Border*/
 }
 .App-header {

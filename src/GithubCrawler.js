@@ -37,7 +37,8 @@ const GithubCrawler = () => {
         {allrepos.length === 0 || allrepos === undefined ? (
           <p> No public repos yet. </p>
         ) : (
-          allrepos.map((item, index) => (
+          allrepos.sort((a,b)=>(a['pushed_at']<b['pushed_at'])).map((item, index) => (
+            /*sort element by push date*/
             <a className="" href={item["html_url"]}>
               {" "}
               <li className="gitli" key={item}>
@@ -52,7 +53,7 @@ const GithubCrawler = () => {
                       ></img>
                     </div>
 
-                    <div className="gitimgdiv">
+                    <div className="gitdiv">
                       <div>
                         {AttributeValuePair("Name: ", item["full_name"])}
                       </div>
@@ -64,6 +65,9 @@ const GithubCrawler = () => {
                       </div>
                       <div>
                         {AttributeValuePair("Last Push: ", item["pushed_at"])}
+                      </div>
+                      <div>
+                        {AttributeValuePair("Language: ", item["language"])}
                       </div>
                     </div>
                   </div>

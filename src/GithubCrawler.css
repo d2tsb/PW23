@@ -50,13 +50,14 @@
 
   border-radius: 5px;
 
-  border-style: solid;
+  /*border-style: solid;*/
+  background-image: linear-gradient(top, #AAA, #000);
   border-color: rgb(255, 255, 255);
 }
 .gitimg {
   filter: invert(1);
 }
-.gitimgdiv {
+.gitdiv {
   display: grid;
   margin-left: 1vh;
 }

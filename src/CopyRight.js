@@ -5,7 +5,7 @@ const CopyRight = () => {
   return (
     <div className="fl">
       <div className="copyright">
-        CopyRight Tilman - Sören Bertram _ all rights reserved.
+        © Tilman - Sören Bertram. All rights reserved.
       </div>
     </div>
   );
