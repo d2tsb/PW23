@@ -27,9 +27,22 @@ body {
    user-select: none;
 
   background-color: #000000;
+  animation: fadeinApp 0.9s forwards;
   height: 100%;
 }
 
+@keyframes fadeinApp {
+  from {
+
+    opacity: 0;
+  }
+  to{
+
+    opacity: 1;
+
+  }
+  
+}
 .Frame {
   display: grid;
   grid-template-columns: 25px auto 25px;
