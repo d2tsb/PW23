@@ -8,7 +8,7 @@ import "./GithubCrawler.css";
 function AttributeValuePair(attrib, value) {
   return (
     <div>
-      <text style={{ color: "#AAA" }}>{attrib}</text>
+    <text style={{ color: "#AAA" }}>{attrib}</text>
       <text className="gitText" style={{color: "#FFF"}}>{value}</text>
     </div>
   );

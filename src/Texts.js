@@ -1,32 +1,45 @@
 import "./App.css";
-import "./Texts.css"
+import "./Texts.css";
 import React from "react";
 import { useState } from "react";
 import "./Lifeline";
 import Lifeline from "./Lifeline";
 const TextsWritten = require("./ressources/TextsWritten");
 
-const Texts = () => {
+const Texts = ({ language }) => {
   const Descriptions = [
-    TextsWritten.default.Text0,
-    TextsWritten.default.Text1,
-    TextsWritten.default.Text1,
+    TextsWritten.default.Text0[language],
+    TextsWritten.default.Text1[language],
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const menuItems = ["About", "Preferences and Focus", "History"];
+  const menuItems = [
+    ["About", "Preferences and Focus", "History"],
+    ["Übersicht", "Fokus", "Werdegang"],
+  ];
+
   //const Descriptions = ["HelloText0", "HelloText1", "HelloText2"];
 
   const ChooseElement = () => {
     switch (selectedIndex) {
       case 0:
-        return <div className="Description_ collapser"> <text> {Descriptions[0]} </text> </div>;
+        return (
+          <div className="Description_ collapser">
+            {" "}
+            <text> {Descriptions[0]} </text>{" "}
+          </div>
+        );
       case 1:
-        return <div className="Description_ collapser"> <text> {Descriptions[1]} </text> </div>;
+        return (
+          <div className="Description_ collapser">
+            {" "}
+            <text> {Descriptions[1]} </text>{" "}
+          </div>
+        );
       case 2:
         return (
           <div>
-            <Lifeline/>
+            <Lifeline language={language} />
           </div>
         );
     }
@@ -36,10 +49,11 @@ const Texts = () => {
   return (
     <div className="ListItem1">
       <ul className="ul_">
-        {menuItems.length === 0 || menuItems === undefined ? (
+        {menuItems[language].length === 0 ||
+        menuItems[language] === undefined ? (
           <p> No Option. </p>
         ) : (
-          menuItems.map((item, index) => (
+          menuItems[language].map((item, index) => (
             <li
               key={item}
               onClick={() => {
