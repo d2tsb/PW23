@@ -15,7 +15,7 @@ function App() {
         <div className="Frame">
           <header className="App-header">
             <div className="AppHeaderInnerDiv">
-              <p className="TextSize">Tilman - Sören Bertram</p>
+              <p className="TextSize">Personal Homepage:</p>
             </div>
             <hr />
           </header>
@@ -28,8 +28,15 @@ function App() {
                 style={{marginBottom: "20px"}}
               />
               <div style={{ marginTop: "5px" }}>
+                <text>Profession: Computer Science </text>
+              </div>
+              <div>
+                <text>Full Name: Tilman - Sören Bertram </text>
+              </div>
+              <div >
                 <text>Birth: 05.09.2001</text>
               </div>
+
               <text>Loc: Bavaria, Landshut</text>
               <div>
                 <text>Mail:</text>{" "}
