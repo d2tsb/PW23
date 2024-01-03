@@ -61,7 +61,7 @@ const Profile = ({ language }) => {
           </a>
         </div>
         <div>
-          <text> Github: </text>
+          <text> GitHub: </text>
           <a className="link_" href="https://github.com/d2tsb">
             d2tsb
           </a>
@@ -118,6 +118,9 @@ const Page = () => {
     <div data-role="page" className="App">
       <div className="Frame">
         <Header language={Language} setLanguage={setLanguage} />
+      <img 
+      className="styleGIF" 
+      src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXk2NnJocnlxMDF2ZDZwcmFnMWRtbmFlMnE3Y2l0bTZkNXJoY3ZpdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zx1KzuQBR8wIbrm81t/giphy.gif"></img>
         <Profile language={Language} />
         <Texts language={Language} />
         <GithubCrawler />
