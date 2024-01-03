@@ -1,8 +1,12 @@
 import "./App.css";
 import "./Texts";
 import "./GithubCrawler"
+import "./BottomBar"
+import "./CopyRight"
 import Texts from "./Texts";
 import GithubCrawler from "./GithubCrawler";
+import { BottomBar } from "./BottomBar";
+import CopyRight from "./CopyRight";
 
 function App() {
   return (
@@ -43,6 +47,8 @@ function App() {
           </div>
           <Texts />
           <GithubCrawler/>
+          <BottomBar/>
+          <CopyRight/>
         </div>
       </div>
     </body>

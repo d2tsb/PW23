@@ -10,9 +10,9 @@
 
   flex-direction: column;
   align-items: center;
-  margin-right: 40%; 
+  margin-right: 60%;
   /*overflow-y:auto;*/
-  margin-top: 5vh; 
+  margin-top: 5vh;
   animation: fadegitin 1s forwards;
 }
 .gitElement {
@@ -20,10 +20,14 @@
 }
 .gitText {
   padding: 2px;
+  margin-right: 20px;
 }
 .gitli {
+  -webkit-transition: transform 0.5s ease-in-out;
+  transform: scale(100%);
+
   padding-top: 20px;
-  width: 85%;
+  width: 80%;
   padding-bottom: 20px;
   /*padding-right: 100rem; */
   /*padding-right: 60%;*/
@@ -41,7 +45,7 @@
 .gitul {
   /*
   margin-right: 30vh;*/
-  padding-left: 0vh; 
+  padding-left: 0vh;
   border: 3px;
 
   border-radius: 5px;
@@ -52,32 +56,31 @@
 .gitimg {
   filter: invert(1);
 }
-.gitimgdiv
-{
-  display:grid; 
-  margin-left: 1vh; 
-
+.gitimgdiv {
+  display: grid;
+  margin-left: 1vh;
+}
+.gitli::before {
 }
 
+.gitli:hover {
+  -webkit-transition: transform 0.2s ease-in-out;
+  -moz-transition: transform 0.2s ease-in-out;
+  -ms-transition: transform 0.2s ease-in-out;
+  transform: scale(102%);
+}
 
-.gitbutton
-{
-  border: 0px; 
-  color: #000; 
+.gitbutton {
+  border: 0px;
+  color: #000;
   background-color: #000;
 }
-
 
 @keyframes fadegitin {
   from {
     opacity: 0;
-
   }
   to {
     opacity: 1;
-
   }
-
-
-
 }

@@ -1,0 +1,59 @@
+.elf
+{
+
+  margin-top: 60px; 
+  /*background-color: #888;*/
+  background-image: linear-gradient(to bottom, #5e5e5e, rgba(0,0,0,0));
+  grid-row-start: 5; 
+  grid-row-end: 6; 
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+}
+
+.resizeBottomBarImage
+{
+  width: 30px; 
+}
+.elfDiv
+{
+
+
+}
+.elfLi
+{
+  padding: 3px; 
+  margin-right: 1vh; 
+
+}
+@keyframes rolloutright {
+  from 
+  {
+
+    transform: scaleX(0%);
+
+  }
+  to{
+    transform: scaleX(100%);
+  }
+
+
+
+}
+.elfLi:hover{
+  transform: scale(110%);
+  text-decoration: underline;
+  -webkit-transition: transform 0.2s ease-in-out;
+  -moz-transition: transform 0.2s ease-in-out;
+  -ms-transition: transform 0.2s ease-in-out;
+
+}
+.resizeBottomBarImage:hover
+{
+  transform: scale(110%);
+  text-decoration: underline;
+  -webkit-transition: transform 0.2s ease-in-out;
+  -moz-transition: transform 0.2s ease-in-out;
+  -ms-transition: transform 0.2s ease-in-out;
+
+}
