@@ -9,8 +9,10 @@ import { BottomBar } from "./BottomBar";
 import CopyRight from "./CopyRight";
 import { useState } from "react";
 import LinkedInLogo from "./ressources/ldin.svg";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CodePic from "./ressources/SC01.png"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
+const LinkedInURL = "https://www.linkedin.com/in/tsbertram/"
 const Profile = ({ language }) => {
   return (
     <div className="DataDivWrapper">
@@ -21,7 +23,7 @@ const Profile = ({ language }) => {
           className="resize"
           style={{ marginBottom: "20px" }}
         />
-        <a href={""}>
+        <a href={LinkedInURL}>
           <img
             src={LinkedInLogo}
             style={{ width: "3vh" }}
@@ -71,7 +73,8 @@ const Profile = ({ language }) => {
   );
 };
 const Header = ({ language, setLanguage }) => {
-  const LinkedInURL = "";
+  let title = "Personal Homepage";
+  //title = "Personal Homepage: Tilman - Sören Bertram";
   const LDin = (
     <li>
       <a href={LinkedInURL}>
@@ -86,7 +89,7 @@ const Header = ({ language, setLanguage }) => {
   return (
     <header className="App-header">
       <div className="">
-        <p className="TextSize">Personal Homepage</p>
+        <p className="TextSize">{title}</p>
         <ul className="languageMenu">
           {LDin}
           <li
@@ -120,9 +123,12 @@ const Page = () => {
         <Header language={Language} setLanguage={setLanguage} />
       <img 
       className="styleGIF" 
+      alt="G I F"
       src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXk2NnJocnlxMDF2ZDZwcmFnMWRtbmFlMnE3Y2l0bTZkNXJoY3ZpdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zx1KzuQBR8wIbrm81t/giphy.gif"></img>
+
         <Profile language={Language} />
         <Texts language={Language} />
+        <img src={CodePic} className="styleCodePic" alt="Pic of Code"></img>
         <GithubCrawler />
         <BottomBar />
         <CopyRight />
