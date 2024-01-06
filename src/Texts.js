@@ -1,5 +1,5 @@
-import "./App.css";
-import "./Texts.css";
+import "./css/cssdark/App.css";
+import "./css/cssdark/Texts.css";
 import React from "react";
 import { useState } from "react";
 import "./Lifeline";

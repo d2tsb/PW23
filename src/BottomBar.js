@@ -1,5 +1,5 @@
 import React from "react";
-import "./BottomBar.css";
+import "./css/cssdark/BottomBar.css";
 import { Link } from "react-router-dom";
 
 export const BottomBar = () => {
@@ -19,7 +19,7 @@ export const BottomBar = () => {
               <img
                 className="resizeBottomBarImage"
                 src={require("./ressources/github_PNG80.png")}
-                alt="git logo picture"
+                alt="git logo "
               ></img>
               <text className="hide"> view source code.. </text>
   

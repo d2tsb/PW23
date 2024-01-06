@@ -17,6 +17,7 @@
   color: rgba(147, 147, 147, 0.92); 
   animation: fadeincopyright 2s forwards;
   z-index: 1;
+  font-size: small;
 }
 
 /*if visible right away*/

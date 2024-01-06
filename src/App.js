@@ -1,33 +1,34 @@
-import "./App.css";
+import "./css/cssdark/App.css";
 import "./Texts";
 import "./GithubCrawler";
 import "./BottomBar";
 import "./CopyRight";
 import Texts from "./Texts";
+import LightDarkSwitch from "./LightDarkSwitch";
 import GithubCrawler from "./GithubCrawler";
 import { BottomBar } from "./BottomBar";
 import CopyRight from "./CopyRight";
 import { useState } from "react";
 import LinkedInLogo from "./ressources/ldin.svg";
-import CodePic from "./ressources/SC01.png"
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const LinkedInURL = "https://www.linkedin.com/in/tsbertram/"
+const LinkedInURL = "https://www.linkedin.com/in/tsbertram/";
 const Profile = ({ language }) => {
   return (
     <div className="DataDivWrapper">
       <span className="DataDiv">
         <img
-          src={require("./ressources/pictureMe.png")}
+          src={require("./ressources/pictureMe.jpg")}
           alt="Pictr. of Self"
           className="resize"
           style={{ marginBottom: "20px" }}
         />
-        <a href={LinkedInURL}>
+        <a href={LinkedInURL} style={{ width: "30px" }}>
           <img
             src={LinkedInLogo}
             style={{ width: "3vh" }}
             className="LDinLogo"
+            alt="linked in logo"
           ></img>
         </a>
 
@@ -55,7 +56,14 @@ const Profile = ({ language }) => {
           )}
         </div>
 
-        <text>Loc: Bavaria, Landshut</text>
+        <div>
+          {language ? (
+            <text>Ort: Bayern, Landshut</text>
+          ) : (
+            <text>Loc: Bavaria, Landshut</text>
+          )}
+        </div>
+
         <div>
           <text>Mail:</text>{" "}
           <a className="link_" href="mailto:tilmansoerenw@protonmail.com">
@@ -72,20 +80,28 @@ const Profile = ({ language }) => {
     </div>
   );
 };
-const Header = ({ language, setLanguage }) => {
+const Header = ({ language, setLanguage, DM }) => {
   let title = "Personal Homepage";
   //title = "Personal Homepage: Tilman - Sören Bertram";
   const LDin = (
     <li>
       <a href={LinkedInURL}>
         <img
-          src={LinkedInLogo}
           style={{ width: "1.5rem" }}
+          alt="linked in logo"
+          src={LinkedInLogo}
           className="LDinLogo"
         ></img>
       </a>
     </li>
   );
+  const LightDarkSwitchLi = //unused
+    (
+      <li>
+        <LightDarkSwitch setValue={DM.setColorTheme} value={DM.colorTheme} />
+      </li>
+    );
+
   return (
     <header className="App-header">
       <div className="">
@@ -117,18 +133,32 @@ const Header = ({ language, setLanguage }) => {
 
 const Page = () => {
   const [Language, setLanguage] = useState(0);
+  const [colorTheme, setColorTheme] = useState(0); //0 is dark, 1 is high.
+  const GIF = (
+    <div className="styleGIFPic">
+      <img //unused
+        id="styleGIF"
+        className="styleGIF"
+        alt="G I F"
+        src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXk2NnJocnlxMDF2ZDZwcmFnMWRtbmFlMnE3Y2l0bTZkNXJoY3ZpdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zx1KzuQBR8wIbrm81t/giphy.gif"
+      ></img>
+    </div>
+  );
+
   return (
     <div data-role="page" className="App">
-      <div className="Frame">
-        <Header language={Language} setLanguage={setLanguage} />
-      <img 
-      className="styleGIF" 
-      alt="G I F"
-      src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXk2NnJocnlxMDF2ZDZwcmFnMWRtbmFlMnE3Y2l0bTZkNXJoY3ZpdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zx1KzuQBR8wIbrm81t/giphy.gif"></img>
-
+      <div
+        className="Frame"
+        //style={colorTheme ? { backgroundColor: "#AAA" } : null}
+      >
+        <Header
+          language={Language}
+          setLanguage={setLanguage}
+          DM={{ colorTheme, setColorTheme }}
+        />
+        {GIF}
         <Profile language={Language} />
         <Texts language={Language} />
-        <img src={CodePic} className="styleCodePic" alt="Pic of Code"></img>
         <GithubCrawler />
         <BottomBar />
         <CopyRight />

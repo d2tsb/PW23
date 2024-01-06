@@ -1,0 +1,27 @@
+.ldmSwitch
+{
+  height: 20px;
+  grid-row: 1 2; 
+  grid-column: 2 3; 
+  top: 0; 
+  right: 0; 
+
+  filter: invert(1);
+  z-index: 7;
+  transform: rotate(0) ;
+} 
+.ldmSwitchInverse
+{
+  transform: rotate(25deg) ;
+  filter: invert(0);
+}
+
+.ldmSwitch:hover
+{
+  transform: scale(110%);
+} 
+
+.ldmSwitchInverse:hover
+{
+  transform: scale(110%) rotate(25deg) ;
+}

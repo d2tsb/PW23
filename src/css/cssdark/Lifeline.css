@@ -1,16 +1,19 @@
 .hrAnimatedLine::before {
-  position: absolute;
+  position: relative;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
 .hrAnimatedLine {
+  display:flex;
   margin-top: 10px;
   margin-left: 3px;
   border: 0; 
   width: 700px;
   height: 2px;
   /*background: #fff;*/
+  background-image: -webkit-gradient(to right, #fff, rgba(0,0,0,0));
+
   background-image: linear-gradient(to right, #fff, rgba(0,0,0,0));
   position: absolute;
   transform-origin: left;
@@ -86,4 +89,6 @@
   margin-left: 50px; 
   flex-direction: row;
   background-color: #000;
+  overflow-x:scroll; 
+  overflow-y:auto; 
 }

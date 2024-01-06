@@ -1,5 +1,5 @@
 import React from "react";
-import "./CopyRight.css";
+import "./css/cssdark/CopyRight.css";
 
 const CopyRight = () => {
   return (

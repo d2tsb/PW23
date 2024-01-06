@@ -3,6 +3,7 @@
 
   margin-top: 60px; 
   /*background-color: #888;*/
+  background-image: -webkit-gradient(bottom, #5e5e5e, rgba(0,0,0,0));
   background-image: linear-gradient(to bottom, #5e5e5e, rgba(0,0,0,0));
   grid-row-start: 5; 
   grid-row-end: 6; 

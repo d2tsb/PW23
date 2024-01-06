@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import "./GithubCrawler.css";
+import "./css/cssdark/GithubCrawler.css";
 
 /*crawls and shows the most recent Github repos that where pushed to*/
 
@@ -33,6 +33,7 @@ const GithubCrawler = () => {
   /*<text className="gitText">{item["id"]}</text>*/
   return (
     <div className="gitcraw">
+
       <ul className="gitul">
         {allrepos.length === 0 || allrepos === undefined ? (
           <p> No public repos yet. </p>

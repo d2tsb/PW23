@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import "./Lifeline.css";
+import "./css/cssdark/Lifeline.css";
 
 const LifelineElement = (probs) => {
   return (
@@ -40,7 +40,7 @@ const Lifeline = ({ language }) => {
       "2017: Mittlere Reife",
       "2019: Abitur, Studium BWL",
       "2020: Studium Informatik",
-    ]
+    ],
   ];
   const numElements = description[language].length;
   const LifeLineElements = [];
@@ -53,9 +53,11 @@ const Lifeline = ({ language }) => {
   }
 
   return (
-    <div className="root-div">
-      <hr className="hrAnimatedLine" />
-      <div className="dotDiv">{LifeLineElements}</div>
+    <div>
+      <div className="root-div">
+         <hr className="hrAnimatedLine" />
+        <div className="dotDiv">{LifeLineElements}</div>
+      </div>
     </div>
   );
 };
