@@ -34,7 +34,7 @@ const Lifeline = ({ language }) => {
       "2011: Entering HighSchool",
       "2017: Secondary School leaving Certificate",
       "2019: 'Abitur' (High school diploma), Begin Economy Studies",
-      "2020: Begin Computer Science Studies",
+      "2020: Start of Computer Science Studies",
     ],
 
     [

@@ -87,7 +87,7 @@
 .root-div {
   margin-top: 30px;
   display: flex;
-  margin-left: 50px; 
+  margin-left: 20px; 
   flex-direction: row;
   background-color: #000;
   overflow-x:auto; 
