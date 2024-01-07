@@ -95,12 +95,12 @@ const Header = ({ language, setLanguage, DM }) => {
       </a>
     </li>
   );
-  const LightDarkSwitchLi = //unused
-    (
+  // const LightDarkSwitchLi = //unused
+    // (
       <li>
         <LightDarkSwitch setValue={DM.setColorTheme} value={DM.colorTheme} />
       </li>
-    );
+    // );
 
   return (
     <header className="App-header">

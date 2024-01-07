@@ -140,14 +140,16 @@ body {
   }
 }
 .styleGIF {
-  opacity: 0.1;
+  width: 100%;
+  opacity: 0.2;
   z-index: -7;
-  margin-left: 50%;
-  height: 70%;
   object-fit: cover;
+  mask-clip: border-box;
+  mask: linear-gradient(to left, #000, rgba(255, 255, 255, 0)); 
+  /* mask: radial-gradient(circle at 90%, #000, rgba(255, 255, 255, 0)); */
 }
 .styleGIFPic {
-  display: contents;
+  display: flex;
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 2;

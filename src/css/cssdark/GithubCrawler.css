@@ -34,7 +34,8 @@
   /*padding-right: 100rem; */
   /*padding-right: 60%;*/
   padding-left: 2vh;
-  /*background-image: linear-gradient(to bottom, #2e2e2e, #000);*/
+  /* background-image: linear-gradient(to bottom, #2e2e2e, #000); */
+  background-image: radial-gradient(#000, #0e0e0e);
   background-color: #000;
   /*background-color:rgb(101, 101, 101);*/
   /*background-color:rgb(0, 0, 181);*/

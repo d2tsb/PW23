@@ -4,6 +4,9 @@ import "./css/cssdark/Lifeline.css";
 const LifelineElement = (probs) => {
   return (
     <div>
+      {!probs.probs.index ?  
+      <hr className="hrAnimatedLine" />:
+        null} 
       <div style={{ paddingRight: "70px" }}>
         <span
           className="dot"
@@ -47,18 +50,15 @@ const Lifeline = ({ language }) => {
   for (var i = 0; i < numElements; i++) {
     LifeLineElements.push(
       <LifelineElement
-        probs={{ probsdelay: i * 0.1 + "s", text: description[language][i] }}
+        probs={{ probsdelay: i * 0.1 + "s", text: description[language][i], index: i }}
       />
     );
   }
 
   return (
-    <div>
       <div className="root-div">
-         <hr className="hrAnimatedLine" />
         <div className="dotDiv">{LifeLineElements}</div>
       </div>
-    </div>
   );
 };
 
