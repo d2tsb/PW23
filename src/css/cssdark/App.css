@@ -41,7 +41,7 @@ body {
 .Frame {
   display: grid;
   grid-template-columns: 25px calc(100% - 50px) 25px;
-  grid-template-rows: 100px 500px auto auto 400px 100px 100px; /*400px*/
+  grid-template-rows: 100px 500px auto auto 200px 100px 100px; /*400px*/
   /*600px*/
   /*Name, Picture + Data, Menu, Text, Space, Statusline, Border*/
 }

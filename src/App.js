@@ -23,10 +23,10 @@ const Profile = ({ language }) => {
           className="resize"
           style={{ marginBottom: "20px" }}
         />
-        <a href={LinkedInURL} style={{ width: "30px" }}>
+        <a href={LinkedInURL} style={{ width: "0px" }}>
           <img
             src={LinkedInLogo}
-            style={{ width: "3vh" }}
+            style={{ width: "4vh" }}
             className="LDinLogo"
             alt="linked in logo"
           ></img>
