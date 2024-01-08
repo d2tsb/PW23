@@ -26,7 +26,8 @@ const Profile = ({ language }) => {
         <a href={LinkedInURL} style={{ width: "0px" }}>
           <img
             src={LinkedInLogo}
-            style={{ width: "4vh" }}
+            style={{ width: "35px" }}
+            // style={{ width: "4vh" }}
             className="LDinLogo"
             alt="linked in logo"
           ></img>
