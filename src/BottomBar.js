@@ -2,13 +2,13 @@ import React from "react";
 import "./css/cssdark/BottomBar.css";
 import { Link } from "react-router-dom";
 
-export const BottomBar = () => {
+export const BottomBar = ({language}) => {
   return (
     <div className="elf">
       <ul className="elfDiv ">
         <li className="elfLi"> 
           <Link className="elfLi" style={{color: "#000"}} to="/Impressum">
-            Impressum
+            {language ? "Impressum" : "Legals" }
           </Link> 
         </li>
         <div
