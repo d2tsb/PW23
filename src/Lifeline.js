@@ -1,12 +1,10 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import "./css/cssdark/Lifeline.css";
 
 const LifelineElement = (probs) => {
   return (
     <div>
-      {!probs.probs.index ?  
-      <hr className="hrAnimatedLine" />:
-        null} 
+      {!probs.probs.index ? <hr className="hrAnimatedLine" /> : null}
       <div style={{ paddingRight: "70px" }}>
         <span
           className="dot"
@@ -31,10 +29,10 @@ const Lifeline = ({ language }) => {
   const description = [
     [
       "2001: *",
-      "2011: Entering HighSchool",
-      "2017: Secondary School leaving Certificate",
-      "2019: 'Abitur' (High school diploma), Begin Economy Studies",
-      "2020: Start of Computer Science Studies",
+      "2011: Entering Highschool",
+      "2017: Secondary school-leaving Certificate (Mittlere Reife)",
+      "2019: High school diploma (Abitur)& Economy Studies",
+      "2020: Computer-Science Studies",
     ],
 
     [
@@ -50,15 +48,19 @@ const Lifeline = ({ language }) => {
   for (var i = 0; i < numElements; i++) {
     LifeLineElements.push(
       <LifelineElement
-        probs={{ probsdelay: i * 0.1 + "s", text: description[language][i], index: i }}
+        probs={{
+          probsdelay: i * 0.1 + "s",
+          text: description[language][i],
+          index: i,
+        }}
       />
     );
   }
 
   return (
-      <div className="root-div">
-        <div className="dotDiv">{LifeLineElements}</div>
-      </div>
+    <div className="root-div">
+      <div className="dotDiv">{LifeLineElements}</div>
+    </div>
   );
 };
 

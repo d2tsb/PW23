@@ -37,7 +37,7 @@ const Profile = ({ language }) => {
           {language ? (
             <text>Fachrichtung: Informatik </text>
           ) : (
-            <text>Profession: Computer Science </text>
+            <text>Major: Computer Science </text>
           )}
         </div>
         {language ? (
@@ -51,9 +51,9 @@ const Profile = ({ language }) => {
         )}
         <div>
           {language ? (
-            <text>Geburt: 05-09-2001</text>
+            <text>Geburtsdatum: 05.09.2001</text>
           ) : (
-            <text>Birth: 09-05-2001</text>
+            <text>Birthdate: 09/05/2001</text>
           )}
         </div>
 
@@ -97,11 +97,11 @@ const Header = ({ language, setLanguage, DM }) => {
     </li>
   );
   // const LightDarkSwitchLi = //unused
-    // (
-      <li>
-        <LightDarkSwitch setValue={DM.setColorTheme} value={DM.colorTheme} />
-      </li>
-    // );
+  // (
+  <li>
+    <LightDarkSwitch setValue={DM.setColorTheme} value={DM.colorTheme} />
+  </li>;
+  // );
 
   return (
     <header className="App-header">

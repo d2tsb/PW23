@@ -17,7 +17,7 @@ function AttributeValuePair(attrib, value) {
 }
 
 const GithubCrawler = () => {
-  const limit = 3;
+  const limit = 5;
   const [allrepos, setAllRepos] = useState([""]);
   useEffect(() => {
     const url = "https://api.github.com/users/d2tsb/repos";
@@ -33,20 +33,21 @@ const GithubCrawler = () => {
   }, []);
 
   /*<text className="gitText">{item["id"]}</text>*/
+      // <text style={{marginRight: "calc(100% - 60px)"}}>List of Github repos: (ordered by last Push) </text>
   return (
     <div className="gitcraw">
       <ul className="gitul">
         {allrepos.length === 0 || allrepos === undefined ? (
-          <p> No public repos yet. </p>
+          null
         ) : (
           allrepos
             .sort((a, b) => a["pushed_at"] < b["pushed_at"])
+            .slice(0, limit)
             .map((item, index) => (
               /*sort element by push date*/
               <a className="" href={item["html_url"]}>
                 {" "}
                 <li className="gitli" key={item}>
-                  {index >= limit ? null : (
                     <div className="gitElement">
                       <div>
                         <img
@@ -75,7 +76,6 @@ const GithubCrawler = () => {
                         </div>
                       </div>
                     </div>
-                  )}
                 </li>
               </a>
             ))
