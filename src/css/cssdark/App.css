@@ -116,8 +116,8 @@ body {
   padding-right: 2px;
 }
 .languageMenuliactive {
-  background-color: #6e6e6e;
   /* background-color: #303030; */
+  background: #616161;
   /* #4c87af; */
 
   border-radius: 2px;
@@ -234,6 +234,9 @@ a:active {
   color: white;
   /*background-color: #0e0e0e;*/
   /*background-image: linear-gradient(to right,  #0e0e0e , rgba(0,0,0,0));*/
+  -webkit-background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
+  -khtml-background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
+  -moz-background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
   background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
   padding: 6px;
   padding-bottom: 5vh;
