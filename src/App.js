@@ -108,7 +108,6 @@ const Header = ({ language, setLanguage, DM }) => {
       <div className="">
         <p className="TextSize">{title}</p>
         <ul className="languageMenu">
-          {LDin}
           <li
             className={!language ? "languageMenuliactive" : ""}
             onClick={() => {

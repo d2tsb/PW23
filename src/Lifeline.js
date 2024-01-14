@@ -4,12 +4,15 @@ import "./css/cssdark/Lifeline.css";
 const LifelineElement = (probs) => {
   return (
     <div>
-      {!probs.probs.index ? <hr className="hrAnimatedLine" /> : null}
       <div style={{ paddingRight: "70px" }}>
         <span
           className="dot"
           style={{ animationDelay: probs.probs.probsdelay }}
         ></span>
+        <div>
+        {!probs.probs.index ? <hr className="hrAnimatedLine" /> : null}
+
+        </div>
         <div
           className="dotDivText"
           style={{ animationDelay: probs.probs.probsdelay }}
