@@ -2,12 +2,14 @@
   position: absolute;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  z-index: 0; 
 }
 
 .hrAnimatedLine {
   /* margin-top: 10px; */
   margin-top: calc(0% - 10px); 
-  margin-left: calc(0% + 5px);
+  margin-left: calc(0% + 9px);
+  /* margin-left: calc(0% + 5px);  */
   border: 0; 
   width: 100%;
   mask-clip: border-box;

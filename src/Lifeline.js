@@ -9,10 +9,8 @@ const LifelineElement = (probs) => {
           className="dot"
           style={{ animationDelay: probs.probs.probsdelay }}
         ></span>
-        <div>
-        {!probs.probs.index ? <hr className="hrAnimatedLine" /> : null}
 
-        </div>
+        {!probs.probs.index ? <hr className="hrAnimatedLine" /> : null}
         <div
           className="dotDivText"
           style={{ animationDelay: probs.probs.probsdelay }}

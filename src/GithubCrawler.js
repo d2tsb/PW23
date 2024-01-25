@@ -17,6 +17,7 @@ function AttributeValuePair(attrib, value) {
 }
 
 const GithubCrawler = () => {
+  // const block = ["gifs", ""];
   const limit = 5;
   const [allrepos, setAllRepos] = useState([""]);
   useEffect(() => {
@@ -33,21 +34,24 @@ const GithubCrawler = () => {
   }, []);
 
   /*<text className="gitText">{item["id"]}</text>*/
-      // <text style={{marginRight: "calc(100% - 60px)"}}>List of Github repos: (ordered by last Push) </text>
+  // <text style={{marginRight: "calc(100% - 60px)"}}>List of Github repos: (ordered by last Push) </text>
   return (
     <div className="gitcraw">
       <ul className="gitul">
-        {allrepos.length === 0 || allrepos === undefined ? (
-          null
-        ) : (
-          allrepos
-            .sort((a, b) => a["pushed_at"] < b["pushed_at"])
-            .slice(0, limit)
-            .map((item, index) => (
-              /*sort element by push date*/
-              <a className="" href={item["html_url"]}>
-                {" "}
-                <li className="gitli" key={item}>
+        {allrepos.length === 0 || allrepos === undefined
+          ? null
+          : allrepos
+              .sort((a, b) => a["pushed_at"] < b["pushed_at"])
+              .filter(
+                (a) =>
+                  a["language"] != null 
+              )
+              .slice(0, limit)
+              .map((item, index) => (
+                /*sort element by push date*/
+                <a className="" href={item["html_url"]}>
+                  {" "}
+                  <li className="gitli" key={item}>
                     <div className="gitElement">
                       <div>
                         <img
@@ -76,10 +80,9 @@ const GithubCrawler = () => {
                         </div>
                       </div>
                     </div>
-                </li>
-              </a>
-            ))
-        )}
+                  </li>
+                </a>
+              ))}
       </ul>
     </div>
   );
