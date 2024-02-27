@@ -12,9 +12,11 @@
 
 }
 
+
 .resizeBottomBarImage
 {
   width: 30px; 
+  height: 30px; 
 }
 
 .resizeBottomBarImage:hover + .hide{
@@ -55,6 +57,7 @@
 
 
 }
+
 .elfLi
 {
   padding: 3px; 
@@ -91,4 +94,14 @@
   -moz-transition: transform 0.2s ease-in-out;
   -ms-transition: transform 0.2s ease-in-out;
 
+}
+.elfDiv
+{
+  display: flex; 
+
+
+}
+.fnfDiv
+{
+  margin-left: calc(100% - 10rem);
 }

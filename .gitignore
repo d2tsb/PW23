@@ -8,6 +8,9 @@
 /.pnp
 .pnp.js
 
+/.fnf
+.fnf
+
 # testing
 /coverage
 

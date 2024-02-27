@@ -10,7 +10,10 @@ import { BottomBar } from "./BottomBar";
 import CopyRight from "./CopyRight";
 import { useState } from "react";
 import LinkedInLogo from "./ressources/ldin.svg";
+import GIFSrc2 from "./ressources/bgif.gif"
+import GIFSrc3 from "./ressources/bgif.jpeg"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import FNF from "./fnf/FNF"
 
 const LinkedInURL = "https://www.linkedin.com/in/tsbertram/";
 const Profile = ({ language }) => {
@@ -134,13 +137,14 @@ const Header = ({ language, setLanguage, DM }) => {
 const Page = () => {
   const [Language, setLanguage] = useState(0);
   const [colorTheme, setColorTheme] = useState(0); //0 is dark, 1 is high.
+  const GIFSrc = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXk2NnJocnlxMDF2ZDZwcmFnMWRtbmFlMnE3Y2l0bTZkNXJoY3ZpdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zx1KzuQBR8wIbrm81t/giphy.gif"
   const GIF = (
     <div className="styleGIFPic">
       <img //unused
         id="styleGIF"
         className="styleGIF"
         alt="G I F"
-        src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXk2NnJocnlxMDF2ZDZwcmFnMWRtbmFlMnE3Y2l0bTZkNXJoY3ZpdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zx1KzuQBR8wIbrm81t/giphy.gif"
+        src={GIFSrc3}
       ></img>
     </div>
   );
@@ -185,6 +189,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Page />} />
         <Route path="Impressum" element={<Impressum />} />
+        <Route path="FNF" element={<FNF />} />
       </Routes>
     </BrowserRouter>
   );
