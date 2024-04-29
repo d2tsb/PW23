@@ -18,4 +18,11 @@ Please be welcomed to visit my [homepage](https://www.tilmanbertram.com).
   This website is hosted with nginx.
   This website was built using yarn.
 
+### Remarks and TODO
+  This is one of my first websites - so includes features, that are outdated.
+  This code maybe getting refactored, because the concepts aren't up-to-date.
 
+  CSS -> SCSS with BEM (Block, Elements, Modifiers)
+  Remove inline CSS-styling
+  App.js is way to arbitrary. 
+  Maybe fix the text bump, when switching between 'About and Preferences'

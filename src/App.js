@@ -10,32 +10,46 @@ import { BottomBar } from "./BottomBar";
 import CopyRight from "./CopyRight";
 import { useState } from "react";
 import LinkedInLogo from "./ressources/ldin.svg";
-import GIFSrc2 from "./ressources/bgif.gif"
-import GIFSrc3 from "./ressources/bgif.jpeg"
+import GIFSrc2 from "./ressources/bgif.gif";
+//import GIFSrc3 from "./ressources/bgif.jpeg"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import FNF from "./fnf/FNF"
+import FNF from "./fnf/FNF";
 
 const LinkedInURL = "https://www.linkedin.com/in/tsbertram/";
 const Profile = ({ language }) => {
   return (
     <div className="DataDivWrapper">
       <span className="DataDiv">
+        {" "}
+        {/**maybe think about refactoring - and build subclasses */}
         <img
           src={require("./ressources/pictureMe.jpg")}
           alt="Pictr. of Self"
           className="resize"
           style={{ marginBottom: "20px" }}
         />
-        <a href={LinkedInURL} style={{ width: "0px" }}>
-          <img
-            src={LinkedInLogo}
-            style={{ width: "35px" }}
-            // style={{ width: "4vh" }}
-            className="LDinLogo"
-            alt="linked in logo"
-          ></img>
-        </a>
+        <div>
+          <a href={LinkedInURL} style={{ width: "0px", marginRight: "10px" }}>
+            <img
+              src={LinkedInLogo}
+              style={{ width: "35px" }}
+              // style={{ width: "4vh" }}
+              className="LDinLogo"
+              alt="linked in logo"
+            ></img>
 
+          </a>
+          <a href={language ? "https://www.campudus.com/" : "https://www.campudus.com/en" } style={{ width: "0px" }}>
+            <img
+              src={require('./ressources/CampudusLogo.png')}
+              style={{ width: "35px", filter: "invert(0)" }}
+              // style={{ width: "4vh" }}
+              className="LDinLogo"
+              alt="linked in logo"
+            ></img>
+
+          </a>
+        </div>
         <div style={{ marginTop: "5px" }}>
           {language ? (
             <text>Fachrichtung: Informatik </text>
@@ -59,7 +73,6 @@ const Profile = ({ language }) => {
             <text>Birthdate: 09/05/2001</text>
           )}
         </div>
-
         <div>
           {language ? (
             <text>Ort: Bayern, Landshut</text>
@@ -67,7 +80,6 @@ const Profile = ({ language }) => {
             <text>Loc: Bavaria, Landshut</text>
           )}
         </div>
-
         <div>
           <text>Mail:</text>{" "}
           <a className="link_" href="mailto:tilmansoerenw@protonmail.com">
@@ -80,6 +92,21 @@ const Profile = ({ language }) => {
             d2tsb
           </a>
         </div>
+        {language ? (
+          <div>
+            <text> Arbeit: </text>
+            <a className="link_" href="https://www.campudus.com">
+              Campudus Developers
+            </a>
+          </div>
+        ) : (
+          <div>
+            <text> Work: </text>
+            <a className="link_" href="https://www.campudus.com/en">
+              Campudus Developers
+            </a>
+          </div>
+        )}
       </span>
     </div>
   );
@@ -137,14 +164,14 @@ const Header = ({ language, setLanguage, DM }) => {
 const Page = () => {
   const [Language, setLanguage] = useState(0);
   const [colorTheme, setColorTheme] = useState(0); //0 is dark, 1 is high.
-  const GIFSrc = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXk2NnJocnlxMDF2ZDZwcmFnMWRtbmFlMnE3Y2l0bTZkNXJoY3ZpdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zx1KzuQBR8wIbrm81t/giphy.gif"
+  //const GIFSrc = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXk2NnJocnlxMDF2ZDZwcmFnMWRtbmFlMnE3Y2l0bTZkNXJoY3ZpdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zx1KzuQBR8wIbrm81t/giphy.gif"
   const GIF = (
     <div className="styleGIFPic">
       <img //unused
         id="styleGIF"
         className="styleGIF"
         alt="G I F"
-        src={GIFSrc3}
+        src={GIFSrc2}
       ></img>
     </div>
   );
@@ -164,7 +191,7 @@ const Page = () => {
         <Profile language={Language} />
         <Texts language={Language} />
         <GithubCrawler />
-        <BottomBar  language={Language}/>
+        <BottomBar language={Language} />
         <CopyRight />
       </div>
     </div>
@@ -176,9 +203,16 @@ const Impressum = () => {
     <div>
       <div style={{ color: "#FFF", height: "70px" }}>Impressum</div>
       <ul className="ulImpressum">
-        <li style={{ color: "#FFF" }}>reactjs: https://opensource.fb.com/legal/terms or opensource@meta.com  </li>
-        <li style={{ color: "#FFF" }}>linkedin: https://www.linkedin.com/legal/impressum</li>
-        <li style={{ color: "#FFF" }}>giphy: https://support.giphy.com/hc/en-us/sections/360003012792-Privacy-and-Safety</li> 
+        <li style={{ color: "#FFF" }}>
+          reactjs: https://opensource.fb.com/legal/terms or opensource@meta.com{" "}
+        </li>
+        <li style={{ color: "#FFF" }}>
+          linkedin: https://www.linkedin.com/legal/impressum
+        </li>
+        <li style={{ color: "#FFF" }}>
+          giphy:
+          https://support.giphy.com/hc/en-us/sections/360003012792-Privacy-and-Safety
+        </li>
       </ul>
     </div>
   );

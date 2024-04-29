@@ -1,3 +1,5 @@
+
+/***maybe refactor into BEM (Block, Elements and Modifiers) using scss.***/
 html,
 body {
   width: 100vw;
@@ -239,6 +241,7 @@ a:active {
   -moz-background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
   background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
   padding: 6px;
+
   padding-bottom: 5vh;
   grid-row-start: 3;
   grid-row-end: 4;
