@@ -1,29 +1,27 @@
-import "./css/cssdark/App.css";
-import "./Texts";
-import "./GithubCrawler";
-import "./BottomBar";
-import "./CopyRight";
-import Texts from "./Texts";
-import LightDarkSwitch from "./LightDarkSwitch";
-import GithubCrawler from "./GithubCrawler";
-import { BottomBar } from "./BottomBar";
-import CopyRight from "./CopyRight";
-import { useState } from "react";
-import LinkedInLogo from "./ressources/ldin.svg";
-import GIFSrc2 from "./ressources/bgif.gif";
+import { image_map } from "../resources/image_source/image_map";
+import "./App.scss";
+import "./Texts/Texts";
+import "./GithubCrawler/GithubCrawler";
+import "./BottomBar/BottomBar";
+import "./CopyRight/CopyRight";
+import Texts from "./Texts/Texts";
+import LightDarkSwitch from "./LightDarkSwitch/LightDarkSwitch";
+import GithubCrawler from "./GithubCrawler/GithubCrawler";
+import { BottomBar } from "./BottomBar/BottomBar";
+import CopyRight from "./CopyRight/CopyRight";
+import React, { useState } from "react";
 //import GIFSrc3 from "./ressources/bgif.jpeg"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import FNF from "./fnf/FNF";
+import FNF from "../fnf/FNF";
 
 const LinkedInURL = "https://www.linkedin.com/in/tsbertram/";
-const Profile = ({ language }) => {
+const Profile = ({ language }: {language: string}) => {
   return (
     <div className="DataDivWrapper">
       <span className="DataDiv">
-        {" "}
         {/**maybe think about refactoring - and build subclasses */}
         <img
-          src={require("./ressources/pictureMe.jpg")}
+          src={image_map.me}
           alt="Pictr. of Self"
           className="resize"
           style={{ marginBottom: "20px" }}
@@ -31,7 +29,7 @@ const Profile = ({ language }) => {
         <div>
           <a href={LinkedInURL} style={{ width: "0px", marginRight: "10px" }}>
             <img
-              src={LinkedInLogo}
+              src={image_map.linkedInLogo}
               style={{ width: "35px" }}
               // style={{ width: "4vh" }}
               className="LDinLogo"
@@ -41,7 +39,7 @@ const Profile = ({ language }) => {
           </a>
           <a href={language ? "https://www.campudus.com/" : "https://www.campudus.com/en" } style={{ width: "0px" }}>
             <img
-              src={require('./ressources/CampudusLogo.png')}
+              src={image_map.campudusLogo}
               style={{ width: "35px", filter: "invert(0)" }}
               // style={{ width: "4vh" }}
               className="LDinLogo"
@@ -111,7 +109,14 @@ const Profile = ({ language }) => {
     </div>
   );
 };
-const Header = ({ language, setLanguage, DM }) => {
+const Header = ({ language, setLanguage, DM }:
+  {
+    language: string,
+    setLanguage: React.Dispatch<React.SetStateAction<string>>,
+    DM: { colorTheme: number, setColorTheme: React.Dispatch<React.SetStateAction<number>> }
+
+  }
+) => {
   let title = "Personal Homepage";
   //title = "Personal Homepage: Tilman - Sören Bertram";
   const LDin = (
@@ -120,7 +125,7 @@ const Header = ({ language, setLanguage, DM }) => {
         <img
           style={{ width: "1.5rem" }}
           alt="linked in logo"
-          src={LinkedInLogo}
+          src={image_map.linkedInLogo}
           className="LDinLogo"
         ></img>
       </a>
@@ -164,14 +169,13 @@ const Header = ({ language, setLanguage, DM }) => {
 const Page = () => {
   const [Language, setLanguage] = useState(0);
   const [colorTheme, setColorTheme] = useState(0); //0 is dark, 1 is high.
-  //const GIFSrc = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXk2NnJocnlxMDF2ZDZwcmFnMWRtbmFlMnE3Y2l0bTZkNXJoY3ZpdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zx1KzuQBR8wIbrm81t/giphy.gif"
   const GIF = (
     <div className="styleGIFPic">
       <img //unused
         id="styleGIF"
         className="styleGIF"
         alt="G I F"
-        src={GIFSrc2}
+        src={image_map.topBanner}
       ></img>
     </div>
   );

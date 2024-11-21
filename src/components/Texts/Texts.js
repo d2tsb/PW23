@@ -1,10 +1,9 @@
-import "./css/cssdark/App.css";
-import "./css/cssdark/Texts.css";
-import React from "react";
+import "../App.scss";
+import "./Texts.scss";
 import { useState } from "react";
-import "./Lifeline";
-import Lifeline from "./Lifeline";
-const TextsWritten = require("./ressources/TextsWritten");
+import "../Lifeline/Lifeline";
+import Lifeline from "../Lifeline/Lifeline";
+const TextsWritten = require("../../resources/text/TextsWritten");
 
 const Texts = ({ language }) => {
   const Descriptions = [
