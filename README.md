@@ -1,4 +1,4 @@
-# Descr: Personal Homepage '23 done with REACTJS
+# Descr: Personal Homepage '23 done with REACTTS
 
 Please be welcomed to visit my [homepage](https://www.tilmanbertram.com).
 
