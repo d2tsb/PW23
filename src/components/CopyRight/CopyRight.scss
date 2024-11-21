@@ -1,6 +1,4 @@
-
-.fl
-{
+.copyright {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 7;
@@ -9,30 +7,20 @@
   align-items: center;
   flex-direction: column;
 
-
-}
-.copyright
-{
-
-  color: rgba(147, 147, 147, 0.92); 
-  animation: fadeincopyright 2s forwards;
-  z-index: 1;
-  font-size: small;
+  &__content {
+    color: rgba(147, 147, 147, 0.92);
+    animation: fadeincopyright 2s forwards;
+    z-index: 1;
+    font-size: small;
+  }
 }
 
 /*if visible right away*/
 @keyframes fadeincopyright {
   from {
-
     opacity: 0;
-
-  }  
-  to
-  {
-
-    opacity: 1;
-
-
   }
-  
+  to {
+    opacity: 1;
+  }
 }

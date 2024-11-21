@@ -19,38 +19,40 @@
     padding: 3px;
     margin-right: 1vh;
   }
-}
+  &__image {
+    width: 30px;
+    height: 30px;
+  }
 
-.resizeBottomBarImage {
-  width: 30px;
-  height: 30px;
-}
+  &__image:hover + &__hide {
+    display: block;
+    animation: rolloutright 0.5s forwards;
+  }
+  &__image:hover {
+    transform: scale(110%);
+    text-decoration: underline;
+    transition: transform 0.2s ease-in-out;
+  }
+  &__hide:active {
+    text-decoration: none;
+  }
 
-.resizeBottomBarImage:hover + .hide {
-  display: block;
-  animation: rolloutright 0.5s forwards;
-}
-.divFlex {
-  display: flex;
-  flex-direction: row;
-}
+  &__hide {
+    margin-top: 3px;
+    grid-row-start: 5;
+    grid-row-start: 6;
+    grid-column-start: 2;
+    grid-column-end: 3;
 
-.hide:active {
-  text-decoration: none;
+    display: none;
+    color: black;
+    margin-left: 1rem;
+  }
+  &__image-div {
+    display: flex;
+    flex-direction: row;
+  }
 }
-
-.hide {
-  margin-top: 3px;
-  grid-row-start: 5;
-  grid-row-start: 6;
-  grid-column-start: 2;
-  grid-column-end: 3;
-
-  display: none;
-  color: black;
-  margin-left: 1rem;
-}
-
 @keyframes rolloutright {
   from {
     transform: translateX(500px) scaleX(0%);
@@ -58,14 +60,6 @@
   to {
     transform: translateX(0%);
   }
-}
-
-.resizeBottomBarImage:hover {
-  transform: scale(110%);
-  text-decoration: underline;
-  -webkit-transition: transform 0.2s ease-in-out;
-  -moz-transition: transform 0.2s ease-in-out;
-  -ms-transition: transform 0.2s ease-in-out;
 }
 
 .fnfDiv {
