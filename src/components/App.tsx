@@ -1,4 +1,4 @@
-import { image_map } from "../assets/image_source/image_map";
+import { image_map } from "../assets/imageMap";
 import "./App.scss";
 import "./Texts/Texts";
 import "./GithubCrawler/GithubCrawler";
@@ -20,6 +20,6 @@ const App = () => {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
