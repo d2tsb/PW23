@@ -32,3 +32,10 @@ Please be welcomed to visit my [homepage](https://www.tilmanbertram.com).
   `nvm install 20`
 
   `nvm use 20`
+
+### Install Client
+  `npm ci`
+### Dev
+  `npm run start`
+### Build 
+  `npm run build`

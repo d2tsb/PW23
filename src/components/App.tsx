@@ -1,4 +1,4 @@
-import { image_map } from "../resources/image_source/image_map";
+import { image_map } from "../assets/image_source/image_map";
 import "./App.scss";
 import "./Texts/Texts";
 import "./GithubCrawler/GithubCrawler";

@@ -1,7 +1,7 @@
 import React from "react";
 import "./BottomBar.scss";
 import { Link } from "react-router-dom";
-import { image_map } from "../../resources/image_source/image_map";
+import { image_map } from "../../assets/image_source/image_map";
 
 export const BottomBar = ({ language }) => {
   return (

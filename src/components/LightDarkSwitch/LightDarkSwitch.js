@@ -1,4 +1,4 @@
-import { image_map } from "../../resources/image_source/image_map";
+import { image_map } from "../../assets/image_source/image_map";
 import "./LightDarkSwitch.scss"
 
 const LightDarkSwitch = ({value, setValue}) => {

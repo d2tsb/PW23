@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { image_map } from "../../resources/image_source/image_map";
+import { image_map } from "../../assets/image_source/image_map";
 import LightDarkSwitch from "../LightDarkSwitch/LightDarkSwitch";
 
 const LinkedInURL = "https://www.linkedin.com/in/tsbertram/";
