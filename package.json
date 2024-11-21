@@ -9,7 +9,6 @@
     "fs": "^0.0.1-security",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-horizontal-timeline": "^1.5.3",
     "react-router-dom": "^6.21.1",
     "react-scripts": "^5.0.1",
     "react-timeline-animation": "^1.2.3",
