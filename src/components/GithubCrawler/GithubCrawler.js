@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import "./css/cssdark/GithubCrawler.css";
+import "./GithubCrawler.scss";
+import { image_map } from "../../resources/image_source/image_map";
 
 /*crawls and shows the most recent Github repos that where pushed to*/
 
@@ -56,7 +57,7 @@ const GithubCrawler = () => {
                       <div>
                         <img
                           className="gitimg"
-                          src={require("./ressources/gitpic.png")}
+                          src={image_map.githubLogoTransparent}
                           alt="Github Symbol"
                           width={"30px"}
                         ></img>

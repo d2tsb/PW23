@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/cssdark/Lifeline.css";
+import "./Lifeline.scss";
 
 const LifelineElement = (probs) => {
   return (

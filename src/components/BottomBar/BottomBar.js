@@ -1,6 +1,7 @@
 import React from "react";
-import "./css/cssdark/BottomBar.css";
+import "./BottomBar.scss";
 import { Link } from "react-router-dom";
+import { image_map } from "../../resources/image_source/image_map";
 
 export const BottomBar = ({ language }) => {
   return (
@@ -17,7 +18,7 @@ export const BottomBar = ({ language }) => {
             <div className="divFlex">
               <img
                 className="resizeBottomBarImage"
-                src={require("./ressources/github_PNG80.png")}
+                src={image_map.githubLogo}
                 alt="git logo "
               ></img>
               <text className="hide"> view source code.. </text>
