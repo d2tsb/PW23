@@ -26,3 +26,7 @@ Please be welcomed to visit my [homepage](https://www.tilmanbertram.com).
   Remove inline CSS-styling
   App.js is way to arbitrary. 
   Maybe fix the text bump, when switching between 'About and Preferences'
+
+### Version
+  nvm install 18
+  nvm use 18
