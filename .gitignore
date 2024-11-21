@@ -2,8 +2,8 @@
 
 # dependencies
 /node_modules
-/ressources
-/src/ressources
+*resources
+/src/resources
 /public/res
 /public/images
 /.pnp

@@ -1,5 +1,5 @@
 # Descr: Personal Homepage '23 done with REACTJS
-## !!!Disclaimer!!!: Sourcecode only works if dependencies as 'ressources' are given. 
+
 Please be welcomed to visit my [homepage](https://www.tilmanbertram.com).
 
 
@@ -11,22 +11,24 @@ Please be welcomed to visit my [homepage](https://www.tilmanbertram.com).
     and displays it appropriatly, styled with CSS.
   
 ### About this Website
-  Well the website and its core-elements were written in ReactJS.
-  ReactJS is a Framework developed by Facebook to quickly 
-  create Frontend Webapplications and uses NodeJS as its base,
+  Well the website and its core-elements were written in ~~ReactJS~~ -> is now ReactTs.
+  ReactJS is a framework developed by Facebook to quickly 
+  create frontend web applications and uses NodeJS as its base,
   by involving HTML and CSS into the code. 
-  This website is hosted with nginx.
+  ~~This website is hosted with nginx.~~ -> now uses Deno App
   This website was built using yarn.
 
 ### Remarks and TODO
-  This is one of my first websites - so includes features, that are outdated.
+  This is one of my first websites.
   This code maybe getting refactored, because the concepts aren't up-to-date.
 
-  CSS -> SCSS with BEM (Block, Elements, Modifiers)
-  Remove inline CSS-styling
-  App.js is way to arbitrary. 
-  Maybe fix the text bump, when switching between 'About and Preferences'
+  - CSS -> SCSS with BEM (Block, Elements, Modifiers)
+  - Remove inline CSS-styling
+  - Refactor into components
+  - fix the text bump, when switching between 'About and Preferences'
 
 ### Version
-  nvm install 18
-  nvm use 18
+#### install newest version of node
+  `nvm install 20`
+
+  `nvm use 20`

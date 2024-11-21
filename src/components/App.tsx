@@ -221,7 +221,7 @@ const Impressum = () => {
     </div>
   );
 };
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
