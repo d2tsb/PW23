@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import { image_map } from "../../assets/image_source/image_map";
+import { image_map } from "../../assets/imageMap";
 import LightDarkSwitch from "../LightDarkSwitch/LightDarkSwitch";
 
 const LinkedInURL = "https://www.linkedin.com/in/tsbertram/";
-const Header = ({ language, setLanguage, DM }:
-  {
-    language: number,
-    setLanguage: React.Dispatch<React.SetStateAction<number>>,
-    DM: { colorTheme: number, setColorTheme: React.Dispatch<React.SetStateAction<number>> }
-
-  }
-) => {
+const Header = ({
+  language,
+  setLanguage,
+  DM,
+}: {
+  language: number;
+  setLanguage: React.Dispatch<React.SetStateAction<number>>;
+  DM: {
+    colorTheme: number;
+    setColorTheme: React.Dispatch<React.SetStateAction<number>>;
+  };
+}) => {
   let title = "Personal Homepage";
   //title = "Personal Homepage: Tilman - Sören Bertram";
   const LDin = (

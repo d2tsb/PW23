@@ -1,7 +1,6 @@
-
-import { image_map } from "../../assets/image_source/image_map";
+import { image_map } from "../../assets/imageMap";
 const LinkedInURL = "https://www.linkedin.com/in/tsbertram/";
-const Profile = ({ language }: {language: number}) => {
+const Profile = ({ language }: { language: number }) => {
   return (
     <div className="DataDivWrapper">
       <span className="DataDiv">
@@ -21,9 +20,15 @@ const Profile = ({ language }: {language: number}) => {
               className="LDinLogo"
               alt="linked in logo"
             ></img>
-
           </a>
-          <a href={language ? "https://www.campudus.com/" : "https://www.campudus.com/en" } style={{ width: "0px" }}>
+          <a
+            href={
+              language
+                ? "https://www.campudus.com/"
+                : "https://www.campudus.com/en"
+            }
+            style={{ width: "0px" }}
+          >
             <img
               src={image_map.campudusLogo}
               style={{ width: "35px", filter: "invert(0)" }}
@@ -31,7 +36,6 @@ const Profile = ({ language }: {language: number}) => {
               className="LDinLogo"
               alt="linked in logo"
             ></img>
-
           </a>
         </div>
         <div style={{ marginTop: "5px" }}>
@@ -96,4 +100,4 @@ const Profile = ({ language }: {language: number}) => {
   );
 };
 
-export default Profile; 
+export default Profile;

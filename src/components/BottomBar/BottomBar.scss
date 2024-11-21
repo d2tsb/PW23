@@ -1,107 +1,73 @@
-.elf
-{
-
-  margin-top: 60px; 
-  /*background-color: #888;*/
-  background-image: -webkit-gradient(bottom, #5e5e5e, rgba(0,0,0,0));
-  background-image: linear-gradient(to bottom, #5e5e5e, rgba(0,0,0,0));
-  grid-row-start: 5; 
-  grid-row-end: 6; 
+.bottom-bar {
+  margin-top: 60px;
+  background-image: -webkit-gradient(bottom, #5e5e5e, rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to bottom, #5e5e5e, rgba(0, 0, 0, 0));
+  grid-row-start: 5;
+  grid-row-end: 6;
   grid-column-start: 2;
   grid-column-end: 3;
 
+  &__Div {
+    display: flex;
+  }
+  &__Li:hover {
+    transform: scale(110%);
+    text-decoration: underline;
+    transition: transform 0.2s ease-in-out;
+  }
+  &__Li {
+    padding: 3px;
+    margin-right: 1vh;
+  }
 }
 
-
-.resizeBottomBarImage
-{
-  width: 30px; 
-  height: 30px; 
+.resizeBottomBarImage {
+  width: 30px;
+  height: 30px;
 }
 
-.resizeBottomBarImage:hover + .hide{
-  display: block; 
+.resizeBottomBarImage:hover + .hide {
+  display: block;
   animation: rolloutright 0.5s forwards;
-
 }
-.divFlex
-{
-  display: flex; 
+.divFlex {
+  display: flex;
   flex-direction: row;
-
 }
 
-.hide::before
-{
-
-
-}
-.hide:active
-{
+.hide:active {
   text-decoration: none;
-
 }
 
-.hide 
-{
-  margin-top: 3px; 
-  grid-row-start: 5; 
-  grid-row-start: 6; 
+.hide {
+  margin-top: 3px;
+  grid-row-start: 5;
+  grid-row-start: 6;
   grid-column-start: 2;
   grid-column-end: 3;
-
 
   display: none;
-  color: black; 
-  margin-left: 1rem;    
-
-
+  color: black;
+  margin-left: 1rem;
 }
 
-.elfLi
-{
-  padding: 3px; 
-  margin-right: 1vh; 
-
-}
 @keyframes rolloutright {
-  from 
-  {
-
+  from {
     transform: translateX(500px) scaleX(0%);
-
   }
-  to{
+  to {
     transform: translateX(0%);
   }
-
-
-
 }
-.elfLi:hover{
+
+.resizeBottomBarImage:hover {
   transform: scale(110%);
   text-decoration: underline;
   -webkit-transition: transform 0.2s ease-in-out;
   -moz-transition: transform 0.2s ease-in-out;
   -ms-transition: transform 0.2s ease-in-out;
-
 }
-.resizeBottomBarImage:hover
-{
-  transform: scale(110%);
-  text-decoration: underline;
-  -webkit-transition: transform 0.2s ease-in-out;
-  -moz-transition: transform 0.2s ease-in-out;
-  -ms-transition: transform 0.2s ease-in-out;
 
-}
-.elfDiv
-{
-  display: flex; 
-
-
-}
-.fnfDiv
-{
+.fnfDiv {
   margin-left: calc(100% - 10rem);
 }

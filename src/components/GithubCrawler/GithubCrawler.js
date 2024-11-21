@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./GithubCrawler.scss";
-import { image_map } from "../../assets/image_source/image_map";
+import { image_map } from "../../assets/imageMap";
 
 /*crawls and shows the most recent Github repos that where pushed to*/
 
@@ -43,10 +43,7 @@ const GithubCrawler = () => {
           ? null
           : allrepos
               .sort((a, b) => a["pushed_at"] < b["pushed_at"])
-              .filter(
-                (a) =>
-                  a["language"] != null 
-              )
+              .filter((a) => a["language"] != null)
               .slice(0, limit)
               .map((item, index) => (
                 /*sort element by push date*/
