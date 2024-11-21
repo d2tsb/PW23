@@ -2,12 +2,13 @@
 
 # dependencies
 /node_modules
-*resources
-/src/resources
+
 /public/res
 /public/images
 /.pnp
 .pnp.js
+
+/src/resources/scripts/*
 
 /.fnf
 .fnf
