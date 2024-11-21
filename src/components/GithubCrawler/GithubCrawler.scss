@@ -1,4 +1,4 @@
-.gitcraw {
+.gc {
   display: flex;
   grid-row-start: 4;
   grid-row-end: 5;
@@ -16,72 +16,55 @@
   /*overflow-y:auto;*/
   margin-top: 5vh;
   animation: fadegitin 1s forwards;
-}
-.gitElement {
-  display: flex;
-}
-.gitText {
-  padding: 2px;
-  margin-right: 20px;
-}
-.gitli {
-  -webkit-transition: transform 0.5s ease-in-out;
-  transform: scale(100%);
 
-  padding-top: 20px;
-  width: 80%;
-  padding-bottom: 20px;
-  /*padding-right: 100rem; */
-  /*padding-right: 60%;*/
-  padding-left: 2vh;
-  /* background-image: linear-gradient(to bottom, #2e2e2e, #000); */
-  background-image: radial-gradient(#000, #0e0e0e);
-  background-color: #000;
-  /*background-color:rgb(101, 101, 101);*/
-  /*background-color:rgb(0, 0, 181);*/
-  /*background-color:rgb(61, 61, 226);*/
-  border-radius: 5px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  border: 1px;
-  border-style: solid;
-  border-color: white;
-}
-.gitul {
-  /*
-  margin-right: 30vh;*/
-  padding-left: 0vh;
-  border: 3px;
+  &__ul {
+    padding-left: 0vh;
+    border: 3px;
+    border-radius: 5px;
+    border-color: rgb(255, 255, 255);
+  }
+  &__li {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(100%);
 
-  border-radius: 5px;
-
-  /*border-style: solid;*/
-  /*background-image: linear-gradient(to top, #AAA, #000);*/
-  border-color: rgb(255, 255, 255);
-}
-.gitimg {
-  filter: invert(1);
-}
-.gitdiv {
-  display: grid;
-  margin-left: 1vh;
-}
-.gitli::before {
-}
-
-.gitli:hover {
-  -webkit-transition: transform 0.2s ease-in-out;
-  -moz-transition: transform 0.2s ease-in-out;
-  -ms-transition: transform 0.2s ease-in-out;
-  transform: scale(102%);
-}
-
-.gitbutton {
-  border: 0px;
-  color: #000;
-  background-color: #000;
+    padding-top: 20px;
+    width: 80%;
+    padding-bottom: 20px;
+    padding-left: 2vh;
+    background-image: radial-gradient(#000, #0e0e0e);
+    background-color: #000;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px;
+    border-style: solid;
+    border-color: white;
+  }
+  &__element {
+    display: flex;
+  }
+  &__text {
+    padding: 2px;
+    margin-right: 20px;
+  }
+  &__li:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(102%);
+  }
+  &__img {
+    filter: invert(1);
+  }
+  &__div {
+    display: grid;
+    margin-left: 1vh;
+  }
+  &__button {
+    border: 0px;
+    color: #000;
+    background-color: #000;
+  }
 }
 
 @keyframes fadegitin {
