@@ -6,7 +6,7 @@ import CopyRight from "../CopyRight/CopyRight";
 import Profile from "../Profile/Profile";
 import React, { useState } from "react";
 import Header from "../Header/Header";
-import { image_map } from "../../resources/image_source/image_map";
+import { image_map } from "../../assets/image_source/image_map";
 const Page = () => {
   const [Language, setLanguage] = useState(0);
   const [colorTheme, setColorTheme] = useState(0); //0 is dark, 1 is high.

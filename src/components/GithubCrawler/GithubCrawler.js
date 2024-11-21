@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./GithubCrawler.scss";
-import { image_map } from "../../resources/image_source/image_map";
+import { image_map } from "../../assets/image_source/image_map";
 
 /*crawls and shows the most recent Github repos that where pushed to*/
 
