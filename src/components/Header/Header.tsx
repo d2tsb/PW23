@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { image_map } from "../../assets/imageMap";
 import LightDarkSwitch from "../LightDarkSwitch/LightDarkSwitch";
+import "./Header.scss";
 
-const LinkedInURL = "https://www.linkedin.com/in/tsbertram/";
 const Header = ({
   language,
   setLanguage,
@@ -15,42 +13,34 @@ const Header = ({
     setColorTheme: React.Dispatch<React.SetStateAction<number>>;
   };
 }) => {
-  let title = "Personal Homepage";
-  //title = "Personal Homepage: Tilman - Sören Bertram";
-  const LDin = (
-    <li>
-      <a href={LinkedInURL}>
-        <img
-          style={{ width: "1.5rem" }}
-          alt="linked in logo"
-          src={image_map.linkedInLogo}
-          className="LDinLogo"
-        ></img>
-      </a>
-    </li>
-  );
+  const title = "Personal Homepage";
   <li>
     <LightDarkSwitch setValue={DM.setColorTheme} value={DM.colorTheme} />
   </li>;
+  const handleLanguageSwitch = () => {
+    setLanguage((prev) => (prev === 0 ? 1 : 0));
+  };
 
   return (
-    <header className="App-header">
-      <div className="">
-        <p className="TextSize">{title}</p>
-        <ul className="languageMenu">
+    <header className="header">
+      <div>
+        <p className="header__text">{title}</p>
+        <ul className="header__language-menu">
           <li
-            className={!language ? "languageMenuliactive" : ""}
-            onClick={() => {
-              setLanguage(0);
-            }}
+            className={
+              (!language ? "header__language-menu--active " : "") +
+              "header__language-menu--li"
+            }
+            onClick={handleLanguageSwitch}
           >
             EN
           </li>
           <li
-            className={language ? "languageMenuliactive" : ""}
-            onClick={() => {
-              setLanguage(1);
-            }}
+            className={
+              (language ? "header__language-menu--active " : "") +
+              "header__language-menu--li"
+            }
+            onClick={handleLanguageSwitch}
           >
             DE
           </li>

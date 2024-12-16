@@ -1,38 +1,66 @@
-.hrAnimatedLine::before {
-  position: absolute;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  z-index: 0; 
-}
+.lifeline {
+  margin-top: 30px;
+  display: flex;
+  margin-left: 20px;
+  flex-direction: row;
+  background-color: #000;
+  overflow-x: auto;
+  overflow-y: auto;
+  &__elements {
+    position: relative;
+    display: flex;
 
-.hrAnimatedLine {
-  /* margin-top: 10px; */
-  margin-top: calc(0% - 10px); 
-  margin-left: calc(0% + 9px);
-  /* margin-left: calc(0% + 5px);  */
-  border: 0; 
-  width: 100%;
-  mask-clip: border-box;
-  object-fit: cover;
-  height: 2px;
-  /*background: #fff;*/
-  background-image: -webkit-gradient(to right, #fff, rgba(0,0,0,0));
+    padding-right: 120px;
+  }
+  &__element {
+    opacity: 0;
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    justify-content: space-between;
+    align-items: baseline;
+    animation: fade-in-right 1s forwards;
+    &--text {
+      width: 50px;
+      float: top;
+      color: #bbb;
+      opacity: 0;
+      transform: rotate(-80deg);
+      animation: fade-in-right 1s forwards;
+    }
+  }
+  &__line {
+    margin-top: calc(0% - 10px);
+    margin-left: calc(0% + 9px);
+    border: 0;
+    width: 100%;
+    mask-clip: border-box;
+    object-fit: cover;
+    height: 2px;
+    background-image: -webkit-gradient(to right, #fff, rgba(0, 0, 0, 0));
 
-  background-image: linear-gradient(to right, #fff, rgba(0,0,0,0));
-  position: absolute;
-  transform-origin: left;
-  animation: grow-left 1s linear ;
+    background-image: linear-gradient(to right, #fff, rgba(0, 0, 0, 0));
+    position: absolute;
+    transform-origin: left;
+    animation: grow-left 1s linear;
+    &::before {
+      position: absolute;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      z-index: 0;
+    }
+  }
 }
 
 @keyframes animate {
   from {
     left: 0;
   }
-
   to {
     left: 100%;
   }
-
 }
 
 @keyframes fade-in-right {
@@ -53,46 +81,4 @@
   to {
     transform: scaleX(1) translateX(0px);
   }
-}
-
-.dotDiv
-{
-  position: relative;
-  display: flex;
-
-  padding-right: 120px; 
-  
-
-}
-
-.dot {
-    opacity: 0;
-  height: 10px;
-  width: 10px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  justify-content: space-between;
-  align-items:baseline;
-  animation: fade-in-right 1s forwards;
-}
-.dotDivText
-{
-
-  width: 50px; 
-  float: top;
-  color:#bbb;
-  opacity: 0;
-  transform: rotate(-80deg);
-  animation: fade-in-right 1s forwards;
-
-}
-.root-div {
-  margin-top: 30px;
-  display: flex;
-  margin-left: 20px; 
-  flex-direction: row;
-  background-color: #000;
-  overflow-x:auto; 
-  overflow-y:auto; 
 }

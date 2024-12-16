@@ -1,10 +1,9 @@
 import { image_map } from "../../../assets/imageMap";
 import AttributeValuePair from "../AttribValuePair/AttribValuePair";
-const GithubCrawlerElement = ({ item }) => (
+const GithubCrawlerElement = ({ element }) => (
   /*sort element by push date*/
-  <a className="" href={item["html_url"]}>
-    {" "}
-    <li className="gc__li" key={item}>
+  <a className="" href={element["html_url"]}>
+    <li className="gc__li" key={element}>
       <div className="gc__element">
         <div>
           <img
@@ -16,10 +15,12 @@ const GithubCrawlerElement = ({ item }) => (
         </div>
 
         <div className="gc__div">
-          <div>{AttributeValuePair("Name: ", item["full_name"])}</div>
-          <div>{AttributeValuePair("Description: ", item["description"])}</div>
-          <div>{AttributeValuePair("Last Push: ", item["pushed_at"])}</div>
-          <div>{AttributeValuePair("Language: ", item["language"])}</div>
+          <div>{AttributeValuePair("Name: ", element["full_name"])}</div>
+          <div>
+            {AttributeValuePair("Description: ", element["description"])}
+          </div>
+          <div>{AttributeValuePair("Last Push: ", element["pushed_at"])}</div>
+          <div>{AttributeValuePair("Language: ", element["language"])}</div>
         </div>
       </div>
     </li>

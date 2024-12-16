@@ -31,7 +31,7 @@ const GithubCrawler = () => {
             .sort((a, b) => a["pushed_at"] < b["pushed_at"])
             .filter((a) => a["language"] != null)
             .slice(0, limit)
-            .map((item) => <GithubCrawlerElement item={item} />)}
+            .map((item) => <GithubCrawlerElement element={item} />)}
       </ul>
     </div>
   );

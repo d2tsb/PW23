@@ -1,4 +1,3 @@
-
 /***maybe refactor into BEM (Block, Elements and Modifiers) using scss.***/
 html,
 body {
@@ -47,16 +46,7 @@ body {
   /*600px*/
   /*Name, Picture + Data, Menu, Text, Space, Statusline, Border*/
 }
-.App-header {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  /*min-height: 100vh;*/
-  display: block;
-  color: white;
-  background-color: #000;
-  grid-row-start: 1;
-  grid-row-end: 2;
-}
+
 .ListItem1 {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -95,36 +85,6 @@ body {
   font-size: 15px;
 }
 
-.TextSize {
-  height: 1rem;
-}
-
-.languageMenu {
-  height: 1rem;
-  margin-right: 25px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column: 2 3;
-
-  z-index: 7;
-}
-
-.languageMenu li {
-  margin-right: 10px;
-  padding-left: 2px;
-  padding-right: 2px;
-}
-.languageMenuliactive {
-  /* background-color: #303030; */
-  background: #616161;
-  /* #4c87af; */
-
-  border-radius: 2px;
-}
-
 .link_ {
   color: rgb(125, 184, 171);
 }
@@ -150,7 +110,7 @@ body {
   z-index: -7;
   object-fit: cover;
   mask-clip: border-box;
-  mask: linear-gradient(to left, #000, rgba(255, 255, 255, 0)); 
+  mask: linear-gradient(to left, #000, rgba(255, 255, 255, 0));
   /* mask: radial-gradient(circle at 90%, #000, rgba(255, 255, 255, 0)); */
 }
 .styleGIFPic {
@@ -173,12 +133,6 @@ body {
   margin-left: 10%;
   /*mask-image: linear-gradient(to left, rgba(0, 0, 0, 1.0), transparent 100%);*/
 }
-.ulImpressum {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .ul_ {
   list-style-type: none;
   margin: 0;
@@ -236,8 +190,16 @@ a:active {
   color: white;
   /*background-color: #0e0e0e;*/
   /*background-image: linear-gradient(to right,  #0e0e0e , rgba(0,0,0,0));*/
-  -webkit-background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
-  -khtml-background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
+  -webkit-background-image: linear-gradient(
+    to bottom,
+    #0e0e0e,
+    rgba(0, 0, 0, 0)
+  );
+  -khtml-background-image: linear-gradient(
+    to bottom,
+    #0e0e0e,
+    rgba(0, 0, 0, 0)
+  );
   -moz-background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
   background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
   padding: 6px;
