@@ -1,9 +1,9 @@
-
+import "./Impressum.scss";
 const Impressum = () => {
   return (
     <div>
       <div style={{ color: "#FFF", height: "70px" }}>Impressum</div>
-      <ul className="ulImpressum">
+      <ul className="impressum">
         <li style={{ color: "#FFF" }}>
           reactjs: https://opensource.fb.com/legal/terms or opensource@meta.com{" "}
         </li>
