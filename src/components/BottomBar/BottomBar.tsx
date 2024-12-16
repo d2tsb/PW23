@@ -9,7 +9,7 @@ export const BottomBar = ({ language }: { language: number }) => (
         <Link
           className="bottom-bar__Li"
           style={{ color: "#000" }}
-          to="/Impressum"
+          to="/impressum"
         >
           {language ? "Impressum" : "Legals"}
         </Link>

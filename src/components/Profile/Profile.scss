@@ -1,0 +1,36 @@
+.profile {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  &__content {
+    color: white;
+    font-family: sans-serif;
+    vertical-align: top;
+    row-gap: 5px;
+    display: grid;
+    align-items: start;
+    font-size: 15px;
+
+    &--img {
+      width: 10rem;
+      height: auto;
+      float: left;
+      margin-bottom: 20px;
+    }
+  }
+  &__logo {
+    filter: invert(1);
+    opacity: 80%;
+    width: 35px;
+
+    margin-right: 10px;
+    &:hover {
+      transform: scale(103%);
+    }
+  }
+  &__link {
+    margin-left: 5px;
+    color: rgb(125, 184, 171);
+  }
+}
