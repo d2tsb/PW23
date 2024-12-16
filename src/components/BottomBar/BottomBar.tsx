@@ -4,10 +4,10 @@ import { image_map } from "../../assets/imageMap";
 
 export const BottomBar = ({ language }: { language: number }) => (
   <div className="bottom-bar">
-    <ul className="bottom-bar__Div ">
-      <li className="bottom-bar__Li">
+    <ul className="bottom-bar__elements">
+      <li className="bottom-bar__element">
         <Link
-          className="bottom-bar__Li"
+          className="bottom-bar__element"
           style={{ color: "#000" }}
           to="/impressum"
         >

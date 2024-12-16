@@ -7,15 +7,16 @@
   grid-column-start: 2;
   grid-column-end: 3;
 
-  &__Div {
+  &__elements {
     display: flex;
   }
-  &__Li:hover {
-    transform: scale(110%);
-    text-decoration: underline;
-    transition: transform 0.2s ease-in-out;
-  }
-  &__Li {
+
+  &__element {
+    &:hover {
+      transform: scale(110%);
+      text-decoration: underline;
+      transition: transform 0.2s ease-in-out;
+    }
     padding: 3px;
     margin-right: 1vh;
   }
