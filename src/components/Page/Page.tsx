@@ -5,7 +5,7 @@ import CopyRight from "../CopyRight/CopyRight";
 import Profile from "../Profile/Profile";
 import { useState } from "react";
 import Header from "../Header/Header";
-import { image_map } from "../../assets/imageMap";
+import { imageMap } from "../../resources/imageMap";
 import "./Page.scss";
 const Page = () => {
   const [Language, setLanguage] = useState<number>(0);
@@ -15,7 +15,7 @@ const Page = () => {
       <img
         className="page__gif--content"
         alt="GIF"
-        src={image_map.topBanner}
+        src={imageMap.topBanner}
       ></img>
     </div>
   );
