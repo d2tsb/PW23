@@ -1,16 +1,16 @@
 import "./Profile.scss";
-import { image_map } from "../../assets/imageMap";
+import { imageMap } from "../../resources/imageMap";
 const linkedInUrl = "https://www.linkedin.com/in/tsbertram/";
 
 const Profile = ({ language }: { language: number }) => {
   return (
     <div className="profile">
       <span className="profile__content">
-        <img src={image_map.me} alt="me" className="profile__content--img" />
+        <img src={imageMap.me} alt="me" className="profile__content--img" />
         <div>
           <a href={linkedInUrl}>
             <img
-              src={image_map.linkedInLogo}
+              src={imageMap.linkedInLogo}
               className="profile__logo"
               alt="linked in logo"
             ></img>
@@ -24,7 +24,7 @@ const Profile = ({ language }: { language: number }) => {
             style={{ width: "0px" }}
           >
             <img
-              src={image_map.campudusLogo}
+              src={imageMap.campudusLogo}
               style={{ filter: "invert(0)" }}
               className="profile__logo"
               alt="campudus logo"

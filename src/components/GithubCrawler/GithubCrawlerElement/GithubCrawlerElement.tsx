@@ -1,4 +1,4 @@
-import { image_map } from "../../../assets/imageMap";
+import { imageMap } from "../../../resources/imageMap";
 import AttributeValuePair from "../AttribValuePair/AttribValuePair";
 const GithubCrawlerElement = ({ element }) => (
   /*sort element by push date*/
@@ -8,7 +8,7 @@ const GithubCrawlerElement = ({ element }) => (
         <div>
           <img
             className="gc__img"
-            src={image_map.githubLogoTransparent}
+            src={imageMap.githubLogoTransparent}
             alt="Github Symbol"
             width={"30px"}
           ></img>

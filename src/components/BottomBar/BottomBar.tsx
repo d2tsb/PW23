@@ -1,6 +1,6 @@
 import "./BottomBar.scss";
 import { Link } from "react-router-dom";
-import { image_map } from "../../assets/imageMap";
+import { imageMap } from "../../resources/imageMap";
 
 export const BottomBar = ({ language }: { language: number }) => (
   <div className="bottom-bar">
@@ -20,7 +20,7 @@ export const BottomBar = ({ language }: { language: number }) => (
           <div className="bottom-bar__image-div">
             <img
               className="bottom-bar__image"
-              src={image_map.githubLogo}
+              src={imageMap.githubLogo}
               alt="git logo "
             ></img>
             <text className="bottom-bar__hide"> view source code.. </text>

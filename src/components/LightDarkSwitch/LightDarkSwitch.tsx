@@ -1,4 +1,4 @@
-import { image_map } from "../../assets/imageMap";
+import { imageMap } from "../../resources/imageMap";
 import "./LightDarkSwitch.scss";
 
 const LightDarkSwitch = ({ value, setValue }) => {
@@ -13,7 +13,7 @@ const LightDarkSwitch = ({ value, setValue }) => {
           className={
             !value ? "theme-switch" : "theme-switch theme-switch--inverse"
           }
-          src={image_map.lightLogo}
+          src={imageMap.lightLogo}
           alt="LightDarkmode"
         />
       </div>
