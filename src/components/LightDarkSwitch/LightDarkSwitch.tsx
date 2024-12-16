@@ -10,7 +10,9 @@ const LightDarkSwitch = ({ value, setValue }) => {
         }}
       >
         <img
-          className={!value ? "ldmSwitch" : "ldmSwitch ldmSwitchInverse"}
+          className={
+            !value ? "theme-switch" : "theme-switch theme-switch--inverse"
+          }
           src={image_map.lightLogo}
           alt="LightDarkmode"
         />

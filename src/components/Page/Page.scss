@@ -1,0 +1,52 @@
+.page {
+  &__properties {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+
+    /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+    -ms-user-select: none;
+    user-select: none;
+
+    background-color: #000000;
+    animation: fadeinApp 0.9s forwards;
+    height: 100%;
+  }
+  &__frame {
+    display: grid;
+    grid-template-columns: 25px calc(100% - 50px) 25px;
+    grid-template-rows: 100px 500px auto auto 200px 100px 100px;
+  }
+  &__gif {
+    display: flex;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    &--content {
+      width: 100%;
+      opacity: 0.2;
+      z-index: -7;
+      object-fit: cover;
+      mask-clip: border-box;
+      mask: linear-gradient(to left, #000, rgba(255, 255, 255, 0));
+    }
+  }
+}
+
+.styleCodePic {
+  margin-top: 10vh;
+  opacity: 0.3;
+  z-index: -6;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  box-shadow: inset 0 0 100px #000;
+  overflow: hidden;
+  margin-left: 10%;
+}

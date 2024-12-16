@@ -1,23 +1,17 @@
+import "./Profile.scss";
 import { image_map } from "../../assets/imageMap";
-const LinkedInURL = "https://www.linkedin.com/in/tsbertram/";
+const linkedInUrl = "https://www.linkedin.com/in/tsbertram/";
+
 const Profile = ({ language }: { language: number }) => {
   return (
-    <div className="DataDivWrapper">
-      <span className="DataDiv">
-        {/**maybe think about refactoring - and build subclasses */}
-        <img
-          src={image_map.me}
-          alt="Pictr. of Self"
-          className="resize"
-          style={{ marginBottom: "20px" }}
-        />
+    <div className="profile">
+      <span className="profile__content">
+        <img src={image_map.me} alt="me" className="profile__content--img" />
         <div>
-          <a href={LinkedInURL} style={{ width: "0px", marginRight: "10px" }}>
+          <a href={linkedInUrl}>
             <img
               src={image_map.linkedInLogo}
-              style={{ width: "35px" }}
-              // style={{ width: "4vh" }}
-              className="LDinLogo"
+              className="profile__logo"
               alt="linked in logo"
             ></img>
           </a>
@@ -31,10 +25,9 @@ const Profile = ({ language }: { language: number }) => {
           >
             <img
               src={image_map.campudusLogo}
-              style={{ width: "35px", filter: "invert(0)" }}
-              // style={{ width: "4vh" }}
-              className="LDinLogo"
-              alt="linked in logo"
+              style={{ filter: "invert(0)" }}
+              className="profile__logo"
+              alt="campudus logo"
             ></img>
           </a>
         </div>
@@ -69,28 +62,31 @@ const Profile = ({ language }: { language: number }) => {
           )}
         </div>
         <div>
-          <text>Mail:</text>{" "}
-          <a className="link_" href="mailto:tilmansoerenw@protonmail.com">
+          <text>Mail:</text>
+          <a
+            className="profile__link"
+            href="mailto:tilmansoerenw@protonmail.com"
+          >
             tilmansoerenw@protonmail.com
           </a>
         </div>
         <div>
           <text> GitHub: </text>
-          <a className="link_" href="https://github.com/d2tsb">
+          <a className="profile__link" href="https://github.com/d2tsb">
             d2tsb
           </a>
         </div>
         {language ? (
           <div>
             <text> Arbeit: </text>
-            <a className="link_" href="https://www.campudus.com">
+            <a className="profile__link" href="https://www.campudus.com">
               Campudus Developers
             </a>
           </div>
         ) : (
           <div>
             <text> Work: </text>
-            <a className="link_" href="https://www.campudus.com/en">
+            <a className="profile__link" href="https://www.campudus.com/en">
               Campudus Developers
             </a>
           </div>

@@ -1,4 +1,4 @@
 export default {
   empty: "/",
-  impressum: "/Impressum",
+  impressum: "/impressum",
 };

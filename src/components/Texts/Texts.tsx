@@ -17,37 +17,30 @@ const Texts = ({ language }) => {
     ["Übersicht", "Fokus", "Werdegang"],
   ];
 
-  //const Descriptions = ["HelloText0", "HelloText1", "HelloText2"];
-
-  const ChooseElement = () => {
+  const getTextElement = () => {
     switch (selectedIndex) {
       case 0:
         return (
-          <div className="Description_ collapser">
-            {" "}
-            <text> {Descriptions[0]} </text>{" "}
+          <div className="texts__content collapser">
+            <text> {Descriptions[0]} </text>
           </div>
         );
       case 1:
         return (
-          <div className="Description_ collapser">
-            {" "}
-            <text> {Descriptions[1]} </text>{" "}
+          <div className="texts__content collapser">
+            <text> {Descriptions[1]} </text>
           </div>
         );
       case 2:
-        return (
-          <div>
-            <Lifeline language={language} />
-          </div>
-        );
+        return <Lifeline language={language} />;
+      default:
+        return <text></text>;
     }
-    return <text></text>;
   };
 
   return (
-    <div className="ListItem1">
-      <ul className="ul_">
+    <div className="texts">
+      <ul className="texts__elements">
         {menuItems[language].length === 0 ||
         menuItems[language] === undefined ? (
           <p> No Option. </p>
@@ -59,14 +52,20 @@ const Texts = ({ language }) => {
                 setSelectedIndex(index);
               }}
             >
-              <text className={selectedIndex === index ? "liActive" : "lia"}>
+              <text
+                className={
+                  selectedIndex === index
+                    ? "texts__element--active"
+                    : "texts__element"
+                }
+              >
                 {item}
               </text>
             </li>
           ))
         )}
       </ul>
-      {ChooseElement()}
+      {getTextElement()}
     </div>
   );
 };
