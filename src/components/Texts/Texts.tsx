@@ -6,11 +6,8 @@ import Lifeline from "../Lifeline/Lifeline";
 import { useContext } from "react";
 import { PageContext } from "../Page/Page";
 import { textsWritten } from "../../__resources__/text/TextsWritten";
+import { menuBarOptions } from "../../__resources__/structure";
 
-const menuItems = {
-  en: ["About", "Preferences and Focus", "History"],
-  de: ["Übersicht", "Fokus", "Werdegang"],
-};
 const Texts = () => {
   const { language } = useContext(PageContext);
   const description = [
@@ -44,11 +41,11 @@ const Texts = () => {
   return (
     <div className="texts">
       <ul className="texts__elements">
-        {menuItems[language].length === 0 ||
-        menuItems[language] === undefined ? (
+        {menuBarOptions[language].length === 0 ||
+        menuBarOptions[language] === undefined ? (
           <p> No Option. </p>
         ) : (
-          menuItems[language].map((item, index) => (
+          menuBarOptions[language].map((item, index) => (
             <li
               key={item}
               onClick={() => {

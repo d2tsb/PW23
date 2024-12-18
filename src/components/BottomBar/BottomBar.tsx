@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { imageMap } from "../../__resources__/imageMap.ts";
 import { PageContext } from "../Page/Page.tsx";
 import { useContext } from "react";
-import { BottomBarOptions } from "../../__resources__/structure.ts";
+import { bottomBarOptions } from "../../__resources__/structure.ts";
 
 export const BottomBar = () => {
   const { language } = useContext(PageContext);
@@ -16,7 +16,7 @@ export const BottomBar = () => {
             style={{ color: "#000" }}
             to="/impressum"
           >
-            {BottomBarOptions[language]}
+            {bottomBarOptions[language]}
           </Link>
         </li>
 
