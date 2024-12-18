@@ -1,8 +1,11 @@
 import "./Profile.scss";
 import { imageMap } from "../../__resources__/imageMap";
-const linkedInUrl = "https://www.linkedin.com/in/tsbertram/";
+import { useContext } from "react";
+import { PageContext } from "../Page/Page";
 
-const Profile = ({ language }: { language: number }) => {
+const linkedInUrl = "https://www.linkedin.com/in/tsbertram/";
+const Profile = () => {
+  const { language } = useContext(PageContext);
   return (
     <div className="profile">
       <span className="profile__content">
