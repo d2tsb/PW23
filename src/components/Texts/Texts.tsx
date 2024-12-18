@@ -3,32 +3,35 @@ import "./Texts.scss";
 import { useState } from "react";
 import "../Lifeline/Lifeline";
 import Lifeline from "../Lifeline/Lifeline";
-const TextsWritten = require("../../resources/text/TextsWritten");
+import { useContext } from "react";
+import { PageContext } from "../Page/Page";
+import { textsWritten } from "../../__resources__/text/TextsWritten";
 
-const Texts = ({ language }) => {
-  const Descriptions = [
-    TextsWritten.default.Text0[language],
-    TextsWritten.default.Text1[language],
+const menuItems = {
+  en: ["About", "Preferences and Focus", "History"],
+  de: ["Übersicht", "Fokus", "Werdegang"],
+};
+const Texts = () => {
+  const { language } = useContext(PageContext);
+  const description = [
+    textsWritten.text0[language] ?? "no description found",
+    textsWritten.text1[language] ?? "no description found",
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const menuItems = [
-    ["About", "Preferences and Focus", "History"],
-    ["Übersicht", "Fokus", "Werdegang"],
-  ];
 
   const getTextElement = () => {
     switch (selectedIndex) {
       case 0:
         return (
           <div className="texts__content collapser">
-            <text> {Descriptions[0]} </text>
+            <text> {description[0]} </text>
           </div>
         );
       case 1:
         return (
           <div className="texts__content collapser">
-            <text> {Descriptions[1]} </text>
+            <text> {description[1]} </text>
           </div>
         );
       case 2:
