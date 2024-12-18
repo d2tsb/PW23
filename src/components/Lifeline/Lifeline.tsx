@@ -1,60 +1,48 @@
 import "./Lifeline.scss";
+import { lifeLineDescriptions as descriptions } from "../../__resources__/structure";
+import { PageContext } from "../Page/Page";
+import { useContext } from "react";
 
-const LifelineElement = (probs) => {
+interface LifelineElementProps {
+  probsdelay: string;
+  description: string;
+  index: number;
+}
+const LifelineElement = ({
+  probsdelay,
+  description,
+  index,
+}: LifelineElementProps) => {
   return (
     <div>
       <div style={{ paddingRight: "70px" }}>
         <span
           className="lifeline__element"
-          style={{ animationDelay: probs.probs.probsdelay }}
+          style={{ animationDelay: probsdelay }}
         ></span>
 
-        {!probs.probs.index ? <hr className="lifeline__line" /> : null}
+        {!index ? <hr className="lifeline__line" /> : null}
         <div
           className="lifeline__element--text"
-          style={{ animationDelay: probs.probs.probsdelay }}
+          style={{ animationDelay: probsdelay }}
         >
-          <span className="">{probs.probs.text}</span>
+          <span>{description}</span>
         </div>
       </div>
     </div>
   );
 };
 
-const Lifeline = ({ language }) => {
-  // Values should be only date
-  //const VALUES = ["09.05.2001", "2007", "2017", "2019", "2020"];
-
-  // Description array corresponding to values
-  const description = [
-    [
-      "2001: *",
-      "2011: Entering Highschool",
-      "2017: Secondary school-leaving Certificate (Mittlere Reife)",
-      "2019: High school diploma (Abitur)& Economy Studies",
-      "2020: Computer-Science Studies",
-      "2024: Webdeveloper at Campudus Developers",
-    ],
-
-    [
-      "2001: *",
-      "2011: Eintritt Gymnasium",
-      "2017: Mittlere Reife",
-      "2019: Abitur, Studium BWL",
-      "2020: Studium Informatik",
-      "2024: Webdeveloper at Campudus Developers",
-    ],
-  ];
-  const numElements = description[language].length;
+const Lifeline = () => {
+  const { language } = useContext(PageContext);
+  const numElements = descriptions[language].length;
   const LifeLineElements = [];
   for (var i = 0; i < numElements; i++) {
     LifeLineElements.push(
       <LifelineElement
-        probs={{
-          probsdelay: i * 0.1 + "s",
-          text: description[language][i],
-          index: i,
-        }}
+        probsdelay={i * 0.1 + "s"}
+        description={descriptions[language][i] ?? "no description found"}
+        index={i}
       />
     );
   }

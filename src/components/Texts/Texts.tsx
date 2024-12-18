@@ -32,7 +32,7 @@ const Texts = () => {
           </div>
         );
       case 2:
-        return <Lifeline language={language} />;
+        return <Lifeline />;
       default:
         return <text></text>;
     }
