@@ -1,9 +1,19 @@
-import { imageMap } from "../../../resources/imageMap";
+import { imageMap } from "../../../__resources__/imageMap";
 import AttributeValuePair from "../AttribValuePair/AttribValuePair";
-const GithubCrawlerElement = ({ element }) => (
+const GithubCrawlerElement = ({
+  element,
+}: {
+  element: {
+    html_url: string;
+    full_name: string;
+    description: string;
+    pushed_at: string;
+    language: string;
+  };
+}) => (
   /*sort element by push date*/
-  <a className="" href={element["html_url"]}>
-    <li className="gc__li" key={element}>
+  <a href={element["html_url"]}>
+    <li className="gc__li" key={element.html_url}>
       <div className="gc__element">
         <div>
           <img

@@ -1,4 +1,4 @@
-import { imageMap } from "../../resources/imageMap";
+import { imageMap } from "../../__resources__/imageMap";
 import "./LightDarkSwitch.scss";
 
 const LightDarkSwitch = ({ value, setValue }) => {

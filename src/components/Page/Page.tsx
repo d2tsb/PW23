@@ -5,7 +5,7 @@ import CopyRight from "../CopyRight/CopyRight";
 import Profile from "../Profile/Profile";
 import { useState } from "react";
 import Header from "../Header/Header";
-import { imageMap } from "../../resources/imageMap";
+import { imageMap } from "../../__resources__/imageMap";
 import "./Page.scss";
 const Page = () => {
   const [Language, setLanguage] = useState<number>(0);

@@ -1,6 +1,6 @@
 import "./BottomBar.scss";
 import { Link } from "react-router-dom";
-import { imageMap } from "../../resources/imageMap";
+import { imageMap } from "../../__resources__/imageMap";
 
 export const BottomBar = ({ language }: { language: number }) => (
   <div className="bottom-bar">

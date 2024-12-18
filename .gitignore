@@ -8,7 +8,9 @@
 /.pnp
 .pnp.js
 
-/src/resources/scripts/*
+*.ps1
+*.txt
+TextsWritten.js
 
 /.fnf
 .fnf
