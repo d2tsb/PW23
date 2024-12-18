@@ -1,5 +1,5 @@
 import "./Profile.scss";
-import { imageMap } from "../../resources/imageMap";
+import { imageMap } from "../../__resources__/imageMap";
 const linkedInUrl = "https://www.linkedin.com/in/tsbertram/";
 
 const Profile = ({ language }: { language: number }) => {
