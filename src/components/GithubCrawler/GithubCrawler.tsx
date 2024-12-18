@@ -9,7 +9,7 @@ import GithubCrawlerElement from "./GithubCrawlerElement/GithubCrawlerElement";
 
 const GithubCrawler = () => {
   const limit = 5;
-  const [allrepos, setAllRepos] = useState([""]);
+  const [allrepos, setAllRepos] = useState<[]>([]);
   useEffect(() => {
     const url = "https://api.github.com/users/d2tsb/repos";
     fetch(url) //fetch API
@@ -28,8 +28,12 @@ const GithubCrawler = () => {
       <ul className="gc__ul">
         {!(allrepos.length === 0 || allrepos === undefined) &&
           allrepos
-            .sort((a, b) => a["pushed_at"] < b["pushed_at"])
-            .filter((a) => a["language"] != null)
+            .sort(
+              (a, b) =>
+                new Date(b["pushed_at"]).getTime() -
+                new Date(a["pushed_at"]).getTime()
+            )
+            .filter((a) => a["language"] !== null)
             .slice(0, limit)
             .map((item) => <GithubCrawlerElement element={item} />)}
       </ul>

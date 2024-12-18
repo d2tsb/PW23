@@ -10,7 +10,7 @@
 
 *.ps1
 *.txt
-TextsWritten.js
+TextsWritten.ts
 
 /.fnf
 .fnf
