@@ -46,9 +46,9 @@ const Page = () => {
           <Header />
           {gif}
           <Profile />
-          <Texts language={Language} />
+          <Texts />
           <GithubCrawler />
-          <BottomBar language={Language} />
+          <BottomBar />
           <CopyRight />
         </div>
       </div>

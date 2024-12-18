@@ -23,7 +23,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "lib": ["esnext", "dom", "dom.iterable"],
-    //"allowImportingTsExtensions": true
-  
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   }
 }
