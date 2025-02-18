@@ -1,9 +1,9 @@
 import "./BottomBar.scss";
 import { Link } from "react-router-dom";
-import { imageMap } from "../../__resources__/imageMap.ts";
-import { PageContext } from "../Page/Page.tsx";
+import { imageMap } from "../../__resources__/imageMap";
+import { PageContext } from "../Page/Page";
 import { useContext } from "react";
-import { bottomBarOptions } from "../../__resources__/structure.ts";
+import { bottomBarOptions } from "../../__resources__/structure";
 
 export const BottomBar = () => {
   const { language } = useContext(PageContext);

@@ -1,34 +1,20 @@
 .header {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  /*min-height: 100vh;*/
-  display: block;
-  color: white;
-  background-color: #000;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  &__text {
-    height: 1rem;
-  }
-  &__language-menu {
-    height: 1rem;
-    margin-right: 25px;
-    position: absolute;
-    top: 0;
-    right: 0;
+    &__elements {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        margin-top: 4px;
+        height: 48px;
+        border-bottom: 1px solid #ddd;
+    }
+    grid-column-start: 2;
+    grid-column-end: 3;
+
     grid-row-start: 1;
     grid-row-end: 2;
-    grid-column: 2 3;
-
-    z-index: 7;
-    &--li {
-      margin-right: 10px;
-      padding-left: 2px;
-      padding-right: 2px;
+    width: 100%;
+    &__text {
+        height: 1rem;
     }
-    &--active {
-      background: #616161;
-      border-radius: 2px;
-    }
-  }
 }
