@@ -30,6 +30,31 @@
             color: #466;
         }
     }
+    &-year {
+        margin: 0px 20px;
+        color: $menu-text-color;
+        font-weight: bold;
+        &-elements {
+            display: flex;
+            flex-direction: column;
+            margin-top: 4px;
+            height: 80px;
+            border-bottom: 2px dotted #333;
+        }
+        &-element {
+            height: 40px;
+            margin: 0px 10px;
+            color: $menu-text-color;
+            font-weight: bold;
+            &:hover {
+                cursor: pointer;
+                color: #466;
+            }
+        }
+        &--selected {
+            color: #466;
+        }
+    }
 
     &-canvas {
         display: flex;
@@ -46,6 +71,7 @@
         opacity: 0.9;
         transition: opacity 2s;
         height: 100%;
+        max-height: 300px;
         width: 100%;
         z-index: 2;
 
