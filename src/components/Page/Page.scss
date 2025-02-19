@@ -24,6 +24,15 @@
             filter: blur(10px);
         }
     }
+    &__cover {
+        position: absolute;
+        filter: blur(10px);
+        height: 100%;
+        width: 100%;
+        right: 0;
+        top: 0;
+        z-index: 8;
+    }
     &__gif {
         display: flex;
         grid-row-start: 2;
@@ -39,6 +48,9 @@
             mask-clip: border-box;
             mask: linear-gradient(to left, #000, rgba(255, 255, 255, 0));
         }
+    }
+    &__blur {
+        filter: blur(10px);
     }
 }
 

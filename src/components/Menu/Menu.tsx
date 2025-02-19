@@ -4,6 +4,7 @@ import type { Language, Year } from "../../__resources__/types";
 import { PageContext } from "../Page/Page";
 import { useState } from "react";
 import { useContext } from "react";
+import { imageMap } from "../../__resources__/imageMap";
 
 const LanguageSwitch = () => {
   const { language, setLanguage } = useContext(PageContext);
@@ -69,6 +70,19 @@ const YearSwitch = () => {
     </div>
   );
 };
+const MenuSubmit = () => {
+  const { setShowMenu } = useContext(PageContext);
+  return (
+    <div className="menu-submit">
+      <button
+        className="menu-submit--button"
+        onClick={() => setShowMenu(false)}
+      >
+        <img src={imageMap.submit} alt="submit" />
+      </button>
+    </div>
+  );
+};
 
 const MenuCanvas = () => {
   const [revealMenu, setRevealMenu] = useState<string>("");
@@ -85,6 +99,7 @@ const MenuCanvas = () => {
       <div className="menu-canvas-content">
         <LanguageSwitch />
         <YearSwitch />
+        <MenuSubmit />
       </div>
     </div>
   );
