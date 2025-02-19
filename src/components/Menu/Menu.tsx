@@ -1,7 +1,8 @@
 import "./Menu.scss";
+import { match } from "ts-pattern";
 import type { Language, Year } from "../../__resources__/types";
-import { useState } from "react";
 import { PageContext } from "../Page/Page";
+import { useState } from "react";
 import { useContext } from "react";
 
 const LanguageSwitch = () => {
@@ -25,10 +26,46 @@ const LanguageSwitch = () => {
     switchLanguage("English", "en"),
   ];
 
+  const description = match(language)
+    .with("de", () => "Sprache:")
+    .with("en", () => "Language:")
+    .exhaustive();
+
   return (
     <div className="menu-language">
-      <p>Language: </p>
+      <p> {description}</p>
       <div className="menu-language-elements">{languageMenuElements}</div>
+    </div>
+  );
+};
+
+const YearSwitch = () => {
+  const { year, setYear, language } = useContext(PageContext);
+  const switchYear = (yearName: string, yearIdentifier: Year) => (
+    <div
+      onClick={() => setYear(yearIdentifier)}
+      className={
+        "menu-year-element " +
+        (year === yearIdentifier ? " menu-year--selected" : "")
+      }
+    >
+      {yearName}
+    </div>
+  );
+  const languageMenuElements = [
+    switchYear("No. 2025", "2025"),
+    switchYear("No. 2024", "2024"),
+  ];
+
+  const description = match(language)
+    .with("de", () => "Jahr:")
+    .with("en", () => "Year:")
+    .exhaustive();
+
+  return (
+    <div className="menu-year">
+      <p>{description}</p>
+      <div className="menu-year-elements">{languageMenuElements}</div>
     </div>
   );
 };
@@ -47,6 +84,7 @@ const MenuCanvas = () => {
     <div className={show(showMenu) + revealMenu}>
       <div className="menu-canvas-content">
         <LanguageSwitch />
+        <YearSwitch />
       </div>
     </div>
   );
