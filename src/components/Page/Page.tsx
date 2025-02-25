@@ -4,7 +4,7 @@ import { BottomBar } from "../BottomBar/BottomBar";
 import CopyRight from "../CopyRight/CopyRight";
 import Profile from "../Profile/Profile";
 import Menu from "../Menu/Menu";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Header from "../Header/Header";
 import { imageMap } from "../../__resources__/imageMap";
 import { Language, SetState, Year } from "../../__resources__/types";
@@ -20,6 +20,7 @@ interface PageProps {
   setLanguage: SetState<Language>;
   setShowMenu: SetState<boolean>;
   setYear: SetState<Year>;
+  githubCrawlerRef?: React.RefObject<HTMLDivElement>;
 }
 
 export const PageContext = createContext<PageProps>({
@@ -38,6 +39,7 @@ const Page = () => {
   const [colorTheme, setColorTheme] = useState<number>(0);
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [year, setYear] = useState<Year>("2025");
+  const githubCrawlerRef = useRef<HTMLDivElement>(null);
   const gif = (
     <div className="page__gif">
       <img
@@ -59,6 +61,7 @@ const Page = () => {
         setLanguage,
         setShowMenu,
         setYear,
+        githubCrawlerRef,
       }}
     >
       <div data-role="page" className="page__properties">
