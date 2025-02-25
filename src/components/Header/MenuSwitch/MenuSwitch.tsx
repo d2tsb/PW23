@@ -16,10 +16,15 @@ const Sandwich = ({ showCross }: { showCross?: boolean }) => {
 };
 
 const MenuSwitch = () => {
-  const { setShowMenu, showMenu } = useContext(PageContext);
+  const { setShowMenu, showMenu, year } = useContext(PageContext);
   return (
-    <div onClick={() => setShowMenu(!showMenu)}>
-      <Sandwich showCross={showMenu} />
+    <div className="menu-switch">
+      <div className="menu-switch-year" onClick={() => null}>
+        {year}
+      </div>
+      <div onClick={() => setShowMenu(!showMenu)}>
+        <Sandwich showCross={showMenu} />
+      </div>
     </div>
   );
 };

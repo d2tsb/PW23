@@ -41,7 +41,7 @@ export const ProfileInfo: ProfileInfoType = {
       birthdate: {
         attributeType: "PAIR",
         description: "Geburtsdatum",
-        value: "09.05.2001",
+        value: "05.09.2001",
       },
       major: {
         attributeType: "PAIR",

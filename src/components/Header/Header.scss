@@ -1,20 +1,25 @@
 .header {
-    &__elements {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+  &__elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-        margin-top: 4px;
-        height: 48px;
-        border-bottom: 1px solid #ddd;
-    }
-    grid-column-start: 2;
-    grid-column-end: 3;
+    margin-top: 4px;
+    height: 48px;
+    border-bottom: 1px solid #ddd;
+  }
+  grid-column-start: 2;
+  grid-column-end: 3;
 
-    grid-row-start: 1;
-    grid-row-end: 2;
-    width: 100%;
-    &__text {
-        height: 1rem;
-    }
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: 100%;
+  &__text {
+    height: 1rem;
+  }
+  &__year {
+    font-size: 1rem;
+    height: 1rem;
+    color: #ddd;
+  }
 }
