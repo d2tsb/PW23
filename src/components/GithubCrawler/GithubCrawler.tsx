@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "./GithubCrawler.scss";
 import GithubCrawlerElement from "./GithubCrawlerElement/GithubCrawlerElement";
+import { PageContext } from "../Page/Page";
+import { useContext } from "react";
 
 /*
  *description: crawls and shows the most recent Github repos that where pushed to
@@ -9,6 +11,7 @@ import GithubCrawlerElement from "./GithubCrawlerElement/GithubCrawlerElement";
 
 const GithubCrawler = () => {
   const limit = 5;
+  const { githubCrawlerRef } = useContext(PageContext);
   const [allrepos, setAllRepos] = useState<[]>([]);
   useEffect(() => {
     const url = "https://api.github.com/users/d2tsb/repos";
@@ -24,7 +27,7 @@ const GithubCrawler = () => {
   }, []);
 
   return (
-    <div className="gc" id="github-crawler">
+    <div className="gc" id="github-crawler" ref={githubCrawlerRef}>
       <ul className="gc__ul">
         {!(allrepos.length === 0 || allrepos === undefined) &&
           allrepos
