@@ -33,7 +33,7 @@ const LanguageSwitch = () => {
 
   return (
     <div className="menu-language">
-      <p key={"1"}> {description}</p>
+      <p> {description}</p>
       <div className="menu-language-elements">{languageMenuElements}</div>
     </div>
   );

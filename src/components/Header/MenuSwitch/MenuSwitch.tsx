@@ -1,14 +1,18 @@
 import "./MenuSwitch.scss";
 import { useContext } from "react";
-import { Language, Year } from "../../../__resources__/types";
 import { imageMap } from "../../../__resources__/imageMap";
 import { PageContext } from "../../Page/Page";
 
 const MenuSwitch = () => {
   const { setShowMenu, showMenu } = useContext(PageContext);
+  const selected = showMenu ? "menu-switch--selected" : "";
   return (
     <div onClick={() => setShowMenu(true)}>
-      <img src={imageMap.menu} className="menu-switch" alt="sandwich" />
+      <img
+        src={imageMap.menu}
+        className={"menu-switch " + selected}
+        alt="sandwich"
+      />
     </div>
   );
 };
