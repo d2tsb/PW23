@@ -9,5 +9,4 @@ export const imageMap = {
   lightLogo: buildImgPath("LightLogo.png"),
   linkedInLogo: buildImgPath("LinkedInLogo.svg"),
   submit: buildImgPath("greenArrow.svg"),
-  menu: buildImgPath("menu.svg"),
 };
