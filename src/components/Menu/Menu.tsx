@@ -12,6 +12,7 @@ const LanguageSwitch = () => {
     languageIdentifier: Language,
   ) => (
     <div
+      key={languageIdentifier}
       onClick={() => setLanguage(languageIdentifier)}
       className={
         "menu-language-element " +
@@ -44,6 +45,7 @@ const YearSwitch = () => {
   const switchYear = (yearName: string, yearIdentifier: Year) => (
     <div
       onClick={() => setYear(yearIdentifier)}
+      key={yearIdentifier}
       className={
         "menu-year-element " +
         (year === yearIdentifier ? " menu-year--selected" : "")
