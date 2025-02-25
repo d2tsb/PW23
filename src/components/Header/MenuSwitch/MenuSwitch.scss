@@ -3,10 +3,7 @@
   height: 30px;
   z-index: 8;
   filter: invert(1);
-  &:hover {
-    cursor: pointer;
-    opacity: 0.6;
-  }
+
   &--selected {
     opacity: 0.5;
   }
@@ -17,6 +14,10 @@
   width: 24px;
   height: 24px;
   margin: 0;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
   &-element {
     width: 24px;
     height: 2px;
