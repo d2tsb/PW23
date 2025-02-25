@@ -56,6 +56,7 @@ export const ProfileInfo: ProfileInfoType = {
       mail: {
         attributeType: "MAIL",
         description: "Mail",
+        url: "mailto:tilmansoerenw@ürtonmail.com",
         linkText: "tilmansoerenw@protonmail.com",
       },
       gitHub: {
