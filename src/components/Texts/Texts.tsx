@@ -9,10 +9,10 @@ import { textsWritten } from "../../__resources__/text/TextsWritten";
 import { menuBarOptions } from "../../__resources__/structure";
 
 const Texts = () => {
-  const { language } = useContext(PageContext);
+  const { language, year } = useContext(PageContext);
   const description = [
-    textsWritten.text0[language] ?? "no description found",
-    textsWritten.text1[language] ?? "no description found",
+    textsWritten.text0[year][language] ?? "no description found",
+    textsWritten.text1[year][language] ?? "no description found",
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(0);
