@@ -52,7 +52,7 @@ const ProfileAttribute = (values: ProfileLinkProps | ProfilePairProps) => {
     .with("PAIR", () => <ProfilePair {...values} />)
     .with("LINK", () => <ProfileLink {...values} />)
     .with("GITHUB", () => <ProfileLink {...values} />)
-    .with("MAIL", () => <ProfileLink {...values} />)
+    .with("MAIL", () => <ProfileLink {...values} />) //maybe refactor later to use PREFIXs
     .exhaustive();
 };
 
@@ -90,13 +90,11 @@ const ProfileInfo: ProfileInfoType = {
       mail: {
         attributeType: "MAIL",
         description: "Mail",
-        url: "mailto:tilmansoerenw@protonmail.com",
         linkText: "tilmansoerenw@protonmail.com",
       },
       gitHub: {
         attributeType: "GITHUB",
         description: "GitHub",
-        url: "https://www.github.com/d2tsb",
         linkText: "d2tsb",
       },
       work: {
@@ -194,38 +192,52 @@ const accumulateInfos = (selectedYear: Year, language: Language) => {
   );
 };
 
+const ProfilePicture = () => {
+  return <img src={imageMap.me} alt="me" className="profile__content--img" />;
+};
+const ProfileLogoSection = ({ language }: { language: Language }) => {
+  return (
+    <div>
+      <a href={linkedInUrl}>
+        <img
+          src={imageMap.linkedInLogo}
+          className="profile__logo"
+          alt="linked in logo"
+        ></img>
+      </a>
+      <a
+        href={
+          language ? "https://www.campudus.com/" : "https://www.campudus.com/en"
+        }
+        style={{ width: "0px" }}
+      >
+        <img
+          src={imageMap.campudusLogo}
+          style={{ filter: "invert(0)" }}
+          className="profile__logo"
+          alt="campudus logo"
+        ></img>
+      </a>
+    </div>
+  );
+};
+const ProfileInfoMap = ({
+  infos,
+}: {
+  infos: (ProfileLinkProps | ProfilePairProps)[];
+}) => {
+  return infos.map((v) => ProfileAttribute(v));
+};
+
 const Profile = () => {
   const { language, year } = useContext(PageContext);
   const infos = accumulateInfos(year, language);
   return (
     <div className="profile">
       <div className="profile__content">
-        <img src={imageMap.me} alt="me" className="profile__content--img" />
-        <div>
-          <a href={linkedInUrl}>
-            <img
-              src={imageMap.linkedInLogo}
-              className="profile__logo"
-              alt="linked in logo"
-            ></img>
-          </a>
-          <a
-            href={
-              language
-                ? "https://www.campudus.com/"
-                : "https://www.campudus.com/en"
-            }
-            style={{ width: "0px" }}
-          >
-            <img
-              src={imageMap.campudusLogo}
-              style={{ filter: "invert(0)" }}
-              className="profile__logo"
-              alt="campudus logo"
-            ></img>
-          </a>
-        </div>
-        {infos.map((v) => ProfileAttribute(v))}
+        <ProfilePicture />
+        <ProfileLogoSection language={language} />
+        <ProfileInfoMap infos={infos} />
       </div>
     </div>
   );
