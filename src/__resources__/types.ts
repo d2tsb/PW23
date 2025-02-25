@@ -12,3 +12,24 @@ export type GithubCrawlerInfo = {
   pushed_at: string;
   language: string;
 };
+
+export type ProfileAttributeTypes = "LINK" | "PAIR" | "GITHUB" | "MAIL";
+
+export type ProfileLinkProps = {
+  attributeType: ProfileAttributeTypes;
+  description?: string;
+  url?: string;
+  linkText?: string;
+};
+export type ProfilePairProps = {
+  attributeType: ProfileAttributeTypes;
+  description?: string;
+  value?: string;
+};
+export type ProfileInfoType = {
+  [key in Language]: {
+    [key in Year]: {
+      [key: string]: ProfileLinkProps | ProfilePairProps;
+    };
+  };
+};
