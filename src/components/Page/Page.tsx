@@ -42,7 +42,7 @@ const Page = () => {
     <div className="page__gif">
       <img
         className="page__gif--content"
-        alt="GIF"
+        alt="moving wallpaper"
         src={imageMap.topBanner}
       ></img>
     </div>
