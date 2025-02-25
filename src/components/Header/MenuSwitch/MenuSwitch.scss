@@ -26,12 +26,12 @@
     border-radius: 2px;
   }
   &-element--top {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(-45deg);
   }
   &-element--middle {
     opacity: 0;
   }
   &-element--bottom {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(45deg);
   }
 }
