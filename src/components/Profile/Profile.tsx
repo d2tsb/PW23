@@ -52,8 +52,9 @@ const ProfileAttribute = (values: ProfileLinkProps | ProfilePairProps) => {
     .with("PAIR", () => <ProfilePair {...values} />)
     .with("LINK", () => <ProfileLink {...values} />)
     .with("GITHUB", () => <ProfileLink {...values} />)
-    .with("MAIL", () => <ProfileLink {...values} />) //maybe refactor later to use PREFIXs
+    .with("MAIL", () => <ProfileLink {...values} />)
     .exhaustive();
+  //maybe refactor later to use PREFIXs for the different types MAIL and GITHUB
 };
 
 type ProfileInfoType = {
@@ -197,7 +198,7 @@ const ProfilePicture = () => {
 };
 const ProfileLogoSection = ({ language }: { language: Language }) => {
   return (
-    <div>
+    <div className="profile__logos">
       <a href={linkedInUrl}>
         <img
           src={imageMap.linkedInLogo}

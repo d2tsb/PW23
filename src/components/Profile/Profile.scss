@@ -16,7 +16,6 @@
       width: 10rem;
       height: auto;
       float: left;
-      margin-bottom: 20px;
     }
   }
   &__logo {
@@ -28,6 +27,10 @@
     &:hover {
       transform: scale(103%);
     }
+  }
+  &__logos {
+    margin-top: 20px;
+    margin-bottom: 5px;
   }
   &__link {
     margin-left: 5px;
