@@ -1,6 +1,4 @@
 import { imageMap } from "../../../__resources__/imageMap";
-import { useContext } from "react";
-import { PageContext } from "../../Page/Page";
 import { Language, Year } from "../../../__resources__/types";
 import { match } from "ts-pattern";
 
