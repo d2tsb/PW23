@@ -24,14 +24,14 @@ const GithubCrawler = () => {
   }, []);
 
   return (
-    <div className="gc">
+    <div className="gc" id="github-crawler">
       <ul className="gc__ul">
         {!(allrepos.length === 0 || allrepos === undefined) &&
           allrepos
             .sort(
               (a, b) =>
                 new Date(b["pushed_at"]).getTime() -
-                new Date(a["pushed_at"]).getTime()
+                new Date(a["pushed_at"]).getTime(),
             )
             .filter((a) => a["language"] !== null)
             .slice(0, limit)

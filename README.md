@@ -26,6 +26,7 @@ Please be welcomed to visit my [homepage](https://www.tilmanbertram.com).
   - Remove inline CSS-styling
   - Refactor into components
   - fix the text bump, when switching between 'About and Preferences'
+  - instead of year use quarter (q1, q2..) for versioning
 
 ### Dependencies
   - NodeJS
