@@ -11,3 +11,18 @@
     opacity: 0.5;
   }
 }
+
+.sandwich {
+  padding-top: 8px;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  &-element {
+    width: 24px;
+    height: 1.5px;
+    background-color: white;
+    margin-top: 6px;
+    transition: 0.4s;
+    border-radius: 2px;
+  }
+}
