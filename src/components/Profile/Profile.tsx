@@ -73,9 +73,16 @@ const Profile = () => {
             tilmansoerenw@protonmail.com
           </a>
         </div>
+
         <div>
           <text> GitHub: </text>
           <a className="profile__link" href="https://github.com/d2tsb">
+            dxdye
+          </a>
+        </div>
+        <div>
+          <text> GitHub2: </text>
+          <a className="profile__link" href="https://github.com/dxdye">
             d2tsb
           </a>
         </div>
