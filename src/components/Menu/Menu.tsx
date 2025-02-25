@@ -2,7 +2,6 @@ import "./Menu.scss";
 import { match } from "ts-pattern";
 import type { Language, Year } from "../../__resources__/types";
 import { PageContext } from "../Page/Page";
-import { useState } from "react";
 import { useContext } from "react";
 import { imageMap } from "../../__resources__/imageMap";
 
@@ -34,7 +33,7 @@ const LanguageSwitch = () => {
 
   return (
     <div className="menu-language">
-      <p> {description}</p>
+      <p key={"1"}> {description}</p>
       <div className="menu-language-elements">{languageMenuElements}</div>
     </div>
   );
@@ -85,23 +84,17 @@ const MenuSubmit = () => {
 };
 
 const MenuCanvas = () => {
-  const [revealMenu, setRevealMenu] = useState<string>("");
   const { showMenu } = useContext(PageContext);
-  const show = (showMenu: boolean) => {
-    setTimeout(() => {
-      setRevealMenu(" menu-show");
-    }, 500); //could do without
-    return showMenu ? "menu-canvas" : "";
-  };
-
   return (
-    <div className={show(showMenu) + revealMenu}>
-      <div className="menu-canvas-content">
-        <LanguageSwitch />
-        <YearSwitch />
-        <MenuSubmit />
+    showMenu && (
+      <div className="menu-canvas">
+        <div className="menu-canvas-content">
+          <LanguageSwitch />
+          <YearSwitch />
+          <MenuSubmit />
+        </div>
       </div>
-    </div>
+    )
   );
 };
 
