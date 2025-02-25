@@ -49,10 +49,10 @@ const ProfilePair = ({
 
 const ProfileAttribute = (values: ProfileLinkProps | ProfilePairProps) => {
   return match(values.attributeType)
+    .with("PAIR", () => <ProfilePair {...values} />)
     .with("LINK", () => <ProfileLink {...values} />)
     .with("GITHUB", () => <ProfileLink {...values} />)
     .with("MAIL", () => <ProfileLink {...values} />)
-    .with("PAIR", () => <ProfileLink {...values} />)
     .exhaustive();
 };
 
