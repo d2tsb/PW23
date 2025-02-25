@@ -4,11 +4,12 @@ import { Language, Year } from "../../../__resources__/types";
 import { imageMap } from "../../../__resources__/imageMap";
 import { PageContext } from "../../Page/Page";
 
-export default () => {
+const MenuSwitch = () => {
   const { setShowMenu, showMenu } = useContext(PageContext);
   return (
-    <div onClick={() => setShowMenu(!showMenu)}>
-      <img src={imageMap.menu} className="menu-switch" />
+    <div onClick={() => setShowMenu(true)}>
+      <img src={imageMap.menu} className="menu-switch" alt="sandwich" />
     </div>
   );
 };
+export default MenuSwitch;

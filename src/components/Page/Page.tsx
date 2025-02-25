@@ -33,8 +33,6 @@ export const PageContext = createContext<PageProps>({
   setYear: () => {},
 });
 
-const Cover = () => <div className="page__cover" />;
-
 const Page = () => {
   const [Language, setLanguage] = useState<Language>("de");
   const [colorTheme, setColorTheme] = useState<number>(0); //0 is dark, 1 is high.
