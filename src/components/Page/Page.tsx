@@ -35,9 +35,9 @@ export const PageContext = createContext<PageProps>({
 
 const Page = () => {
   const [Language, setLanguage] = useState<Language>("de");
-  const [colorTheme, setColorTheme] = useState<number>(0); //0 is dark, 1 is high.
-  const [showMenu, setShowMenu] = useState<boolean>(false); //0 is dark, 1 is high.
-  const [year, setYear] = useState<Year>("2025"); //0 is dark, 1 is high.
+  const [colorTheme, setColorTheme] = useState<number>(0);
+  const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [year, setYear] = useState<Year>("2025");
   const gif = (
     <div className="page__gif">
       <img
