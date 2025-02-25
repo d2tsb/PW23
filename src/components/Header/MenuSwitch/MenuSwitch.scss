@@ -19,10 +19,19 @@
   margin: 0;
   &-element {
     width: 24px;
-    height: 1.5px;
+    height: 2px;
     background-color: white;
     margin-top: 6px;
     transition: 0.4s;
     border-radius: 2px;
+  }
+  &-element--top {
+    transform: translateY(8px) rotate(45deg);
+  }
+  &-element--middle {
+    opacity: 0;
+  }
+  &-element--bottom {
+    transform: translateY(-8px) rotate(-45deg);
   }
 }
