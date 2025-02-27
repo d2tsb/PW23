@@ -5,17 +5,21 @@
   grid-column-start: 2;
   grid-column-end: 3;
   color: aliceblue;
-  /*background-color: rgb(37, 42, 42);*/
   background-color: #000;
 
-  /*background-image: linear-gradient(to bottom, #2e2e2e, #000000);*/
   flex-direction: column;
   align-items: center;
-  /*margin-right: 30rem;*/
   margin-left: 0;
-  /*overflow-y:auto;*/
   margin-top: 5vh;
   animation: fadegitin 1s forwards;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 50%);
+  transition:
+    opacity 300ms ease-out,
+    transform 300ms ease-out;
+  will-change: opacity, visibility;
 
   &__ul {
     padding-left: 0vh;
@@ -65,6 +69,12 @@
     color: #000;
     background-color: #000;
   }
+}
+.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  display: flex;
 }
 
 @keyframes fadegitin {

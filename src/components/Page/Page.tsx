@@ -20,7 +20,6 @@ interface PageProps {
   setLanguage: SetState<Language>;
   setShowMenu: SetState<boolean>;
   setYear: SetState<Year>;
-  githubCrawlerRef?: React.RefObject<HTMLDivElement>;
 }
 
 export const PageContext = createContext<PageProps>({
@@ -61,7 +60,6 @@ const Page = () => {
         setLanguage,
         setShowMenu,
         setYear,
-        githubCrawlerRef,
       }}
     >
       <div data-role="page" className="page__properties">

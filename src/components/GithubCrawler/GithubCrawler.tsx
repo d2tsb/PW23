@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "./GithubCrawler.scss";
 import GithubCrawlerElement from "./GithubCrawlerElement/GithubCrawlerElement";
-import { PageContext } from "../Page/Page";
-import { useContext } from "react";
+import { useRef } from "react";
 
 /*
  *description: crawls and shows the most recent Github repos that where pushed to
@@ -11,8 +10,21 @@ import { useContext } from "react";
 
 const GithubCrawler = () => {
   const limit = 5;
-  const { githubCrawlerRef } = useContext(PageContext);
   const [allrepos, setAllRepos] = useState<[]>([]);
+  const [isVisible, setVisible] = useState(false);
+
+  const domRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0]?.isIntersecting) {
+        setVisible(true);
+        observer.unobserve(domRef.current!);
+      }
+    });
+
+    observer.observe(domRef.current!);
+  }, []);
   useEffect(() => {
     const url = "https://api.github.com/users/d2tsb/repos";
     fetch(url) //fetch API
@@ -27,7 +39,7 @@ const GithubCrawler = () => {
   }, []);
 
   return (
-    <div className="gc" id="github-crawler" ref={githubCrawlerRef}>
+    <div ref={domRef} className={isVisible ? "gc is-visible " : "gc"}>
       <ul className="gc__ul">
         {!(allrepos.length === 0 || allrepos === undefined) &&
           allrepos
