@@ -4,11 +4,11 @@
   grid-column-start: 2;
   grid-column-end: 3;
   &__content {
+    display: grid;
     color: white;
     font-family: sans-serif;
     vertical-align: top;
     row-gap: 5px;
-    display: grid;
     align-items: start;
     font-size: 15px;
 
@@ -17,9 +17,6 @@
       height: auto;
       float: left;
       border-radius: 2px;
-    }
-    &--hide {
-      opacity: 0.5;
     }
   }
   &__logo {
@@ -39,5 +36,14 @@
   &__link {
     margin-left: 5px;
     color: rgb(125, 184, 171);
+  }
+}
+@media screen and (max-width: 600px) {
+  .profile {
+    &__content {
+      &--hide {
+        opacity: 0.5;
+      }
+    }
   }
 }
