@@ -1,15 +1,15 @@
-import Texts from "../Texts/Texts";
-import GithubCrawler from "../GithubCrawler/GithubCrawler";
-import { BottomBar } from "../BottomBar/BottomBar";
-import CopyRight from "../CopyRight/CopyRight";
-import Profile from "../Profile/Profile";
-import Menu from "../Menu/Menu";
-import { useState, useRef } from "react";
-import Header from "../Header/Header";
-import { imageMap } from "../../__resources__/imageMap";
-import { Language, SetState, Year } from "../../__resources__/types";
-import "./Page.scss";
-import { createContext } from "react";
+import Texts from '../Texts/Texts';
+import GithubCrawler from '../GithubCrawler/GithubCrawler';
+import { BottomBar } from '../BottomBar/BottomBar';
+import CopyRight from '../CopyRight/CopyRight';
+import Profile from '../Profile/Profile';
+import Menu from '../Menu/Menu';
+import { useState } from 'react';
+import Header from '../Header/Header';
+import { imageMap } from '../../__resources__/imageMap';
+import { Language, SetState, Year } from '../../__resources__/types';
+import './Page.scss';
+import { createContext } from 'react';
 
 interface PageProps {
   colorTheme: number;
@@ -24,9 +24,9 @@ interface PageProps {
 
 export const PageContext = createContext<PageProps>({
   colorTheme: 0,
-  language: "de",
+  language: 'de',
   showMenu: false,
-  year: "2025",
+  year: '2025',
   setColorTheme: () => {},
   setShowMenu: () => {},
   setLanguage: () => {},
@@ -34,18 +34,13 @@ export const PageContext = createContext<PageProps>({
 });
 
 const Page = () => {
-  const [Language, setLanguage] = useState<Language>("de");
+  const [Language, setLanguage] = useState<Language>('de');
   const [colorTheme, setColorTheme] = useState<number>(0);
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const [year, setYear] = useState<Year>("2025");
-  const githubCrawlerRef = useRef<HTMLDivElement>(null);
+  const [year, setYear] = useState<Year>('2025');
   const gif = (
-    <div className="page__gif">
-      <img
-        className="page__gif--content"
-        alt="moving wallpaper"
-        src={imageMap.topBanner}
-      ></img>
+    <div className='page__gif'>
+      <img className='page__gif--content' alt='moving wallpaper' src={imageMap.topBanner}></img>
     </div>
   );
 
@@ -62,8 +57,8 @@ const Page = () => {
         setYear,
       }}
     >
-      <div data-role="page" className="page__properties">
-        <div className="page__frame">
+      <div data-role='page' className='page__properties'>
+        <div className='page__frame'>
           <Menu />
           <Header />
           {gif}
