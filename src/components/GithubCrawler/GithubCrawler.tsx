@@ -1,8 +1,9 @@
-import "./GithubCrawler.scss";
-import GithubCrawlerElement from "./GithubCrawlerElement/GithubCrawlerElement";
-import { GithubCrawlerInfo } from "../../__resources__/types";
-import { useState, useEffect, useRef } from "react";
-import { getData } from "../../__resources__/helper";
+import './GithubCrawler.scss';
+import GithubCrawlerElement from './GithubCrawlerElement/GithubCrawlerElement';
+import { GithubCrawlerInfo } from '../../__resources__/types';
+import { useState, useEffect, useRef } from 'react';
+import { getData } from '../../__resources__/helper';
+import { sequentialize } from 'pragmatic-fp-ts';
 
 /*
  *description: crawls and shows the most recent Github repos that where pushed to
@@ -26,31 +27,26 @@ const GithubCrawler = () => {
     observer.observe(domRef.current!);
   }, []);
   useEffect(() => {
-    //this may be get refactored
-    const accounts = ["d2tsb", "dxdye"];
-    const buildUrl = (account: string) =>
-      `https://api.github.com/users/${account}/repos`;
+    //this can all be one layed out function
+    const accounts = ['d2tsb', 'dxdye']; //maybe refactor this later.. (redundant)
+    const buildUrl = (account: string) => `https://api.github.com/users/${account}/repos`;
     const getInfos = async (accounts: string[]) => {
-      accounts.map((account) =>
-        getData<GithubCrawlerInfo[]>(buildUrl(account)).then((data) => {
-          setRepos([...repos, ...data]);
-        }),
+      const repos = await sequentialize(
+        (account: string) => getData<GithubCrawlerInfo[]>(buildUrl(account)),
+        accounts,
       );
+      setRepos(repos.flat());
     };
     getInfos(accounts);
   }, []);
 
   return (
-    <div ref={domRef} className={isVisible ? "gc is-visible " : "gc"}>
-      <ul className="gc__ul">
+    <div ref={domRef} className={isVisible ? 'gc is-visible ' : 'gc'}>
+      <ul className='gc__ul'>
         {!(repos.length === 0 || repos === undefined) &&
           repos
-            .sort(
-              (a, b) =>
-                new Date(b["pushed_at"]).getTime() -
-                new Date(a["pushed_at"]).getTime(),
-            )
-            .filter((a) => a["language"] !== null)
+            .sort((a, b) => new Date(b['pushed_at']).getTime() - new Date(a['pushed_at']).getTime())
+            .filter((a) => a['language'] !== null)
             .slice(0, limit)
             .map((item) => <GithubCrawlerElement element={item} />)}
       </ul>
