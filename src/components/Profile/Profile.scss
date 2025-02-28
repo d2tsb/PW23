@@ -16,6 +16,10 @@
       width: 10rem;
       height: auto;
       float: left;
+      border-radius: 2px;
+    }
+    &--hide {
+      opacity: 0.5;
     }
   }
   &__logo {

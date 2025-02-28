@@ -86,7 +86,13 @@
     width: 95%;
     justify-content: flex-end;
     &--button {
+      background-color: #111;
       width: 40px;
+      border-radius: 2px;
+      &:hover {
+        background-color: #333;
+        cursor: pointer;
+      }
     }
   }
 }
