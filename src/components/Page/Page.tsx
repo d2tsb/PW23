@@ -58,8 +58,8 @@ const Page = () => {
       }}
     >
       <div data-role='page' className='page__properties'>
+        <Menu />
         <div className='page__frame'>
-          <Menu />
           <Header />
           {gif}
           <Profile />
