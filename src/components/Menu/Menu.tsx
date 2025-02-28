@@ -79,7 +79,7 @@ const MenuCanvas = () => {
           <LanguageSwitch />
           <YearSwitch />
           <MenuSubmit />
-          <div className='menu-canvas__background'></div>
+          <div className='menu-canvas__background' />
         </div>
       </div>
     )
