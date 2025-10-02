@@ -23,13 +23,17 @@ const Texts = () => {
       case 0:
         return (
           <div className='texts__content collapser'>
-            {linebreaker(description[0] ?? 'not found')}
+            <div className='texts__content--margin'>
+              {linebreaker(description[0] ?? 'not found')}
+            </div>
           </div>
         );
       case 1:
         return (
           <div className='texts__content collapser'>
-            {linebreaker(description[1] ?? 'not found')}
+            <div className='texts__content--margin'>
+              {linebreaker(description[1] ?? 'not found')}
+            </div>
           </div>
         );
       case 2:
