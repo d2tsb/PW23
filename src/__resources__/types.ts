@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export type SetState<T> = React.Dispatch<React.SetStateAction<T>>;
 
-export type Language = "en" | "de";
-export type Year = "2025" | "2024";
+export type Language = 'en' | 'de';
+export type Year = '2025' | '2024';
 
 export type GithubCrawlerInfo = {
   html_url: string;
@@ -13,7 +13,7 @@ export type GithubCrawlerInfo = {
   language: string;
 };
 
-export type ProfileAttributeTypes = "LINK" | "PAIR" | "GITHUB" | "MAIL";
+export type ProfileAttributeTypes = 'LINK' | 'PAIR' | 'GITHUB' | 'MAIL';
 
 export type ProfileLinkProps = {
   attributeType: ProfileAttributeTypes;
@@ -29,7 +29,7 @@ export type ProfilePairProps = {
 export type ProfileInfoType = {
   [key in Language]: {
     [key in Year]: {
-      [key: string]: ProfileLinkProps | ProfilePairProps;
+      [key: string]: ProfileLinkProps | ProfilePairProps | undefined;
     };
   };
 };

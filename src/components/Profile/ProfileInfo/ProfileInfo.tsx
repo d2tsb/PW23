@@ -83,6 +83,10 @@ export const ProfileLogoSection = ({ language }: { language: Language }) => {
     </div>
   );
 };
-export const ProfileInfoMap = ({ infos }: { infos: (ProfileLinkProps | ProfilePairProps)[] }) => {
-  return infos.map((v) => ProfileAttribute(v));
+export const ProfileInfoMap = ({
+  infos,
+}: {
+  infos: (ProfileLinkProps | ProfilePairProps | undefined)[];
+}) => {
+  return infos.filter((v) => v !== undefined).map((v) => ProfileAttribute(v));
 };
