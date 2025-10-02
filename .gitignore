@@ -10,7 +10,7 @@
 
 *.ps1
 *.txt
-src/__resources__/text/TextsWritten.ts
+src/__resources__/text/*
 
 /.fnf
 .fnf
