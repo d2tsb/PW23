@@ -59,7 +59,7 @@ const Page = () => {
     >
       <div data-role='page' className='page__properties'>
         <Menu />
-        <div className='page__frame'>
+        <div className='page__frame' onClick={() => (showMenu ? setShowMenu(false) : null)}>
           <Header />
           {gif}
           <Profile />
