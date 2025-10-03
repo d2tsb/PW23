@@ -1,6 +1,6 @@
 import { imageMap } from '../../../__resources__/imageMap';
 import { Language, Year } from '../../../__resources__/types';
-import { ProfileInfo, linkedInUrl } from '../../../__resources__/structure';
+import { ProfileInfo, linkedInUrl, schoolUrl } from '../../../__resources__/structure';
 import { ProfileLinkProps, ProfilePairProps } from '../../../__resources__/types';
 import { match } from 'ts-pattern';
 import { PageContext } from '../../Page/Page';
@@ -63,11 +63,15 @@ export const ProfilePicture = () => {
     />
   );
 };
+
 export const ProfileLogoSection = ({ language }: { language: Language }) => {
   return (
     <div className='profile__logos'>
       <a href={linkedInUrl}>
-        <img src={imageMap.linkedInLogo} className='profile__logo' alt='linked in logo'></img>
+        <img src={imageMap.linkedInLogo} className='profile__logo' alt='linkedin logo'></img>
+      </a>
+      <a href={schoolUrl}>
+        <img src={imageMap.hawLogo} className='profile__logo' alt='haw landshut logo'></img>
       </a>
       <a
         href={language ? 'https://www.campudus.com/' : 'https://www.campudus.com/en'}
