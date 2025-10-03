@@ -1,6 +1,11 @@
 import { imageMap } from '../../../__resources__/imageMap';
-import { Language, Year } from '../../../__resources__/types';
-import { ProfileInfo, linkedInUrl, schoolUrl } from '../../../__resources__/structure';
+import { AccountLink, Language, Year } from '../../../__resources__/types';
+import {
+  ProfileInfo,
+  accountLinks,
+  linkedInUrl,
+  schoolUrl,
+} from '../../../__resources__/structure';
 import { ProfileLinkProps, ProfilePairProps } from '../../../__resources__/types';
 import { match } from 'ts-pattern';
 import { PageContext } from '../../Page/Page';
@@ -64,26 +69,27 @@ export const ProfilePicture = () => {
   );
 };
 
-export const ProfileLogoSection = ({ language }: { language: Language }) => {
+const ProfileLogo =
+  ({ urlDest, imageLink, invert, alt }: AccountLink) =>
+  (language: Language) => (
+    <a
+      href={match(language)
+        .with('en', () => urlDest.en ?? urlDest.de)
+        .otherwise(() => urlDest.de)}
+    >
+      <img
+        src={imageLink}
+        style={!invert ? { filter: 'invert(0)' } : {}}
+        className='profile__logo'
+        alt={alt}
+      ></img>
+    </a>
+  );
+
+export const ProfileLogoSection = ({ language, year }: { language: Language; year: Year }) => {
   return (
     <div className='profile__logos'>
-      <a href={linkedInUrl}>
-        <img src={imageMap.linkedInLogo} className='profile__logo' alt='linkedin logo'></img>
-      </a>
-      <a href={schoolUrl}>
-        <img src={imageMap.hawLogo} className='profile__logo' alt='haw landshut logo'></img>
-      </a>
-      <a
-        href={language ? 'https://www.campudus.com/' : 'https://www.campudus.com/en'}
-        style={{ width: '0px' }}
-      >
-        <img
-          src={imageMap.campudusLogo}
-          style={{ filter: 'invert(0)' }}
-          className='profile__logo'
-          alt='campudus logo'
-        ></img>
-      </a>
+      {accountLinks[year].map((acl) => ProfileLogo(acl)(language))}
     </div>
   );
 };

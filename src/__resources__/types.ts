@@ -33,3 +33,17 @@ export type ProfileInfoType = {
     };
   };
 };
+
+export type AccountLink = {
+  imageLink: string;
+  alt: string;
+  urlDest: {
+    en?: string;
+    de: string;
+  };
+  invert?: boolean;
+};
+
+export type AccountLinks = {
+  [key in Year]: AccountLink[];
+};

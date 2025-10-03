@@ -1,4 +1,5 @@
-import { ProfileInfoType } from './types';
+import { imageMap } from './imageMap';
+import { AccountLinks, ProfileInfoType } from './types';
 
 export const menuBarOptions = {
   en: ['About', 'Preferences and Focus', 'History'],
@@ -28,9 +29,6 @@ export const lifeLineDescriptions = {
     '2024: Webdeveloper at Campudus Developers',
   ],
 };
-export const linkedInUrl = 'https://www.linkedin.com/in/tsbertram/';
-export const schoolUrl = 'https://www.haw-landshut.de/';
-
 export const ProfileInfo: ProfileInfoType = {
   de: {
     '2024': {
@@ -145,4 +143,52 @@ export const ProfileInfo: ProfileInfoType = {
       work: undefined,
     },
   },
+};
+
+export const linkedInUrl = 'https://www.linkedin.com/in/tsbertram/';
+export const schoolUrl = 'https://www.haw-landshut.de/';
+
+export const accountLinks: AccountLinks = {
+  2025: [
+    {
+      imageLink: imageMap.linkedInLogo,
+      urlDest: {
+        de: linkedInUrl,
+      },
+      invert: true,
+      alt: 'linkedin logo',
+    },
+    {
+      imageLink: imageMap.hawLogo,
+      urlDest: {
+        de: schoolUrl,
+      },
+      alt: 'haw logo',
+    },
+  ],
+  2024: [
+    {
+      imageLink: imageMap.linkedInLogo,
+      invert: true,
+      urlDest: {
+        de: linkedInUrl,
+      },
+      alt: 'linkedin logo',
+    },
+    {
+      imageLink: imageMap.hawLogo,
+      urlDest: {
+        de: schoolUrl,
+      },
+      alt: 'haw logo',
+    },
+    {
+      imageLink: imageMap.campudusLogo,
+      urlDest: {
+        de: 'https://www.campudus.com/',
+        en: 'https://www.campudus.com/en',
+      },
+      alt: 'campudus logo',
+    },
+  ],
 };
