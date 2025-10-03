@@ -29,6 +29,7 @@ export const lifeLineDescriptions = {
   ],
 };
 export const linkedInUrl = 'https://www.linkedin.com/in/tsbertram/';
+export const schoolUrl = 'https://www.haw-landshut.de/';
 
 export const ProfileInfo: ProfileInfoType = {
   de: {
