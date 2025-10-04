@@ -19,6 +19,7 @@
     }
     padding: 3px;
     margin-right: 1vh;
+    color: #000;
   }
   &__image {
     width: 30px;
@@ -52,6 +53,9 @@
   &__image-div {
     display: flex;
     flex-direction: row;
+  }
+  &__link {
+    width: 30px;
   }
 }
 @keyframes rolloutright {

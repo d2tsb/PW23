@@ -49,9 +49,13 @@
   &__element {
     display: flex;
   }
-  &__text {
+  &__attrib {
+    color: #aaa;
+  }
+  &__value {
     padding: 2px;
     margin-right: 20px;
+    color: #fff;
   }
   &__li:hover {
     transition: transform 0.2s ease-in-out;
