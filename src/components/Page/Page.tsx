@@ -44,6 +44,7 @@ const Page = () => {
       <img className='page__gif--content' alt='moving wallpaper' src={imageMap.topBanner}></img>
     </div>
   );
+  const pageClass = 'page__properties ' + (colorTheme === 0 ? 'alt-theme' : 'dark-theme');
 
   return (
     <PageContext.Provider
@@ -58,7 +59,7 @@ const Page = () => {
         setYear,
       }}
     >
-      <div data-role='page' className='page__properties alt-theme'>
+      <div data-role='page' className={pageClass}>
         <Menu />
         <div className='page__frame ' onClick={() => (showMenu ? setShowMenu(false) : null)}>
           <Header />

@@ -88,12 +88,31 @@
     &--button {
       background-color: transparent;
       width: 40px;
-      border-radius: none;
-      border-style: none;
+      border: none;
       &:hover {
         background-color: var(--menu-border-color);
+        background: rgb(0, 0, 0, 0);
         cursor: pointer;
+        transform: scale(110%);
+        transition: transform 0.2s ease-in-out;
       }
+    }
+    &--theme {
+      margin-right: 10px;
+      width: 40px;
+      background: rgb(0, 0, 0, 0);
+      border: none;
+      &:hover {
+        background: rgb(0, 0, 0, 0);
+        cursor: pointer;
+        transform: scale(110%);
+        transition: transform 0.2s ease-in-out;
+      }
+    }
+    &--theme-img {
+      width: 25px;
+      height: 25px;
+      filter: invert(1) brightness(80%);
     }
   }
 }
