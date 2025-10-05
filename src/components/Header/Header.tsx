@@ -1,12 +1,12 @@
-import "./Header.scss";
-import MenuSwitch from "./MenuSwitch/MenuSwitch";
+import './Header.scss';
+import MenuSwitch from './MenuSwitch/MenuSwitch';
 
 const Header = () => {
-  const title = "Personal Homepage";
+  const title = ':Homepage';
   return (
-    <header className="header">
-      <div className="header__elements">
-        <p className="header__text">{title}</p>
+    <header className='header'>
+      <div className='header__elements'>
+        <p className='header__text'>{title}</p>
         <MenuSwitch />
       </div>
     </header>
