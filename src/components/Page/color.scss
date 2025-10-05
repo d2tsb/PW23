@@ -3,6 +3,7 @@
 
   --profile__content-color: white;
   --profile__link-color: rgb(125, 184, 171);
+  --profile-img-filter: none;
 
   --texts__elements-background-color: #303030;
   --texts__element-color: rgb(239, 239, 239);
@@ -41,6 +42,7 @@
   --bb__b: rgba(0, 0, 0, 0);
   --bb__element-color: #000;
   --bb__hide-color: #000;
+  --bb__image-filter: invert(1) brightness(60%);
 }
 
 .alt-theme {
@@ -48,6 +50,7 @@
 
   --profile__content-color: white;
   --profile__link-color: rgb(125, 184, 171);
+  --profile-img-filter: saturate(160%) brightness(110%) hue-rotate(3deg);
 
   --texts__elements-background-color: #8d8d8d;
   --texts__element-color: rgb(239, 239, 239);
@@ -73,8 +76,8 @@
   --gc-background-color: var(--page-background-color);
   --gc__ul-border-color: white;
   --gc__li-background-color: #8a8a8a;
-  --gc__li-a: #706e6e;
-  --gc__li-b: #4e4e4e;
+  --gc__li-a: #86918e;
+  --gc__li-b: #73727e;
   --gc__attrib-color: #aaa;
   --gc__value-color: #fff;
   --gc__button-color: #5e5656;
@@ -84,6 +87,7 @@
 
   --bb__a: #5e5e5e;
   --bb__b: rgba(0, 0, 0, 0);
-  --bb__element-color: #000;
+  --bb__element-color: #c2c2c5;
   --bb__hide-color: #000;
+  --bb__image-filter: invert(1) brightness(60%);
 }
