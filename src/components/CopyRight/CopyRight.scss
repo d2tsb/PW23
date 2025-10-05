@@ -8,7 +8,7 @@
   flex-direction: column;
 
   &__content {
-    color: rgba(147, 147, 147, 0.92);
+    color: var(--cr__content-color);
     animation: fadeincopyright 2s forwards;
     z-index: 1;
     font-size: small;

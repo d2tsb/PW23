@@ -1,7 +1,6 @@
 .bottom-bar {
   margin-top: 60px;
-  background-image: -webkit-gradient(bottom, #5e5e5e, rgba(0, 0, 0, 0));
-  background-image: linear-gradient(to bottom, #5e5e5e, rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to bottom, var(--bb__a), var(--bb__b));
   grid-row-start: 5;
   grid-row-end: 6;
   grid-column-start: 2;
@@ -19,7 +18,7 @@
     }
     padding: 3px;
     margin-right: 1vh;
-    color: #000;
+    color: var(--bb__element-color);
   }
   &__image {
     width: 30px;
@@ -47,7 +46,7 @@
     grid-column-end: 3;
 
     display: none;
-    color: black;
+    color: var(--bb__hide-color);
     margin-left: 1rem;
   }
   &__image-div {

@@ -14,10 +14,74 @@
   --menu-text-color: #bbb;
   --menu-border-color: #333;
   --menu-hover-selected: #8aa;
+
+  --ll-background-color: #000;
+  --ll__element-background-color: #bbb;
+  --ll__element-background-color--text: #bbb;
+  --ll__line-gradient--a: #fff;
+  --ll__line-gradient--b: rgb(0, 0, 0, 0);
+
+  --header-foreground-color: #ddd;
+
+  --gc-color: aliceblue;
+  --gc-background-color: #000;
+  --gc__ul-border-color: white;
+  --gc__li-background-color: #000;
+  --gc__li-a: #000;
+  --gc__li-b: #0e0e0e;
+  --gc__attrib-color: #aaa;
+  --gc__value-color: #fff;
+  --gc__button-color: #000;
+  --gc__button-background-color: #000;
+
+  --cr__content-color: rgba(147, 147, 147, 0.92);
+
+  --bb__a: #5e5e5e;
+  --bb__b: rgba(0, 0, 0, 0);
+  --bb__element-color: #000;
+  --bb__hide-color: #000;
 }
 
 .alt-theme {
-  --page-background-color: #077;
+  --page-background-color: #000;
+
   --profile__content-color: white;
   --profile__link-color: rgb(125, 184, 171);
+
+  --texts__elements-background-color: #303030;
+  --texts__element-color: rgb(239, 239, 239);
+  --texts__element-color-hover: rgb(100, 154, 211);
+  --texts__element-background-color-hover: #111;
+  --texts__element-color-active: rgb(239, 239, 239);
+  --texts__element-background-color-active: #1c1c1c;
+
+  --menu-text-color: #bbb;
+  --menu-border-color: #333;
+  --menu-hover-selected: #8aa;
+
+  --ll-background-color: #000;
+  --ll__element-background-color: #bbb;
+  --ll__element-background-color--text: #bbb;
+  --ll__line-gradient--a: #fff;
+  --ll__line-gradient--b: rgb(0, 0, 0, 0);
+
+  --header-foreground-color: #ddd;
+
+  --gc-color: aliceblue;
+  --gc-background-color: #000;
+  --gc__ul-border-color: white;
+  --gc__li-background-color: #000;
+  --gc__li-a: #000;
+  --gc__li-b: #0e0e0e;
+  --gc__attrib-color: #aaa;
+  --gc__value-color: #fff;
+  --gc__button-color: #000;
+  --gc__button-background-color: #000;
+
+  --cr__content-color: rgba(147, 147, 147, 0.92);
+
+  --bb__a: #5e5e5e;
+  --bb__b: rgba(0, 0, 0, 0);
+  --bb__element-color: #000;
+  --bb__hide-color: #000;
 }
