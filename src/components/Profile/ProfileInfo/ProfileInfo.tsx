@@ -1,11 +1,6 @@
 import { imageMap } from '../../../__resources__/imageMap';
 import { AccountLink, Language, Year } from '../../../__resources__/types';
-import {
-  ProfileInfo,
-  accountLinks,
-  linkedInUrl,
-  schoolUrl,
-} from '../../../__resources__/structure';
+import { ProfileInfo, accountLinks } from '../../../__resources__/structure';
 import { ProfileLinkProps, ProfilePairProps } from '../../../__resources__/types';
 import { match } from 'ts-pattern';
 import { PageContext } from '../../Page/Page';
