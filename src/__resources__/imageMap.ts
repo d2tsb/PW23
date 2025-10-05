@@ -7,6 +7,7 @@ export const imageMap = {
   codeBackground: buildImgPath('CodeBackground.png'),
   githubLogo: buildImgPath('GitHubLogo.png'),
   githubLogoTransparent: buildImgPath('GitHubLogoTransparent.png'),
+  themeSwitch: buildImgPath('contrast-svgrepo-com.svg'),
   lightLogo: buildImgPath('LightLogo.png'),
   linkedInLogo: buildImgPath('LinkedInLogo.svg'),
   submit: buildImgPath('greenArrow.svg'),

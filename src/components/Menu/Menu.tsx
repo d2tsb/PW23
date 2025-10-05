@@ -60,9 +60,15 @@ const YearSwitch = () => {
   );
 };
 const MenuSubmit = () => {
-  const { setShowMenu } = useContext(PageContext);
+  const { setShowMenu, setColorTheme } = useContext(PageContext);
   return (
     <div className='menu-submit'>
+      <button
+        className='menu-submit--theme'
+        onClick={() => setColorTheme((prev) => (prev === 0 ? 1 : 0))}
+      >
+        <img className='menu-submit--theme-img' src={imageMap.themeSwitch} alt='theme switch' />
+      </button>
       <button className='menu-submit--button' onClick={() => setShowMenu(false)}>
         <img src={imageMap.submit} alt='submit' />
       </button>
