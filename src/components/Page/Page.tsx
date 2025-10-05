@@ -58,7 +58,7 @@ const Page = () => {
         setYear,
       }}
     >
-      <div data-role='page' className='page__properties dark-theme'>
+      <div data-role='page' className='page__properties alt-theme'>
         <Menu />
         <div className='page__frame ' onClick={() => (showMenu ? setShowMenu(false) : null)}>
           <Header />

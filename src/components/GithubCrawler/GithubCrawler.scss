@@ -16,9 +16,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translate(0, 50%);
-  transition:
-    opacity 300ms ease-out,
-    transform 300ms ease-out;
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
   will-change: opacity, visibility;
 
   &__ul {
