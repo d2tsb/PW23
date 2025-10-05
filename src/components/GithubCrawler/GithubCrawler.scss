@@ -4,8 +4,8 @@
   grid-row-end: 5;
   grid-column-start: 2;
   grid-column-end: 3;
-  color: aliceblue;
-  background-color: #000;
+  color: var(--gc-color);
+  background-color: var(--gc-background-color);
 
   flex-direction: column;
   align-items: center;
@@ -25,7 +25,7 @@
     padding-left: 0vh;
     border: 3px;
     border-radius: 5px;
-    border-color: rgb(255, 255, 255);
+    border-color: --gc__ul-border-color;
   }
   &__li {
     transition: transform 0.5s ease-in-out;
@@ -35,8 +35,8 @@
     width: 80%;
     padding-bottom: 20px;
     padding-left: 2vh;
-    background-image: radial-gradient(#000, #0e0e0e);
-    background-color: #000;
+    background-image: radial-gradient(var(--gc__li-a), var(--gc__li-b));
+    background-color: var(--gc__li-background-color);
     border-radius: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -50,12 +50,12 @@
     display: flex;
   }
   &__attrib {
-    color: #aaa;
+    color: var(--gc__attrib-color);
   }
   &__value {
     padding: 2px;
     margin-right: 20px;
-    color: #fff;
+    color: var(--gc__value-color);
   }
   &__li:hover {
     transition: transform 0.2s ease-in-out;
@@ -70,8 +70,8 @@
   }
   &__button {
     border: 0px;
-    color: #000;
-    background-color: #000;
+    color: var(--gc__button-color);
+    background-color: var(--gc__button-background-color);
   }
 }
 .is-visible {
