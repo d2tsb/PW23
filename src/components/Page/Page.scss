@@ -42,6 +42,8 @@
     background-color: transparent;
 
     &--content {
+      padding: 4px 0px 0px;
+      //border-radius: 9px 9px 9px 9px;
       width: 100%;
       opacity: 0.2;
       object-fit: cover;
