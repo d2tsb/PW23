@@ -23,6 +23,7 @@
   &__image {
     width: 30px;
     height: 30px;
+    filter: var(--bb__image-filter);
   }
 
   &__image:hover + &__hide {
