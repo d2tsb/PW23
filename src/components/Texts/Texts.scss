@@ -9,26 +9,26 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #303030;
-    /*display: flex;*/
+    background-color: var(--texts__elements-background-color);
+
     flex-direction: row;
     justify-content: center;
   }
   &__element {
     display: block;
     text-align: center;
-    color: rgb(239, 239, 239);
+    color: var(--texts__element-color);
     padding: 14px 16px;
     text-decoration: none;
     &:hover {
-      background-color: #111;
-      color: rgb(100, 154, 211);
+      background-color: var(--texts__element-background-color-hover);
+      color: var(--texts__element-color-hover);
     }
     &--active {
       display: block;
       text-align: center;
-      color: rgb(239, 239, 239);
-      background-color: #1c1c1c;
+      color: var(--texts__element-color-active);
+      background-color: var(--texts__element-background-color-active);
       padding: 14px 16px;
       text-decoration: none;
     }
