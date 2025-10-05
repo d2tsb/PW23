@@ -35,10 +35,7 @@
   }
   &__content {
     color: white;
-    -webkit-background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
-    -khtml-background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
-    -moz-background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
-    background-image: linear-gradient(to bottom, #0e0e0e, rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to bottom, var(--texts__content-a), rgba(0, 0, 0, 0));
     padding: 6px;
 
     padding-bottom: 5vh;

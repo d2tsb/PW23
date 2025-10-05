@@ -44,7 +44,6 @@
     &--content {
       width: 100%;
       opacity: 0.2;
-      z-index: -7;
       object-fit: cover;
       mask-clip: border-box;
       mask: linear-gradient(to left, #000, rgba(255, 255, 255, 0));
