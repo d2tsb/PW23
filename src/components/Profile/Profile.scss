@@ -6,6 +6,7 @@
   &__content {
     display: grid;
     color: var(--profile__content-color);
+    background-color: transparent;
     font-family: sans-serif;
     vertical-align: top;
     row-gap: 5px;
