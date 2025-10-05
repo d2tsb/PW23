@@ -5,7 +5,7 @@
   grid-column-end: 3;
   &__content {
     display: grid;
-    color: white;
+    color: var(--profile__content-color);
     font-family: sans-serif;
     vertical-align: top;
     row-gap: 5px;
@@ -35,7 +35,7 @@
   }
   &__link {
     margin-left: 5px;
-    color: rgb(125, 184, 171);
+    color: var(--profile__link-color);
   }
 }
 @media screen and (max-width: 600px) {

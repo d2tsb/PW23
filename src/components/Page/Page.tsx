@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import { imageMap } from '../../__resources__/imageMap';
 import { Language, SetState, Year } from '../../__resources__/types';
 import './Page.scss';
+import './color.scss';
 import { createContext } from 'react';
 
 interface PageProps {
@@ -57,9 +58,9 @@ const Page = () => {
         setYear,
       }}
     >
-      <div data-role='page' className='page__properties'>
+      <div data-role='page' className='page__properties dark-theme'>
         <Menu />
-        <div className='page__frame' onClick={() => (showMenu ? setShowMenu(false) : null)}>
+        <div className='page__frame ' onClick={() => (showMenu ? setShowMenu(false) : null)}>
           <Header />
           {gif}
           <Profile />

@@ -1,0 +1,23 @@
+.dark-theme {
+  --page-background-color: #000;
+
+  --profile__content-color: white;
+  --profile__link-color: rgb(125, 184, 171);
+
+  --texts__elements-background-color: #303030;
+  --texts__element-color: rgb(239, 239, 239);
+  --texts__element-color-hover: rgb(100, 154, 211);
+  --texts__element-background-color-hover: #111;
+  --texts__element-color-active: rgb(239, 239, 239);
+  --texts__element-background-color-active: #1c1c1c;
+
+  --menu-text-color: #bbb;
+  --menu-border-color: #333;
+  --menu-hover-selected: #8aa;
+}
+
+.alt-theme {
+  --page-background-color: #077;
+  --profile__content-color: white;
+  --profile__link-color: rgb(125, 184, 171);
+}
