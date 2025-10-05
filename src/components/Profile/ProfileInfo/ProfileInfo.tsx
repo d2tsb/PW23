@@ -71,20 +71,21 @@ export const ProfilePicture = () => {
 
 const ProfileLogo =
   ({ urlDest, imageLink, invert, alt }: AccountLink) =>
-  (language: Language) => (
-    <a
-      href={match(language)
-        .with('en', () => urlDest.en ?? urlDest.de)
-        .otherwise(() => urlDest.de)}
-    >
-      <img
-        src={imageLink}
-        style={!invert ? { filter: 'invert(0)' } : {}}
-        className='profile__logo'
-        alt={alt}
-      ></img>
-    </a>
-  );
+  (language: Language) =>
+    (
+      <a
+        href={match(language)
+          .with('en', () => urlDest.en ?? urlDest.de)
+          .otherwise(() => urlDest.de)}
+      >
+        <img
+          src={imageLink}
+          style={!invert ? { filter: 'invert(0)' } : {}}
+          className='profile__logo'
+          alt={alt}
+        ></img>
+      </a>
+    );
 
 export const ProfileLogoSection = ({ language, year }: { language: Language; year: Year }) => {
   return (
