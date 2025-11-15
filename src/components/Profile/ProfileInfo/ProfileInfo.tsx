@@ -65,7 +65,7 @@ export const ProfilePicture = () => {
 };
 
 const ProfileLogo =
-  ({ urlDest, imageLink, invert, alt, width, height, bigZoom }: AccountLink) =>
+  ({ urlDest, imageLink, invert, alt, width, height, title }: AccountLink) =>
   (language: Language) =>
     (
       <a
@@ -75,21 +75,14 @@ const ProfileLogo =
       >
         <img
           src={imageLink}
-          style={
-            !invert
-              ? {
-                  filter: 'invert(0)',
-                  width: width,
-                  height: height,
-                }
-              : {
-                  filter: 'invert(1)',
-                  width: width,
-                  height: height,
-                }
-          }
-          className={'profile__logo ' + (bigZoom ? 'profile__logo--big-zoom' : '')}
+          style={{
+            filter: !invert ? 'invert(0)' : 'invert(1)',
+            width: width,
+            height: height,
+          }}
           alt={alt}
+          title={title ?? ''}
+          className='profile__logo'
         ></img>
       </a>
     );
