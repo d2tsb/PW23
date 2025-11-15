@@ -147,6 +147,8 @@ export const ProfileInfo: ProfileInfoType = {
 
 export const linkedInUrl = 'https://www.linkedin.com/in/tsbertram/';
 export const schoolUrl = 'https://www.haw-landshut.de/';
+export const awsBadgeCredlyUrl =
+  'https://www.credly.com/badges/d98f62d3-8d8e-446d-b945-583e67d83da5/public_url';
 
 export const accountLinks: AccountLinks = {
   2025: [
@@ -164,6 +166,16 @@ export const accountLinks: AccountLinks = {
         de: schoolUrl,
       },
       alt: 'haw logo',
+    },
+    {
+      imageLink: imageMap.creedlyAwsCloudFoundations,
+      urlDest: {
+        de: awsBadgeCredlyUrl,
+      },
+      alt: 'aws badge logo',
+      height: '42px',
+      width: '42px',
+      bigZoom: true,
     },
   ],
   2024: [
