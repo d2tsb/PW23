@@ -11,4 +11,5 @@ export const imageMap = {
   lightLogo: buildImgPath('LightLogo.png'),
   linkedInLogo: buildImgPath('LinkedInLogo.svg'),
   submit: buildImgPath('greenArrow.svg'),
+  creedlyAwsCloudFoundations: buildImgPath('Credly_AWS_Cloud_Foundations.png'),
 };

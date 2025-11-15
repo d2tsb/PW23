@@ -42,6 +42,9 @@ export type AccountLink = {
     de: string;
   };
   invert?: boolean;
+  height?: string;
+  width?: string;
+  bigZoom?: boolean;
 };
 
 export type AccountLinks = {
