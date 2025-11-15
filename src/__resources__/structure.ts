@@ -150,6 +150,9 @@ export const schoolUrl = 'https://www.haw-landshut.de/';
 export const awsBadgeCredlyUrl =
   'https://www.credly.com/badges/d98f62d3-8d8e-446d-b945-583e67d83da5/public_url';
 
+export const awsBadgeCredlyUrlML =
+  'https://www.credly.com/badges/65a29e8e-e608-4ee9-b988-5bda0ec037b3/public_url';
+
 export const accountLinks: AccountLinks = {
   2025: [
     {
@@ -173,9 +176,19 @@ export const accountLinks: AccountLinks = {
         de: awsBadgeCredlyUrl,
       },
       alt: 'aws badge logo',
+      title: 'AWS cloud foundations badge',
       height: '42px',
       width: '42px',
-      bigZoom: true,
+    },
+    {
+      imageLink: imageMap.creedlyAwsCloudFoundationsMl,
+      urlDest: {
+        de: awsBadgeCredlyUrlML,
+      },
+      alt: 'aws badge logo ml',
+      title: 'AWS ML foundations badge',
+      height: '42px',
+      width: '42px',
     },
   ],
   2024: [
