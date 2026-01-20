@@ -1,4 +1,3 @@
-import { imageMap } from '../../../__resources__/imageMap';
 import { AccountLink, Language, Year } from '../../../__resources__/types';
 import {
   ProfileInfo,
