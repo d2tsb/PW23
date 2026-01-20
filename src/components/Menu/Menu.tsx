@@ -45,7 +45,11 @@ const YearSwitch = () => {
       {yearName}
     </div>
   );
-  const languageMenuElements = [switchYear('No. 2025', '2025'), switchYear('No. 2024', '2024')];
+  const languageMenuElements = [
+    switchYear('No. 2026', '2026'),
+    switchYear('No. 2025', '2025'),
+    switchYear('No. 2024', '2024'),
+  ];
 
   const description = match(language)
     .with('de', () => 'Jahr:')

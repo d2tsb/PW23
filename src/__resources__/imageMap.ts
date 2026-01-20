@@ -2,6 +2,7 @@ const buildImgPath = (imgName: string) => `/images/${imgName}`;
 export const imageMap = {
   topBanner: buildImgPath('TopBanner.gif'),
   me: buildImgPath('Me.jpg'),
+  me2: buildImgPath('me2.png'),
   hawLogo: buildImgPath('landshut_logo.jpg'),
   campudusLogo: buildImgPath('CampudusLogo.png'),
   codeBackground: buildImgPath('CodeBackground.png'),

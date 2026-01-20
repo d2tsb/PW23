@@ -1,6 +1,11 @@
 import { imageMap } from '../../../__resources__/imageMap';
 import { AccountLink, Language, Year } from '../../../__resources__/types';
-import { ProfileInfo, accountLinks } from '../../../__resources__/structure';
+import {
+  ProfileInfo,
+  accountLinks,
+  applyFilterMapForProfilePicture,
+  imageMapByYear,
+} from '../../../__resources__/structure';
 import { ProfileLinkProps, ProfilePairProps } from '../../../__resources__/types';
 import { match } from 'ts-pattern';
 import { PageContext } from '../../Page/Page';
@@ -52,40 +57,42 @@ export const accumulateInfos = (selectedYear: Year, language: Language) => {
 };
 
 export const ProfilePicture = () => {
-  const { showMenu } = useContext(PageContext);
+  const { showMenu, year, colorTheme } = useContext(PageContext);
   return (
-    <img
-      src={imageMap.me}
-      alt='me'
-      className={
-        showMenu ? 'profile__content--img profile__content--hide' : 'profile__content--img '
-      }
-    />
+    <div className='profile__content--image-container'>
+      <img
+        src={imageMapByYear[year]}
+        alt='me'
+        className={
+          showMenu ? 'profile__content--img profile__content--hide' : 'profile__content--img '
+        }
+        style={{ filter: applyFilterMapForProfilePicture[colorTheme ? 'dark' : 'bright'][year] }}
+      />
+    </div>
   );
 };
 
 const ProfileLogo =
   ({ urlDest, imageLink, invert, alt, width, height, title }: AccountLink) =>
-  (language: Language) =>
-    (
-      <a
-        href={match(language)
-          .with('en', () => urlDest.en ?? urlDest.de)
-          .otherwise(() => urlDest.de)}
-      >
-        <img
-          src={imageLink}
-          style={{
-            filter: !invert ? 'invert(0)' : 'invert(1)',
-            width: width,
-            height: height,
-          }}
-          alt={alt}
-          title={title ?? ''}
-          className='profile__logo'
-        ></img>
-      </a>
-    );
+  (language: Language) => (
+    <a
+      href={match(language)
+        .with('en', () => urlDest.en ?? urlDest.de)
+        .otherwise(() => urlDest.de)}
+    >
+      <img
+        src={imageLink}
+        style={{
+          filter: !invert ? 'invert(0)' : 'invert(1)',
+          width: width,
+          height: height,
+        }}
+        alt={alt}
+        title={title ?? ''}
+        className='profile__logo'
+      ></img>
+    </a>
+  );
 
 export const ProfileLogoSection = ({ language, year }: { language: Language; year: Year }) => {
   return (
