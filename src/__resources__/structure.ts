@@ -85,6 +85,21 @@ export const ProfileInfo: ProfileInfoType = {
       },
       work: undefined,
     },
+    '2026': {
+      gitHub: {
+        attributeType: 'GITHUB',
+        description: 'GitHub',
+        url: 'https://www.github.com/dxdye',
+        linkText: 'dxdye',
+      },
+      gitHub2: {
+        attributeType: 'GITHUB',
+        description: 'GitHub (privat)',
+        url: 'https://www.github.com/d2tsb',
+        linkText: 'd2tsb',
+      },
+      work: undefined,
+    },
   },
   en: {
     '2024': {
@@ -142,7 +157,37 @@ export const ProfileInfo: ProfileInfoType = {
       },
       work: undefined,
     },
+    '2026': {
+      gitHub: {
+        attributeType: 'GITHUB',
+        description: 'GitHub',
+        url: 'https://www.github.com/dxdye',
+        linkText: 'dxdye',
+      },
+      gitHub2: {
+        attributeType: 'GITHUB',
+        description: 'GitHub (private)',
+        url: 'https://www.github.com/d2tsb',
+        linkText: 'd2tsb',
+      },
+      work: undefined,
+    },
   },
+};
+
+export const applyFilterMapForProfilePicture = {
+  bright: {
+    '2024': 'saturate(150%) brightness(110%) hue-rotate(3deg);',
+    '2025': 'saturate(150%) brightness(110%) hue-rotate(3deg);',
+    '2026': '',
+  },
+  dark: { '2024': '', '2025': '', '2026': 'brightness(80%)' },
+};
+
+export const imageMapByYear = {
+  '2024': imageMap.me,
+  '2025': imageMap.me,
+  '2026': imageMap.me2,
 };
 
 export const linkedInUrl = 'https://www.linkedin.com/in/tsbertram/';
@@ -154,6 +199,23 @@ export const awsBadgeCredlyUrlML =
   'https://www.credly.com/badges/65a29e8e-e608-4ee9-b988-5bda0ec037b3/public_url';
 
 export const accountLinks: AccountLinks = {
+  2026: [
+    {
+      imageLink: imageMap.linkedInLogo,
+      urlDest: {
+        de: linkedInUrl,
+      },
+      invert: true,
+      alt: 'linkedin logo',
+    },
+    {
+      imageLink: imageMap.hawLogo,
+      urlDest: {
+        de: schoolUrl,
+      },
+      alt: 'haw logo',
+    },
+  ],
   2025: [
     {
       imageLink: imageMap.linkedInLogo,

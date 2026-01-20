@@ -27,7 +27,7 @@ export const PageContext = createContext<PageProps>({
   colorTheme: 0,
   language: 'de',
   showMenu: false,
-  year: '2025',
+  year: '2026',
   setColorTheme: () => {},
   setShowMenu: () => {},
   setLanguage: () => {},
@@ -38,7 +38,7 @@ const Page = () => {
   const [Language, setLanguage] = useState<Language>('de');
   const [colorTheme, setColorTheme] = useState<number>(0);
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const [year, setYear] = useState<Year>('2025');
+  const [year, setYear] = useState<Year>('2026');
   const gif = (
     <div className='page__gif'>
       <img className='page__gif--content' alt='moving wallpaper' src={imageMap.topBanner}></img>
