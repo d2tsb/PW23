@@ -215,6 +215,26 @@ export const accountLinks: AccountLinks = {
       },
       alt: 'haw logo',
     },
+    {
+      imageLink: imageMap.creedlyAwsCloudFoundations,
+      urlDest: {
+        de: awsBadgeCredlyUrl,
+      },
+      alt: 'aws badge logo',
+      title: 'AWS cloud foundations badge',
+      height: '42px',
+      width: '42px',
+    },
+    {
+      imageLink: imageMap.creedlyAwsCloudFoundationsMl,
+      urlDest: {
+        de: awsBadgeCredlyUrlML,
+      },
+      alt: 'aws badge logo ml',
+      title: 'AWS ML foundations badge',
+      height: '42px',
+      width: '42px',
+    },
   ],
   2025: [
     {
