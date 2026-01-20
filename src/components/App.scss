@@ -58,3 +58,11 @@ a:active {
   -ms-user-select: none;
   user-select: none;
 }
+
+img {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none; /* Optional: prevents drag and right-click */
+}
