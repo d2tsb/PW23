@@ -177,8 +177,8 @@ export const ProfileInfo: ProfileInfoType = {
 
 export const applyFilterMapForProfilePicture = {
   bright: {
-    '2024': 'saturate(150%) brightness(110%) hue-rotate(3deg);',
-    '2025': 'saturate(150%) brightness(110%) hue-rotate(3deg);',
+    '2024': 'saturate(150%) brightness(110%) hue-rotate(3deg)',
+    '2025': 'saturate(150%) brightness(110%) hue-rotate(3deg)',
     '2026': '',
   },
   dark: { '2024': '', '2025': '', '2026': 'brightness(80%)' },
