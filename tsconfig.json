@@ -15,9 +15,9 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
 
-    /* If transpiling with TypeScript: */
-    "module": "NodeNext",
-    "outDir": "dist",
+    /* Vite does the transpiling; tsc is only used for type checking. */
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "sourceMap": true,
 
     "jsx": "react-jsx",

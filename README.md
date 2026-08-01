@@ -42,10 +42,12 @@ Please be welcomed to visit my [homepage](https://www.tilmanbertram.com).
   - `public/res/*` for the favicon
 
 ### Version
-#### install node 20 (f.e. via nvm)
-  `nvm install 20`
+#### install node 26 (f.e. via nvm)
+  `nvm install 26`
 
-  `nvm use 20`
+  `nvm use 26`
+
+  Alternatively, `nix-shell` (or `direnv allow`) provides Node 26 via `shell.nix`.
 
 ### Install Client
   `npm ci`

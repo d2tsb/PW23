@@ -2,9 +2,11 @@
 
 pkgs.mkShell {
   packages = with pkgs; [
-    # Node.js LTS (npm comes with it). nodejs_20 was dropped from nixpkgs
-    # after its 2026-04-30 EOL -- keep this on a maintained LTS.
-    nodejs_22
+    # Node.js (npm comes with it). Pin an explicit major so the shell stays
+    # reproducible across nixpkgs bumps. 26 goes LTS on 2026-10-28, EOL 2029-04-30.
+    # Keep this ahead of EOL -- nodejs_20 was dropped from nixpkgs outright
+    # once it went end-of-life on 2026-04-30.
+    nodejs_26
   ];
 
   # Security: audit on install, scoped to this shell only.
