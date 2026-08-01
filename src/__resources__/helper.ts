@@ -1,4 +1,4 @@
-export const getData = <S = any>(url: string): Promise<S> =>
+export const getData = <S = unknown>(url: string): Promise<S> =>
   fetch(url, {
     method: "GET",
   }).then((res) => res.json());

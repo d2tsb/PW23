@@ -1,5 +1,5 @@
 import './BottomBar.scss';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { imageMap } from '../../__resources__/imageMap';
 import { PageContext } from '../Page/Page';
 import { useContext } from 'react';

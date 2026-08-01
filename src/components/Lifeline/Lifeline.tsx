@@ -37,7 +37,7 @@ const Lifeline = () => {
   const { language } = useContext(PageContext);
   const numElements = descriptions[language].length;
   const LifeLineElements = [];
-  for (var i = 0; i < numElements; i++) {
+  for (let i = 0; i < numElements; i++) {
     LifeLineElements.push(
       <LifelineElement
         probsdelay={i * 0.1 + "s"}
