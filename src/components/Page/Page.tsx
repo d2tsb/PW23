@@ -4,27 +4,28 @@ import { BottomBar } from '../BottomBar/BottomBar';
 import CopyRight from '../CopyRight/CopyRight';
 import Profile from '../Profile/Profile';
 import Menu from '../Menu/Menu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import { imageMap } from '../../__resources__/imageMap';
-import { Language, SetState, Year } from '../../__resources__/types';
+import { Language, SetState, Theme, Year } from '../../__resources__/types';
+import { initialTheme, watchPreferredTheme } from '../../__resources__/theme';
 import './Page.scss';
 import './color.scss';
 import { createContext } from 'react';
 
 interface PageProps {
-  colorTheme: number;
+  colorTheme: Theme;
   language: Language;
   showMenu: boolean;
   year: Year;
-  setColorTheme: SetState<number>;
+  setColorTheme: SetState<Theme>;
   setLanguage: SetState<Language>;
   setShowMenu: SetState<boolean>;
   setYear: SetState<Year>;
 }
 
 export const PageContext = createContext<PageProps>({
-  colorTheme: 0,
+  colorTheme: 'light',
   language: 'de',
   showMenu: false,
   year: '2026',
@@ -36,15 +37,19 @@ export const PageContext = createContext<PageProps>({
 
 const Page = () => {
   const [Language, setLanguage] = useState<Language>('de');
-  const [colorTheme, setColorTheme] = useState<number>(0);
+  // Lazy initializer: liest localStorage und Systemeinstellung genau einmal.
+  const [colorTheme, setColorTheme] = useState<Theme>(initialTheme);
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [year, setYear] = useState<Year>('2026');
+
+  // Folgt dem System, solange keine eigene Wahl im localStorage steht.
+  useEffect(() => watchPreferredTheme(setColorTheme), []);
   const gif = (
     <div className='page__gif'>
       <img className='page__gif--content' alt='moving wallpaper' src={imageMap.topBanner}></img>
     </div>
   );
-  const pageClass = 'page__properties ' + (colorTheme === 0 ? 'alt-theme' : 'dark-theme');
+  const pageClass = `page__properties ${colorTheme}`;
 
   return (
     <PageContext.Provider

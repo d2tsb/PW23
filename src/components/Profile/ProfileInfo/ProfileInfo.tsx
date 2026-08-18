@@ -65,7 +65,7 @@ export const ProfilePicture = () => {
         className={
           showMenu ? 'profile__content--img profile__content--hide' : 'profile__content--img '
         }
-        style={{ filter: applyFilterMapForProfilePicture[colorTheme ? 'dark' : 'bright'][year] }}
+        style={{ filter: applyFilterMapForProfilePicture[colorTheme][year] }}
       />
     </div>
   );

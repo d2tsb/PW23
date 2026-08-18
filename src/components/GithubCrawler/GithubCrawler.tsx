@@ -1,6 +1,6 @@
 import './GithubCrawler.scss';
 import GithubCrawlerElement from './GithubCrawlerElement/GithubCrawlerElement';
-import { GithubCrawlerInfo } from '../../__resources__/types';
+import { CachedResponse, GithubCrawlerInfo } from '../../__resources__/types';
 import { useState, useEffect, useRef } from 'react';
 import { getData } from '../../__resources__/helper';
 import { sequentialize } from 'pragmatic-fp-ts';
@@ -29,12 +29,17 @@ const GithubCrawler = () => {
   useEffect(() => {
     //this can all be one layed out function
     const accounts = ['d2tsb', 'dxdye']; //maybe refactor this later.. (redundant)
-    const buildUrl = (account: string) => `https://api.github.com/users/${account}/repos`;
+    // Backend statt api.github.com: der Token liegt damit serverseitig und das
+    // Rate-Limit steigt von 60 auf 5000 Requests/Stunde. nginx schneidet /api/ ab,
+    // beim Backend kommt /github/:account/repos an.
+    const buildUrl = (account: string) => `/api/github/${account}/repos`;
+    // Faellt ein Account aus, bleiben die uebrigen sichtbar - statt einer leeren Sektion.
+    const fetchAccount = (account: string) =>
+      getData<CachedResponse<GithubCrawlerInfo[]>>(buildUrl(account))
+        .then((response) => response.data ?? [])
+        .catch(() => []);
     const getInfos = async (accounts: string[]) => {
-      const repos = await sequentialize(
-        (account: string) => getData<GithubCrawlerInfo[]>(buildUrl(account)),
-        accounts,
-      );
+      const repos = await sequentialize(fetchAccount, accounts);
       setRepos(repos.flat());
     };
     getInfos(accounts);
