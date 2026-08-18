@@ -29,6 +29,16 @@ export type CachedResponse<T> = {
   data: T;
 };
 
+/**
+ * Inhalt von /texts.json. Bewusst durchgehend `Partial`: Das ist zur Laufzeit
+ * geholtes JSON, keine mitkompilierte Konstante - fehlende Jahre oder Sprachen
+ * sind ein moeglicher Zustand und muessen am Verwendungsort abgefangen werden.
+ */
+export type TextsWritten = {
+  about: Partial<Record<Year, Partial<Record<Language, string>>>>;
+  focus: Partial<Record<Year, Partial<Record<Language, string>>>>;
+};
+
 export type ProfileAttributeTypes = 'LINK' | 'PAIR' | 'GITHUB' | 'MAIL';
 
 export type ProfileLinkProps = {
