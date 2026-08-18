@@ -29,14 +29,21 @@ const GithubCrawler = () => {
   useEffect(() => {
     //this can all be one layed out function
     const accounts = ['d2tsb', 'dxdye']; //maybe refactor this later.. (redundant)
-    // Backend statt api.github.com: der Token liegt damit serverseitig und das
-    // Rate-Limit steigt von 60 auf 5000 Requests/Stunde. nginx schneidet /api/ ab,
-    // beim Backend kommt /github/:account/repos an.
-    const buildUrl = (account: string) => `/api/github/${account}/repos`;
-    // Faellt ein Account aus, bleiben die uebrigen sichtbar - statt einer leeren Sektion.
-    const fetchAccount = (account: string) =>
-      getData<CachedResponse<GithubCrawlerInfo[]>>(buildUrl(account))
+    // Primaerquelle: das eigene Backend. Es cacht die GitHub-Antwort und haelt
+    // sie ueber ETags aktuell. nginx schneidet /api/ ab, beim Dienst kommt
+    // /github/:account/repos an (siehe modules/pw23-be.nix).
+    const buildApiUrl = (account: string) => `/api/github/${account}/repos`;
+    // Rueckfallebene: GitHub direkt. Greift in der lokalen Entwicklung ohne
+    // laufendes pw23-be und wenn das Backend in Produktion nicht antwortet.
+    // Kein Nachteil beim Rate-Limit: das Backend arbeitet ebenfalls ohne Token,
+    // und ohne Backend zaehlt der Aufruf gegen die IP des Besuchers.
+    const buildGithubUrl = (account: string) => `https://api.github.com/users/${account}/repos`;
+    // Faellt ein Account komplett aus, bleiben die uebrigen sichtbar -
+    // statt einer leeren Sektion.
+    const fetchAccount = (account: string): Promise<GithubCrawlerInfo[]> =>
+      getData<CachedResponse<GithubCrawlerInfo[]>>(buildApiUrl(account))
         .then((response) => response.data ?? [])
+        .catch(() => getData<GithubCrawlerInfo[]>(buildGithubUrl(account)))
         .catch(() => []);
     const getInfos = async (accounts: string[]) => {
       const repos = await sequentialize(fetchAccount, accounts);
