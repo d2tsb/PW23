@@ -4,6 +4,7 @@ import type { Language, Year } from '../../__resources__/types';
 import { PageContext } from '../Page/Page';
 import { useContext } from 'react';
 import { imageMap } from '../../__resources__/imageMap';
+import { nextTheme, storeTheme } from '../../__resources__/theme';
 
 const LanguageSwitch = () => {
   const { language, setLanguage } = useContext(PageContext);
@@ -64,13 +65,15 @@ const YearSwitch = () => {
   );
 };
 const MenuSubmit = () => {
-  const { setShowMenu, setColorTheme } = useContext(PageContext);
+  const { setShowMenu, colorTheme, setColorTheme } = useContext(PageContext);
+  const toggleTheme = () => {
+    const next = nextTheme(colorTheme);
+    storeTheme(next);
+    setColorTheme(next);
+  };
   return (
     <div className='menu-submit'>
-      <button
-        className='menu-submit--theme'
-        onClick={() => setColorTheme((prev) => (prev === 0 ? 1 : 0))}
-      >
+      <button className='menu-submit--theme' onClick={toggleTheme}>
         <img className='menu-submit--theme-img' src={imageMap.themeSwitch} alt='theme switch' />
       </button>
       <button className='menu-submit--button' onClick={() => setShowMenu(false)}>
