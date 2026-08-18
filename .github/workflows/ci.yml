@@ -1,0 +1,59 @@
+name: ci
+
+on:
+  push:
+    # '**' und nicht '*': Der Stern matcht in GitHubs Filtern keine
+    # Schraegstriche, feat/year-2026 fiele damit durch. Doppelstern matcht
+    # jeden Branchnamen - Tags loesen weiterhin nichts aus, dafuer braeuchte
+    # es einen eigenen tags-Filter.
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+# Jeder Branch laeuft jetzt, entsprechend haeufiger startet die Pipeline.
+# Bei mehreren Pushes hintereinander bricht das die veralteten Laeufe ab,
+# statt sie zu Ende rechnen zu lassen.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # node-version-file statt einer festen Zahl: .nvmrc ist bereits die
+      # Quelle der Wahrheit fuer nvm und wird in shell.nix gespiegelt. Eine
+      # zweite Stelle mit einer Versionsnummer laeuft sonst irgendwann
+      # auseinander.
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      # ci statt install: installiert exakt das, was package-lock.json
+      # festschreibt, und bricht bei Abweichung zwischen Lockfile und
+      # package.json ab, statt die Abweichung stillschweigend aufzuloesen.
+      - name: Abhaengigkeiten
+        run: npm ci
+
+      - name: Linter
+        run: npm run lint
+
+      - name: Typen
+        run: npm run typecheck
+
+      # Faengt, was tsc nicht sieht: fehlende Assets, kaputte SCSS-Importe,
+      # Fehler in der Vite-Konfiguration.
+      - name: Build
+        run: npm run build
+
+      # Das fertige dist/ als Artefakt. Nuetzlich zum Nachsehen, was ein
+      # Commit tatsaechlich erzeugt hat - und die Grundlage, falls spaeter
+      # ein Deploy-Workflow dazukommt.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 7

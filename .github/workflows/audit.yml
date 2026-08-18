@@ -1,0 +1,30 @@
+name: audit
+
+on:
+  # Neue Schwachstellen entstehen ohne eigenes Zutun - deshalb zeitgesteuert
+  # und nicht nur bei Aenderungen.
+  schedule:
+    - cron: "0 6 * * 1" # montags 06:00 UTC
+  # Zusaetzlich, sobald sich Abhaengigkeiten tatsaechlich aendern.
+  pull_request:
+    paths:
+      - package.json
+      - package-lock.json
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      # Dieselbe Schwelle wie in shell.nix (NPM_CONFIG_AUDIT_LEVEL=moderate),
+      # damit lokal und in CI nicht unterschiedliche Grenzen gelten.
+      #
+      # npm audit braucht kein npm ci: es wertet package-lock.json aus.
+      - name: npm audit
+        run: npm audit --audit-level=moderate
