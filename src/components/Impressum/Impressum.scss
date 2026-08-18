@@ -1,5 +1,83 @@
+// Die Route liegt ausserhalb von <Page>, es gibt hier also keine Theme-Klasse
+// und damit keine CSS-Variablen aus color.scss. Die Farben stehen deshalb
+// direkt hier - abgestimmt auf den schwarzen body-Hintergrund aus App.scss.
 .impressum {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  color: #ddd;
+  line-height: 1.65;
+
+  &__back {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #8aa;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__title {
+    margin: 0 0 2.5rem;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  &__section {
+    margin-bottom: 2.5rem;
+
+    h2 {
+      margin: 0 0 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #333;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    h3 {
+      margin: 1.5rem 0 0.4rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #bbb;
+    }
+
+    p {
+      margin: 0 0 0.75rem;
+    }
+
+    code {
+      padding: 0.1rem 0.3rem;
+      border-radius: 3px;
+      background: #1c1c1c;
+      font-size: 0.9em;
+    }
+  }
+
+  &__links {
+    margin: 0;
+    padding-left: 1.2rem;
+
+    // App.scss setzt global `li { float: left; display: inline; }` - das macht
+    // die Menueleisten horizontal und wird dort gebraucht. Hier muss es zurueck
+    // auf Listenverhalten: ohne display:list-item gibt es keine Aufzaehlungs-
+    // zeichen, und ohne float:none brechen die Eintraege aus dem Fluss aus,
+    // wodurch die folgende Ueberschrift verrutscht.
+    li {
+      float: none;
+      display: list-item;
+      margin-bottom: 0.35rem;
+    }
+  }
+
+  a {
+    color: #7db8ab;
+
+    &:hover {
+      color: #9ad3c5;
+    }
+  }
 }

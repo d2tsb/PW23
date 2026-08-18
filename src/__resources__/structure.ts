@@ -6,9 +6,14 @@ export const menuBarOptions = {
   de: ['Übersicht', 'Fokus', 'Werdegang'],
 };
 
+// Nicht "Impressum": Das Wort steht fuer die Pflichtangaben nach § 5 DDG, zu
+// denen zwingend eine ladungsfaehige Anschrift gehoert. Diese Seite ist eine
+// private Portfolio-Seite ohne entgeltliches Angebot und damit nicht
+// impressumspflichtig - die Angaben sind freiwillig, und die Beschriftung
+// sollte das nicht anders behaupten.
 export const bottomBarOptions = {
-  en: 'Legals',
-  de: 'Impressum',
+  en: 'Privacy & Legal',
+  de: 'Privacy & Legal',
 };
 
 export const lifeLineDescriptions = {
@@ -55,7 +60,7 @@ export const ProfileInfo: ProfileInfoType = {
       mail: {
         attributeType: 'MAIL',
         description: 'Mail',
-        url: 'mailto:tilmansoerenw@ürtonmail.com',
+        url: 'mailto:tilmansoerenw@protonmail.com',
         linkText: 'tilmansoerenw@protonmail.com',
       },
       gitHub: {
