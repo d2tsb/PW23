@@ -21,13 +21,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # node-version-file statt einer festen Zahl: .nvmrc ist bereits die
       # Quelle der Wahrheit fuer nvm und wird in shell.nix gespiegelt. Eine
       # zweite Stelle mit einer Versionsnummer laeuft sonst irgendwann
       # auseinander.
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -52,7 +52,7 @@ jobs:
       # Das fertige dist/ als Artefakt. Nuetzlich zum Nachsehen, was ein
       # Commit tatsaechlich erzeugt hat - und die Grundlage, falls spaeter
       # ein Deploy-Workflow dazukommt.
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: dist
           path: dist/
