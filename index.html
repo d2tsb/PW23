@@ -13,6 +13,13 @@
          nicht unter /public/res/. -->
     <link rel="icon" href="/res/logo.png" />
 
+    <!-- Die Seitentexte werden zur Laufzeit geholt (siehe Texts.tsx). Ohne
+         diesen Hinweis startet der Request erst, wenn React gemountet ist -
+         also nach dem Laden und Auswerten des Bundles. Der Preload zieht ihn
+         parallel dazu und nimmt damit einen kompletten Round-Trip aus dem
+         kritischen Pfad. -->
+    <link rel="preload" as="fetch" href="/texts.json" crossorigin />
+
     <title>Tilman - Sören Bertram</title>
 
     <!-- Open Graph / Twitter.
