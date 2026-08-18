@@ -32,3 +32,6 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Texte und erzeugte JSON - siehe scripts/export-texts.mjs
+/public/texts.json

@@ -9,9 +9,60 @@
       name="description"
       content="Hi, my name is Tilman - Sören Bertram and I'm a Fullstack developer and currently student at HAW Landshut."
     />
-    <link rel="icon" href="public/res/logo.png" />
+    <!-- Vite kopiert public/* nach dist/* - die Datei liegt also unter /res/,
+         nicht unter /public/res/. -->
+    <link rel="icon" href="/res/logo.png" />
 
     <title>Tilman - Sören Bertram</title>
+
+    <!-- Open Graph / Twitter.
+         Die Vorschau-Bots von LinkedIn, Slack, WhatsApp und Co. fuehren KEIN
+         JavaScript aus - fuer sie ist ausschliesslich dieses rohe HTML
+         sichtbar. Alles, was per fetch nachgeladen wird, sehen sie nie. -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Tilman - Sören Bertram" />
+    <meta property="og:title" content="Tilman - Sören Bertram" />
+    <meta
+      property="og:description"
+      content="Fullstack-Entwickler und Informatikstudent an der HAW Landshut. Jakarta EE, Quarkus, TypeScript, verteilte Systeme und Serverless auf AWS."
+    />
+    <meta property="og:url" content="https://www.tilmanbertram.com/" />
+    <meta property="og:image" content="https://www.tilmanbertram.com/res/logo.png" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="canonical" href="https://www.tilmanbertram.com/" />
+
+    <!-- Strukturierte Daten. Fuer eine persoenliche Seite die wirksamste
+         Auszeichnung: Suchmaschinen verknuepfen damit Name, Taetigkeit und
+         Profile miteinander, ohne dass dafuer Fliesstext noetig waere. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tilman-Sören Bertram",
+        "url": "https://www.tilmanbertram.com/",
+        "jobTitle": "Fullstack Developer",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Hochschule für angewandte Wissenschaften Landshut",
+          "url": "https://www.haw-landshut.de/"
+        },
+        "knowsAbout": [
+          "Jakarta EE",
+          "Quarkus",
+          "TypeScript",
+          "Distributed Systems",
+          "Serverless Computing",
+          "Optical Character Recognition"
+        ],
+        "sameAs": [
+          "https://github.com/dxdye",
+          "https://www.linkedin.com/in/tsbertram/"
+        ]
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

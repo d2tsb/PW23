@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+
+    # Nur auf Loopback. TLS, ACME und der öffentliche Eingang liegen beim
+    # nginx des Hosts, der hierher weiterreicht - der Container braucht keine
+    # von außen erreichbare Adresse.
+    ports:
+      - "127.0.0.1:8080:8080"
+
+    # Statisches Ausliefern von ein paar hundert KB. nginx kommt damit weit
+    # unter dieser Grenze aus; sie ist die Sicherung, kein Budget.
+    mem_limit: 64m

@@ -1,19 +1,34 @@
 import '../App.scss';
 import './Texts.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../Lifeline/Lifeline';
 import Lifeline from '../Lifeline/Lifeline';
 import { useContext } from 'react';
 import { PageContext } from '../Page/Page';
-import { textsWritten } from '../../__resources__/text/TextsWritten';
 import { menuBarOptions } from '../../__resources__/structure';
+import { getData } from '../../__resources__/helper';
+import { TextsWritten } from '../../__resources__/types';
 import linebreaker from '../../__resources__/linebreaker';
 
 const Texts = () => {
   const { language, year } = useContext(PageContext);
+
+  // Die Texte liegen nicht im Bundle, sondern werden zur Laufzeit geholt.
+  // In der Entwicklung liefert der Vite-Server sie aus public/, in Produktion
+  // nginx per alias aus dem State-Verzeichnis - der Build kennt sie nicht.
+  const [texts, setTexts] = useState<TextsWritten | null>(null);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    getData<TextsWritten>('/texts.json')
+      .then(setTexts)
+      .catch(() => setFailed(true));
+  }, []);
+
+  const placeholder = failed ? 'Text konnte nicht geladen werden.' : '…';
   const description = [
-    textsWritten.about[year][language] ?? 'no description found',
-    textsWritten.focus[year][language] ?? 'no description found',
+    texts?.about[year]?.[language] ?? placeholder,
+    texts?.focus[year]?.[language] ?? placeholder,
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(0);
