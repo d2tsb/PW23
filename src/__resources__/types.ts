@@ -11,7 +11,15 @@ export type GithubCrawlerInfo = {
   full_name: string;
   description: string;
   pushed_at: string;
+  /** Groesste Sprache - was GitHub in der Repo-Liste allein mitliefert. */
   language: string;
+  /**
+   * Vollstaendige Verteilung in Bytes, vom Backend nachgereicht.
+   * `null` heisst "noch nicht geholt", nicht "keine Sprachen" - die Angabe
+   * kostet dort einen eigenen Request je Repository und wird gedrosselt
+   * ergaenzt.
+   */
+  languages?: Record<string, number> | null;
 };
 
 /**
