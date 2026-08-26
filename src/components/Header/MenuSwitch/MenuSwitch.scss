@@ -10,12 +10,12 @@
     color: #ddd;
     font-style: italic;
 
+    // Kein Off-Screen-Trick: mit `position: absolute; top: -1000px` blieb das
+    // Element im Layout, behielt sein 14px-Padding und rendert den Text weiter.
+    // Der ragte dann rechts aus dem Viewport und hat die Seite um 14px
+    // verbreitert. `display: none` nimmt es komplett aus dem Layout.
     @include bp.up-to('xs') {
-      position: absolute;
-      top: -1000px;
-      opacity: 0;
-      width: 0;
-      height: 0;
+      display: none;
     }
   }
 }

@@ -36,10 +36,6 @@
     &:hover {
       transform: scale(103%);
     }
-
-    @include bp.up-to('xs') {
-      width: 30px;
-    }
   }
   &__logos {
     margin-top: 20px;

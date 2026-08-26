@@ -6,9 +6,8 @@
   grid-column-end: 3;
   color: var(--gc-color);
   background-color: var(--gc-background-color);
-
   flex-direction: column;
-  align-items: center;
+  align-items: stretch; // statt center: das ul fuellt die Grid-Spalte
   margin-left: 0;
   margin-top: 5vh;
   animation: fadegitin 1s forwards;
@@ -16,7 +15,9 @@
   opacity: 0;
   visibility: hidden;
   transform: translate(0, 50%);
-  transition: opacity 300ms ease-out, transform 300ms ease-out;
+  transition:
+    opacity 300ms ease-out,
+    transform 300ms ease-out;
   will-change: opacity, visibility;
 
   &__ul {
@@ -29,23 +30,24 @@
     transition: transform 0.5s ease-in-out;
     transform: scale(100%);
 
-    padding-top: 20px;
-    width: 80%;
-    padding-bottom: 20px;
-    padding-left: 2vh;
+    box-sizing: border-box;
+    float: none;
+    display: block;
+    width: auto;
+    margin: 36px 20px;
+    padding: 20px 20px 20px 2vh;
+
     background-image: radial-gradient(var(--gc__li-a), var(--gc__li-b));
     background-color: var(--gc__li-background-color);
     border-radius: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
     border: 1px;
     border-style: solid;
     border-color: white;
   }
+
   &__element {
     display: flex;
+    min-width: 0;
   }
   &__attrib {
     color: var(--gc__attrib-color);
@@ -54,6 +56,11 @@
     padding: 2px;
     margin-right: 20px;
     color: var(--gc__value-color);
+
+    // `anywhere` statt `break-word`: nur `anywhere` senkt auch die
+    // min-content-Breite. Sonst bricht der Text zwar um, das Kaestchen bleibt
+    // aber trotzdem so breit wie der laengste Repo-Name.
+    overflow-wrap: anywhere;
   }
   &__li:hover {
     transition: transform 0.2s ease-in-out;
@@ -64,6 +71,9 @@
   }
   &__div {
     display: grid;
+    // Ohne das behaelt der Flex-Item-Default `min-width: auto` die
+    // min-content-Breite der laengsten Zeile bei und sprengt die Spalte.
+    min-width: 0;
     margin-left: 1vh;
   }
   &__button {
