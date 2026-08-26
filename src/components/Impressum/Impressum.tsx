@@ -1,7 +1,6 @@
 import './Impressum.scss';
 import routes from '../../__resources__/routes';
-
-const MAIL = 'tilmansoerenw@protonmail.com';
+import { MAIL } from '../../__resources__/constants';
 
 /**
  * Bewusst einsprachig deutsch, auch auf der englischen Fassung der Seite -
