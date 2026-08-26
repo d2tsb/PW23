@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints' as bp;
+
 .page {
   &__properties {
     -moz-user-select: -moz-none;
@@ -16,14 +18,21 @@
     background-color: var(--page-background-color);
   }
   &__frame {
+    --frame-gutter: 25px;
+
     z-index: 1;
     display: grid;
-    grid-template-columns: 25px calc(100% - 50px) 25px;
+    grid-template-columns: var(--frame-gutter) 1fr var(--frame-gutter);
     grid-template-rows: 100px 520px auto auto 200px 100px 100px;
+    background: rgba(255, 255, 255, 0);
+
+    @include bp.up-to('xs') {
+      --frame-gutter: 8px;
+    }
+
     &--blur {
       filter: blur(10px);
     }
-    background: rgba(255, 255, 255, 0);
   }
   &__cover {
     position: absolute;

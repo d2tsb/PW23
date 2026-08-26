@@ -1,3 +1,5 @@
+@use '../../../styles/breakpoints' as bp;
+
 .menu-switch {
   display: flex;
   flex-direction: row;
@@ -7,18 +9,14 @@
     padding: 14px;
     color: #ddd;
     font-style: italic;
-  }
-}
-@media screen and (max-width: 320px) {
-  .menu-switch-year {
-    position: absolute;
-    top: -1000px;
-    font-size: 1rem;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    color: #ddd;
-    font-style: italic;
+
+    @include bp.up-to('xs') {
+      position: absolute;
+      top: -1000px;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
   }
 }
 
