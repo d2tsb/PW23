@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints' as bp;
+
 .header {
   &__elements {
     display: flex;
@@ -17,6 +19,9 @@
   &__text {
     height: 1rem;
     color: var(--header-foreground-color);
+    @include bp.up-to('xs') {
+      font-size: 16px;
+    }
   }
   &__year {
     font-size: 1rem;

@@ -22,7 +22,9 @@
 
     z-index: 1;
     display: grid;
-    grid-template-columns: var(--frame-gutter) 1fr var(--frame-gutter);
+    grid-template-columns: var(--frame-gutter) calc(100% - 2 * var(--frame-gutter)) var(
+        --frame-gutter
+      );
     grid-template-rows: 100px 520px auto auto 200px 100px 100px;
     background: rgba(255, 255, 255, 0);
 

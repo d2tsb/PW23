@@ -72,7 +72,7 @@ const Texts = () => {
               }}
             >
               <div
-                className={selectedIndex === index ? 'texts__element--active' : 'texts__element'}
+                className={`texts__element${selectedIndex === index ? ' texts__element--active' : ''}`}
               >
                 {item}
               </div>

@@ -3,10 +3,10 @@
 /***maybe refactor into BEM (Block, Elements and Modifiers) using scss.***/
 html,
 body {
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #000;
-  @include bp.up-to('sm') {
+  @include bp.up-to('xs') {
     font-size: 14px;
   }
 }

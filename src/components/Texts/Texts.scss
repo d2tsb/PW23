@@ -1,36 +1,55 @@
+@use '../../styles/breakpoints' as bp;
+
 .texts {
   grid-column-start: 2;
   grid-column-end: 3;
 
   grid-row-start: 3;
   grid-row-end: 4;
+
+  // Grid-Items haben implizit `min-width: auto` und koennen sonst nicht unter
+  // ihre min-content-Breite schrumpfen. Ohne das laeuft das `overflow-x: auto`
+  // der Lifeline ins Leere und die Spalte wird breiter statt zu scrollen.
+  min-width: 0;
   &__elements {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
     background-color: var(--texts__elements-background-color);
+    flex-wrap: wrap;
+    padding: 0;
 
-    flex-direction: row;
-    justify-content: center;
+    @include bp.up-to('xs') {
+      display: flex;
+      flex-direction: row;
+
+      // Kein `justify-content: space-evenly`: das verteilt den Restplatz in
+      // Luecken zwischen den Items. `flex-grow` legt ihn stattdessen in die
+      // Items selbst, dann sitzen die Tabs lueckenlos nebeneinander.
+      // Basis `auto` statt `0`, damit ein langes Label (EN: "Preferences and
+      // Focus") mehr Breite bekommt als ein kurzes.
+      > li {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+    }
   }
   &__element {
     display: block;
     text-align: center;
     color: var(--texts__element-color);
-    padding: 14px 16px;
+
+    // Fliessend statt Sprung am Breakpoint: waechst mit dem Viewport und ist
+    // auf die urspruenglichen 14px/16px gedeckelt.
+    padding: clamp(10px, 3vw, 14px) clamp(6px, 3vw, 16px);
     text-decoration: none;
     &:hover {
       background-color: var(--texts__element-background-color-hover);
       color: var(--texts__element-color-hover);
     }
     &--active {
-      display: block;
       text-align: center;
       color: var(--texts__element-color-active);
       background-color: var(--texts__element-background-color-active);
-      padding: 14px 16px;
-      text-decoration: none;
     }
   }
   &__content {
