@@ -1,9 +1,14 @@
+@use '../styles/breakpoints' as bp;
+
 /***maybe refactor into BEM (Block, Elements and Modifiers) using scss.***/
 html,
 body {
   width: 100vw;
   min-height: 100vh;
   background-color: #000;
+  @include bp.up-to('sm') {
+    font-size: 14px;
+  }
 }
 
 @keyframes fadeinApp {

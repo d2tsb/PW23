@@ -1,0 +1,32 @@
+@use 'sass:map';
+
+/*
+  Zentrale Breakpoints. Nur Variablen und Mixins - dieses Partial gibt selbst
+  kein CSS aus und kann deshalb gefahrlos in jeder Komponente eingebunden
+  werden, ohne dass sich Regeln im Bundle doppeln.
+
+  Verwendung:
+    @use '../../styles/breakpoints' as bp;
+
+    .foo {
+      width: 35px;
+      @include bp.up-to('xs') {
+        width: 30px;
+      }
+    }
+*/
+
+$breakpoints: (
+  'xs': 320px,
+  'sm': 600px,
+);
+
+@mixin up-to($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error "Unbekannter Breakpoint `#{$name}`. Verfuegbar: #{map.keys($breakpoints)}.";
+  }
+
+  @media screen and (max-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
