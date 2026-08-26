@@ -1,5 +1,6 @@
 import { imageMap } from './imageMap';
 import { AccountLinks, ProfileInfoType } from './types';
+import { MAIL } from './constants';
 
 export const menuBarOptions = {
   en: ['About', 'Preferences and Focus', 'History'],
@@ -60,8 +61,8 @@ export const ProfileInfo: ProfileInfoType = {
       mail: {
         attributeType: 'MAIL',
         description: 'Mail',
-        url: 'mailto:tilmansoerenw@protonmail.com',
-        linkText: 'tilmansoerenw@protonmail.com',
+        url: 'mailto:' + MAIL,
+        linkText: MAIL,
       },
       gitHub: {
         attributeType: 'GITHUB',
@@ -131,8 +132,8 @@ export const ProfileInfo: ProfileInfoType = {
       mail: {
         attributeType: 'MAIL',
         description: 'Mail',
-        url: 'mailto:tilmansoerenw@protonmail.com',
-        linkText: 'tilmansoerenw@protonmail.com',
+        url: 'mailto:' + MAIL,
+        linkText: MAIL,
       },
       gitHub: {
         attributeType: 'GITHUB',
