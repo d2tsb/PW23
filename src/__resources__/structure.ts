@@ -25,6 +25,7 @@ export const lifeLineDescriptions = {
     '2019: High school diploma (Abitur)& Economy Studies',
     '2020: Computer-Science Studies',
     '2024: Webdeveloper at Campudus Developers',
+    '2026: Bachelor of Science, Computer Science',
   ],
   de: [
     '2001: *',
@@ -33,6 +34,7 @@ export const lifeLineDescriptions = {
     '2019: Abitur, Studium BWL',
     '2020: Studium Informatik',
     '2024: Webdeveloper at Campudus Developers',
+    '2026: Bachelor Informatik (B.Sc.)',
   ],
 };
 export const ProfileInfo: ProfileInfoType = {
